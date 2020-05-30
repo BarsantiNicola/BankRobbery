@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ASCII"?>
+<models:AdviseAtomicModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/atomic/advise/" name="AttackModel">
+  <aeg adviseModel="/">
+    <skillElements key="Stealth: Able to come inside protected building and performs actions without be identified">
+      <value name="Stealth: Able to come inside protected building and performs actions without be identified" codename="Stealth" useDefault="false" xpos="540" ypos="57" sourceArcs="//@aeg/@arcElements.2 //@aeg/@arcElements.6" attackExecutionGraph="//@aeg"/>
+    </skillElements>
+    <skillElements key="Hacker: Able to violate electronical and informatic systems">
+      <value name="Hacker: Able to violate electronical and informatic systems" codename="Hacker" useDefault="false" xpos="643" ypos="58" sourceArcs="//@aeg/@arcElements.3 //@aeg/@arcElements.7" attackExecutionGraph="//@aeg"/>
+    </skillElements>
+    <skillElements key="Breaker: Able to violate locks and break safes">
+      <value name="Breaker: Able to violate locks and break safes" codename="Breaker" useDefault="false" xpos="373" ypos="515" sourceArcs="//@aeg/@arcElements.18" attackExecutionGraph="//@aeg"/>
+    </skillElements>
+    <knowledgeElements key="Know security paths and their timing">
+      <value name="Know security paths and their timing" codename="SecurityRoutines" useDefault="false" xpos="810" ypos="316" sourceArcs="//@aeg/@arcElements.12 //@aeg/@arcElements.21" targetArcs="//@aeg/@arcElements.11" attackExecutionGraph="//@aeg"/>
+    </knowledgeElements>
+    <knowledgeElements key="The combination used to open the safe">
+      <value name="The combination used to open the safe" codename="SafeCombination" useDefault="false" xpos="312" ypos="597" sourceArcs="//@aeg/@arcElements.19" attackExecutionGraph="//@aeg"/>
+    </knowledgeElements>
+    <knowledgeElements key="Know the vulnerabilities of the security device used into the building">
+      <value name="Know the vulnerabilities of the security device used into the building" codename="SecVulnerabilities" useDefault="false" xpos="364" ypos="60" sourceArcs="//@aeg/@arcElements.0 //@aeg/@arcElements.4" attackExecutionGraph="//@aeg"/>
+    </knowledgeElements>
+    <accessElements key="Control alarms and can disable them">
+      <value name="Control alarms and can disable them" codename="AlarmsControl" useDefault="false" xpos="414" ypos="282" sourceArcs="//@aeg/@arcElements.17" targetArcs="//@aeg/@arcElements.8" attackExecutionGraph="//@aeg"/>
+    </accessElements>
+    <accessElements key="Control cameras to see their records or delete them">
+      <value name="Control cameras to see their records or delete them" codename="CamerasControl" useDefault="false" xpos="602" ypos="295" sourceArcs="//@aeg/@arcElements.10 //@aeg/@arcElements.13 //@aeg/@arcElements.16" targetArcs="//@aeg/@arcElements.9" attackExecutionGraph="//@aeg"/>
+    </accessElements>
+    <accessElements key="Secure Path to go to the safe and take money back">
+      <value name="Secure Path to go to the safe and take money back" codename="SecurePath" useDefault="false" xpos="709" ypos="582" sourceArcs="//@aeg/@arcElements.15" targetArcs="//@aeg/@arcElements.14" attackExecutionGraph="//@aeg"/>
+    </accessElements>
+    <accessElements key="Phisical Access To Security Components of the building">
+      <value name="Phisical Access To Security Components of the building" codename="PhisicalAccess" useDefault="false" xpos="455" ypos="61" sourceArcs="//@aeg/@arcElements.1 //@aeg/@arcElements.5" attackExecutionGraph="//@aeg"/>
+    </accessElements>
+    <stepElements key="Do Nothing">
+      <value name="Do Nothing" codename="DoNothing" editMask="15" attackExecutionGraph="//@aeg" height="0" width="0" cost="return 500;">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Deterministic">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Get Access To Alarms">
+      <value name="Get Access To Alarms" codename="GetAccessToAlarms" xpos="343" ypos="184" sourceArcs="//@aeg/@arcElements.8" targetArcs="//@aeg/@arcElements.0 //@aeg/@arcElements.1 //@aeg/@arcElements.2 //@aeg/@arcElements.3" attackExecutionGraph="//@aeg" width="150" preconditions="return ((Hacker->Mark()>600 &amp;&amp; Stealth->Mark()>300) || (Hacker->Mark()>200 &amp;&amp; Stealth->Mark()>800)) &amp;&amp; PhisicalAccess->Mark() &amp;&amp; SecVulnerabilities->Mark();" cost="return 30;">
+        <outcomes key="Failure">
+          <value name="Failure" probability="return 0.8;" detection="return 0.9;" effects=""/>
+        </outcomes>
+        <outcomes key="Success(I Wanna Discredit)">
+          <value name="Success(I Wanna Discredit)" probability="return 0.2;" detection="return 0.05;" effects="AlarmsControl->Mark() = true;"/>
+        </outcomes>
+        <timing distributionType="Deterministic">
+          <parameters>return 30-Hacker->Mark()*25/1000;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Get Access To Cameras">
+      <value name="Get Access To Cameras" codename="GetAccessToCameras" xpos="551" ypos="187" sourceArcs="//@aeg/@arcElements.9" targetArcs="//@aeg/@arcElements.4 //@aeg/@arcElements.5 //@aeg/@arcElements.6 //@aeg/@arcElements.7" attackExecutionGraph="//@aeg" width="150" preconditions="return ((Hacker->Mark()>600 &amp;&amp; Stealth->Mark()>300) || (Hacker->Mark()>200 &amp;&amp; Stealth->Mark()>800)) &amp;&amp; PhisicalAccess->Mark() &amp;&amp; SecVulnerabilities->Mark();" cost="return 20;">
+        <outcomes key="Failure">
+          <value name="Failure" probability="return 0.2;" detection="return 0.9;" effects="CamerasControl->Mark() = true;"/>
+        </outcomes>
+        <outcomes key="Success(I Wanna Discredit)">
+          <value name="Success" probability="return 0.2;" detection="return 0.05;" effects="CamerasControl->Mark() = true;&#xA;"/>
+        </outcomes>
+        <timing distributionType="Deterministic">
+          <parameters>return 30-Hacker->Mark()*25/1000;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Study Security Routines">
+      <value name="Study Security Routines" codename="StudySecurityRoutines" xpos="757" ypos="182" sourceArcs="//@aeg/@arcElements.11" targetArcs="//@aeg/@arcElements.10" attackExecutionGraph="//@aeg" width="150" preconditions="return CamerasControl->Mark();" cost="return 5;">
+        <outcomes key="Failure">
+          <value name="Failure" probability="return 0.05;" detection="return 0;" effects=""/>
+        </outcomes>
+        <outcomes key="Success">
+          <value name="Success" probability="return 0.85;" detection="return 0;" effects="SecurityRoutines->Mark() = true;"/>
+        </outcomes>
+        <outcomes key="Failure(Camera Access Found)">
+          <value name="Failure(Camera Access Found)" probability="return 0.1;" detection="return 1;" effects="CamerasControl->Mark() = false;"/>
+        </outcomes>
+        <timing distributionType="Deterministic">
+          <parameters>return 100;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Find Secure Access">
+      <value name="Find Secure Access" codename="FindSecureAccess" xpos="760" ypos="445" sourceArcs="//@aeg/@arcElements.14" targetArcs="//@aeg/@arcElements.12 //@aeg/@arcElements.13" attackExecutionGraph="//@aeg" width="150" preconditions="return SecurityRoutines->Mark() &amp;&amp; CamerasControl->Mark();" cost="return 5;">
+        <outcomes key="Success">
+          <value name="Success" probability="return 0.1;" detection="return 0;" effects="SecurePath->Mark() = true;"/>
+        </outcomes>
+        <outcomes key="Failure(Camera Access Found)">
+          <value name="Failure(Camera Access Found)" probability="return 0.2;" detection="return 1;" effects="SecurityRoutines->Mark() = false;&#xA;CamerasControl->Mark() = false;"/>
+        </outcomes>
+        <outcomes key="Failure">
+          <value name="Failure" probability="return 0.70;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Deterministic">
+          <parameters>return 100;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Safe Break">
+      <value name="Safe Break" codename="SafeBreak" xpos="429" ypos="690" sourceArcs="//@aeg/@arcElements.20" targetArcs="//@aeg/@arcElements.15 //@aeg/@arcElements.16 //@aeg/@arcElements.17 //@aeg/@arcElements.18 //@aeg/@arcElements.19 //@aeg/@arcElements.21" attackExecutionGraph="//@aeg" width="150" preconditions="return ( Breaker->Mark()>800 || SafeCombination->Mark()) &amp;&amp; AlarmsControl->Mark() &amp;&amp; CamerasControl->Mark() &amp;&amp; SecurePath->Mark();" cost="return 50;">
+        <outcomes key="Failure">
+          <value name="Failure" probability="return 0.8;" detection="return 0;" effects=""/>
+        </outcomes>
+        <outcomes key="Success">
+          <value name="Success" probability="return 0.2;" detection="return 0;" effects="Money->Mark() = true;"/>
+        </outcomes>
+        <timing distributionType="Deterministic">
+          <parameters>return 60;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <goalElements key="Stolen money from the bank">
+      <value name="Stolen money from the bank" codename="Money" useDefault="false" xpos="473" ypos="803" targetArcs="//@aeg/@arcElements.20" attackExecutionGraph="//@aeg" width="75"/>
+    </goalElements>
+    <arcElements sourceName="Know the vulnerabilities of the security device used into the building" targetName="Get Access To Alarms" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="Phisical Access To Security Components of the building" targetName="Get Access To Alarms" targetType="Step"/>
+    <arcElements sourceName="Stealth: Able to come inside protected building and performs actions without be identified" targetName="Get Access To Alarms" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="Hacker: Able to violate electronical and informatic systems" targetName="Get Access To Alarms" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="Know the vulnerabilities of the security device used into the building" targetName="Get Access To Cameras" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="Phisical Access To Security Components of the building" targetName="Get Access To Cameras" targetType="Step"/>
+    <arcElements sourceName="Stealth: Able to come inside protected building and performs actions without be identified" targetName="Get Access To Cameras" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="Hacker: Able to violate electronical and informatic systems" targetName="Get Access To Cameras" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="Get Access To Alarms" targetName="Control alarms and can disable them" sourceType="Step"/>
+    <arcElements sourceName="Get Access To Cameras" targetName="Control cameras to see their records or delete them" sourceType="Step"/>
+    <arcElements sourceName="Control cameras to see their records or delete them" targetName="Study Security Routines" targetType="Step"/>
+    <arcElements sourceName="Study Security Routines" targetName="Know security paths and their timing" sourceType="Step" targetType="Knowledge"/>
+    <arcElements sourceName="Know security paths and their timing" targetName="Find Secure Access" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="Control cameras to see their records or delete them" targetName="Find Secure Access" targetType="Step"/>
+    <arcElements sourceName="Find Secure Access" targetName="Secure Path to go to the safe and take money back" sourceType="Step"/>
+    <arcElements sourceName="Secure Path to go to the safe and take money back" targetName="Safe Break" targetType="Step"/>
+    <arcElements sourceName="Control cameras to see their records or delete them" targetName="Safe Break" targetType="Step"/>
+    <arcElements sourceName="Control alarms and can disable them" targetName="Safe Break" targetType="Step"/>
+    <arcElements sourceName="Breaker: Able to violate locks and break safes" targetName="Safe Break" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="The combination used to open the safe" targetName="Safe Break" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="Safe Break" targetName="Stolen money from the bank" sourceType="Step" targetType="Goal"/>
+    <arcElements sourceName="Know security paths and their timing" targetName="Safe Break" sourceType="Knowledge" targetType="Step"/>
+  </aeg>
+  <adversary name="AdversaryName" codename="AdversaryName" horizon="4" detectionDiscount="0.1" costDiscount="0.1" payoffDiscount="0.8">
+    <accessInit key="Phisical Access To Security Components of the building" value="securityComponentsAccess"/>
+    <goalInit key="Stolen money from the bank" value="0"/>
+    <goalPayoff key="Stolen money from the bank" value="3000"/>
+    <knowledgeInit key="Know the vulnerabilities of the security device used into the building" value="secVulnerabilitiesKnowledge"/>
+    <knowledgeInit key="The combination used to open the safe" value="safeCombinationKnowledge"/>
+    <skillInit key="Stealth: Able to come inside protected building and performs actions without be identified" value="stealthSkill"/>
+    <skillInit key="Hacker: Able to violate electronical and informatic systems" value="hackerSkill"/>
+    <skillInit key="Breaker: Able to violate locks and break safes" value="breakerSkill"/>
+  </adversary>
+</models:AdviseAtomicModel>
