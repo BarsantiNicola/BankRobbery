@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<class id="Mobius.Studies.RangeStudy.RangeStudyInterface">
+	<int id="ClassVersion">1</int>
+	<class id="Mobius.Studies.Common.BaseStudyInterface">
+		<int id="ClassVersion">1</int>
+		<class id="Mobius.BaseClasses.BaseInterfaceClass">
+			<int id="ClassVersion">3</int>
+			<string id="ModelName">bankStudy</string>
+			<class id="Mobius.Studies.RangeStudy.RangeStudyInfoClass">
+				<int id="ClassVersion">1</int>
+				<class id="Mobius.Studies.BaseStudyInfoClass">
+					<int id="ClassVersion">1</int>
+					<class id="Mobius.BaseClasses.BaseInfoClass">
+						<int id="ClassVersion">2</int>
+					</class>
+				</class>
+			</class>
+			<class id="Mobius.Studies.RangeStudy.RangeStudyEditor">
+				<int id="ClassVersion">2</int>
+				<class id="Mobius.Studies.Common.BaseStudyEditor">
+					<int id="ClassVersion">4</int>
+					<class id="Mobius.BaseClasses.BaseEditorClass">
+						<int id="ClassVersion">3</int>
+						<boolean id="HasPanel">false</boolean>
+						<vector id="LocalGlobalNamesList">
+						</vector>
+						<vector id="LocalGlobalTypesList">
+						</vector>
+						<boolean id="DisplayToolTips">true</boolean>
+					</class>
+					<string id="FullPath">/home/student/MobiusProject/BankRobbery/Study/bankStudy/</string>
+					<string id="PVModelName">variables</string>
+					<vector id="ActiveExpVector">
+						<boolean id="0">true</boolean>
+					</vector>
+					<vector id="GVNameVector">
+						<string id="0">breakerSkill</string>
+						<string id="1">cyberVulnerabilitiesKnowledge</string>
+						<string id="2">hackerSkill</string>
+						<string id="3">secVulnerabilitiesKnowledge</string>
+						<string id="4">securityComponentsAccess</string>
+						<string id="5">socialEngineerSkill</string>
+						<string id="6">stealthSkill</string>
+					</vector>
+					<vector id="GVTypeStringVector">
+						<string id="0">short</string>
+						<string id="1">short</string>
+						<string id="2">short</string>
+						<string id="3">short</string>
+						<string id="4">short</string>
+						<string id="5">short</string>
+						<string id="6">short</string>
+					</vector>
+				</class>
+				<int id="VectorLength">7</int>
+				<vector id="e">
+					<string id="0">Fixed Value</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Fixed Value</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Fixed Value</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Fixed Value</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Fixed Value</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Fixed Value</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Fixed Value</string>
+				</vector>
+				<vector id="g">
+					<string id="0">1000</string>
+				</vector>
+				<vector id="g">
+					<string id="0">1</string>
+				</vector>
+				<vector id="g">
+					<string id="0">1000</string>
+				</vector>
+				<vector id="g">
+					<string id="0">1</string>
+				</vector>
+				<vector id="g">
+					<string id="0">1</string>
+				</vector>
+				<vector id="g">
+					<string id="0">1000</string>
+				</vector>
+				<vector id="g">
+					<string id="0">1000</string>
+				</vector>
+			</class>
+			<boolean id="Valid">true</boolean>
+		</class>
+	</class>
+</class>

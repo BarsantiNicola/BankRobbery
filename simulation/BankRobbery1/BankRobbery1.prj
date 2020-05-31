@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<models:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/projects" name="BankRobbery1" author="student" creationDate="2020-06-01T01:42:33.898+0200" lastSavedVersion="2.5.10.201907151645">
+  <atomic key="AttackModel">
+    <value name="AttackModel" type="ADVISE Model"/>
+  </atomic>
+  <reward key="variables">
+    <value name="variables" category="Reward" type="Performance Variables Model"/>
+  </reward>
+  <study key="bankStudy">
+    <value name="bankStudy" category="Study" type="Range Study"/>
+  </study>
+  <solver key="simulation">
+    <value name="simulation" category="Solver" type="Simulator"/>
+  </solver>
+  <globalVariable name="stealthSkill"/>
+  <globalVariable name="hackerSkill"/>
+  <globalVariable name="breakerSkill"/>
+  <globalVariable name="secVulnerabilitiesKnowledge"/>
+  <globalVariable name="securityComponentsAccess"/>
+  <globalVariable name="socialEngineerSkill"/>
+  <globalVariable name="cyberVulnerabilitiesKnowledge"/>
+</models:Project>
