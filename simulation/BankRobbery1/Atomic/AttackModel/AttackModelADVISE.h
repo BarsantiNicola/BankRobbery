@@ -1180,6 +1180,8 @@ public:
   short* DirectorCredentials_Mobius_Mark;
   Access *BackDoor;
   short* BackDoor_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
   StepChosen *GetDirectorCredentialsChosen;
   short *GetDirectorCredentialsChosen_Mobius_Mark;
   StepWeight *GetAccessToAlarmsWeight;
@@ -1237,6 +1239,8 @@ public:
   short* DirectorCredentials_Mobius_Mark;
   Access *BackDoor;
   short* BackDoor_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
   StepChosen *GetDirectorCredentialsChosen;
   short *GetDirectorCredentialsChosen_Mobius_Mark;
   StepWeight *GetAccessToAlarmsWeight;
@@ -1465,6 +1469,8 @@ public:
   short* SafeCombination_Mobius_Mark;
   Access *BackDoor;
   short* BackDoor_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
   StepChosen *GetSafeCombinationChosen;
   short *GetSafeCombinationChosen_Mobius_Mark;
   StepWeight *GetAccessToAlarmsWeight;
@@ -1522,6 +1528,8 @@ public:
   short* SafeCombination_Mobius_Mark;
   Access *BackDoor;
   short* BackDoor_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
   StepChosen *GetSafeCombinationChosen;
   short *GetSafeCombinationChosen_Mobius_Mark;
   StepWeight *GetAccessToAlarmsWeight;
@@ -1579,6 +1587,8 @@ public:
   short* SystemAccess_Mobius_Mark;
   Access *BackDoor;
   short* BackDoor_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
   StepChosen *InfectTheSystemChosen;
   short *InfectTheSystemChosen_Mobius_Mark;
   StepWeight *GetAccessToAlarmsWeight;
@@ -1636,6 +1646,8 @@ public:
   short* SystemAccess_Mobius_Mark;
   Access *BackDoor;
   short* BackDoor_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
   StepChosen *InfectTheSystemChosen;
   short *InfectTheSystemChosen_Mobius_Mark;
   StepWeight *GetAccessToAlarmsWeight;

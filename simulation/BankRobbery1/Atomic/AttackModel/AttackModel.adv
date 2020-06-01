@@ -5,7 +5,7 @@
       <value name="Stealth: Able to come inside protected building and performs actions without be identified" codename="Stealth" useDefault="false" xpos="923" ypos="53" sourceArcs="//@aeg/@arcElements.2 //@aeg/@arcElements.6" attackExecutionGraph="//@aeg"/>
     </skillElements>
     <skillElements key="Hacker: Able to violate electronical and informatic systems">
-      <value name="Hacker: Able to violate electronical and informatic systems" codename="Hacker" useDefault="false" xpos="1026" ypos="54" sourceArcs="//@aeg/@arcElements.3 //@aeg/@arcElements.7 //@aeg/@arcElements.36" attackExecutionGraph="//@aeg"/>
+      <value name="Hacker: Able to violate electronical and informatic systems" codename="Hacker" useDefault="false" xpos="1026" ypos="54" sourceArcs="//@aeg/@arcElements.3 //@aeg/@arcElements.7 //@aeg/@arcElements.36 //@aeg/@arcElements.37 //@aeg/@arcElements.38 //@aeg/@arcElements.39" attackExecutionGraph="//@aeg"/>
     </skillElements>
     <skillElements key="Breaker: Able to violate locks and break safes">
       <value name="Breaker: Able to violate locks and break safes" codename="Breaker" useDefault="false" xpos="756" ypos="511" sourceArcs="//@aeg/@arcElements.18" attackExecutionGraph="//@aeg"/>
@@ -50,7 +50,7 @@
       <value name="System Access " codename="SystemAccess" xpos="173" ypos="542" sourceArcs="//@aeg/@arcElements.30" targetArcs="//@aeg/@arcElements.29" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <stepElements key="Do Nothing">
-      <value name="Do Nothing" codename="DoNothing" editMask="15" attackExecutionGraph="//@aeg" height="0" width="0" cost="return 500;">
+      <value name="Do Nothing" codename="DoNothing" editMask="15" attackExecutionGraph="//@aeg" height="0" width="0" cost="return 50000;">
         <outcomes key="Outcome 1">
           <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
         </outcomes>
@@ -131,12 +131,12 @@
       </value>
     </stepElements>
     <stepElements key="Cyber Attack">
-      <value name="Cyber Attack" codename="CyberAttack" xpos="268" ypos="176" sourceArcs="//@aeg/@arcElements.22" targetArcs="//@aeg/@arcElements.21 //@aeg/@arcElements.36" attackExecutionGraph="//@aeg" width="150" preconditions="return(!BackDoor->Mark()&amp;&amp;CyberVulnerability->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 20;">
+      <value name="Cyber Attack" codename="CyberAttack" xpos="268" ypos="176" sourceArcs="//@aeg/@arcElements.22" targetArcs="//@aeg/@arcElements.21 //@aeg/@arcElements.36" attackExecutionGraph="//@aeg" width="150" preconditions="return(!BackDoor->Mark()&amp;&amp;CyberVulnerability->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 30;">
         <outcomes key="Outcome 1">
-          <value name="Success" probability="return 0.70;" detection="return 0.15;" effects="BackDoor->Mark()=true;"/>
+          <value name="Success" probability="return 0.70;" detection="return 0.05;" effects="BackDoor->Mark()=true;"/>
         </outcomes>
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.3;" detection="return 0.7;" effects=""/>
+          <value name="Failure" probability="return 0.3;" detection="return 0.5;" effects=""/>
         </outcomes>
         <timing distributionType="Deterministic">
           <parameters>return 30-Hacker->Mark()*25/1000;</parameters>
@@ -144,64 +144,64 @@
       </value>
     </stepElements>
     <stepElements key="Infect The System">
-      <value name="Infect The System" codename="InfectTheSystem" xpos="130" ypos="390" sourceArcs="//@aeg/@arcElements.29" targetArcs="//@aeg/@arcElements.23" attackExecutionGraph="//@aeg" width="150" preconditions="return (!SystemAccess->Mark()&amp;&amp;BackDoor->Mark());" cost="return 30;">
+      <value name="Infect The System" codename="InfectTheSystem" xpos="130" ypos="390" sourceArcs="//@aeg/@arcElements.29" targetArcs="//@aeg/@arcElements.23 //@aeg/@arcElements.37" attackExecutionGraph="//@aeg" width="150" preconditions="return (!SystemAccess->Mark()&amp;&amp;BackDoor->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 30;">
         <outcomes key="Outcome 1">
-          <value name="Success" probability="return 0.30;" detection="return 0.10;" effects="SystemAccess->Mark()=true;"/>
+          <value name="Success" probability="return 0.30;" detection="return 0.05;" effects="SystemAccess->Mark()=true;"/>
         </outcomes>
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.70;" detection="return 0.9;" effects=""/>
+          <value name="Failure" probability="return 0.70;" detection="return 0.20;" effects=""/>
         </outcomes>
         <timing distributionType="Deterministic">
-          <parameters>return 20;</parameters>
+          <parameters>return 25-Hacker->Mark()*20/1000;</parameters>
         </timing>
       </value>
     </stepElements>
     <stepElements key="Get Director Credentials">
-      <value name="Get Director Credentials" codename="GetDirectorCredentials" xpos="303" ypos="387" sourceArcs="//@aeg/@arcElements.32" targetArcs="//@aeg/@arcElements.24" attackExecutionGraph="//@aeg" width="150" preconditions="return (!DirectorCredentials->Mark()&amp;&amp;BackDoor->Mark());" cost="return 35;">
+      <value name="Get Director Credentials" codename="GetDirectorCredentials" xpos="303" ypos="387" sourceArcs="//@aeg/@arcElements.32" targetArcs="//@aeg/@arcElements.24 //@aeg/@arcElements.38" attackExecutionGraph="//@aeg" width="150" preconditions="return (!DirectorCredentials->Mark()&amp;&amp;BackDoor->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 35;">
         <outcomes key="Outcome 1">
           <value name="Success" probability="return 0.30;" detection="return 0.05;" effects="DirectorCredentials->Mark()=true;"/>
         </outcomes>
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.70;" detection="return 0.9;" effects=""/>
+          <value name="Failure" probability="return 0.70;" detection="return 0.20;" effects=""/>
         </outcomes>
         <timing distributionType="Deterministic">
-          <parameters>return 25;</parameters>
+          <parameters>return 25-Hacker->Mark()*20/1000;</parameters>
         </timing>
       </value>
     </stepElements>
     <stepElements key="Get Safe Combination">
-      <value name="Get Safe Combination" codename="GetSafeCombination" xpos="469" ypos="386" sourceArcs="//@aeg/@arcElements.33" targetArcs="//@aeg/@arcElements.25" attackExecutionGraph="//@aeg" width="150" preconditions="return(!SafeCombination->Mark()&amp;&amp;BackDoor->Mark());" cost="return 35;">
+      <value name="Get Safe Combination" codename="GetSafeCombination" xpos="469" ypos="386" sourceArcs="//@aeg/@arcElements.33" targetArcs="//@aeg/@arcElements.25 //@aeg/@arcElements.39" attackExecutionGraph="//@aeg" width="150" preconditions="return(!SafeCombination->Mark()&amp;&amp;BackDoor->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 35;">
         <outcomes key="Outcome 1">
           <value name="Success" probability="return 0.30;" detection="return 0.05;" effects="SafeCombination->Mark()=true;"/>
         </outcomes>
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.70;" detection="return 0.9;" effects=""/>
+          <value name="Failure" probability="return 0.70;" detection="return 0.20;" effects=""/>
         </outcomes>
         <timing distributionType="Deterministic">
-          <parameters>return 25;</parameters>
+          <parameters>return 25-Hacker->Mark()*20/1000;</parameters>
         </timing>
       </value>
     </stepElements>
     <stepElements key="Phishing">
-      <value name="Phishing" codename="Phishing" xpos="-32" ypos="389" sourceArcs="//@aeg/@arcElements.27" targetArcs="//@aeg/@arcElements.26" attackExecutionGraph="//@aeg" width="150" preconditions="return(!UserCredentials->Mark()&amp;&amp;SocialEngineer->Mark());" cost="return 35;">
+      <value name="Phishing" codename="Phishing" xpos="-32" ypos="389" sourceArcs="//@aeg/@arcElements.27" targetArcs="//@aeg/@arcElements.26" attackExecutionGraph="//@aeg" width="150" preconditions="return(!UserCredentials->Mark()&amp;&amp;SocialEngineer->Mark()>650);" cost="return 35;">
         <outcomes key="Outcome 1">
-          <value name="Success" probability="return 0.20;" detection="return 0.40;" effects="UserCredentials->Mark()=true;"/>
+          <value name="Success" probability="return 0.25;" detection="return 0.;" effects="UserCredentials->Mark()=true;"/>
         </outcomes>
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.80;" detection="return 1;" effects=""/>
+          <value name="Failure" probability="return 0.75;" detection="return 0;" effects=""/>
         </outcomes>
         <timing distributionType="Deterministic">
-          <parameters>return 1000;</parameters>
+          <parameters>return 1000-SocialEngineer->Mark()*25/1000;</parameters>
         </timing>
       </value>
     </stepElements>
     <stepElements key="Transfer Customer Money">
       <value name="Transfer Customer Money" codename="TransferCustomerMoney" xpos="-29" ypos="719" sourceArcs="//@aeg/@arcElements.35" targetArcs="//@aeg/@arcElements.28" attackExecutionGraph="//@aeg" width="150" preconditions="return(!Money->Mark()&amp;&amp;UserCredentials->Mark());" cost="return 5;">
         <outcomes key="Outcome 1">
-          <value name="Success" probability="return 0.8;" detection="return 0.85;" effects="Money->Mark()=true;"/>
+          <value name="Success" probability="return 0.8;" detection="return 0.3;" effects="Money->Mark()=true;"/>
         </outcomes>
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.20;" detection="return 0.95;" effects=""/>
+          <value name="Failure" probability="return 0.20;" detection="return 0.60;" effects=""/>
         </outcomes>
         <timing distributionType="Deterministic">
           <parameters>return 20;</parameters>
@@ -211,10 +211,10 @@
     <stepElements key="Transfer Bank Money">
       <value name="Transfer Bank Money" codename="TransferBankMoney" xpos="185" ypos="677" sourceArcs="//@aeg/@arcElements.34" targetArcs="//@aeg/@arcElements.30 //@aeg/@arcElements.31" attackExecutionGraph="//@aeg" width="150" preconditions="return(!Money->Mark()&amp;&amp;SystemAccess->Mark()&amp;&amp;DirectorCredentials->Mark());" cost="return 5;">
         <outcomes key="Outcome 1">
-          <value name="Success" probability="return 0.80;" detection="return 0.85;" effects="Money->Mark()=true;"/>
+          <value name="Success" probability="return 0.80;" detection="return 0.30;" effects="Money->Mark()=true;"/>
         </outcomes>
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.20;" detection="return 0.95;" effects=""/>
+          <value name="Failure" probability="return 0.20;" detection="return 0.60;" effects=""/>
         </outcomes>
         <timing distributionType="Deterministic">
           <parameters>return 20;</parameters>
@@ -261,8 +261,11 @@
     <arcElements sourceName="Transfer Bank Money" targetName="Stolen money from the bank" sourceType="Step" targetType="Goal"/>
     <arcElements sourceName="Transfer Customer Money" targetName="Stolen money from the bank" sourceType="Step" targetType="Goal"/>
     <arcElements sourceName="Hacker: Able to violate electronical and informatic systems" targetName="Cyber Attack" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="Hacker: Able to violate electronical and informatic systems" targetName="Infect The System" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="Hacker: Able to violate electronical and informatic systems" targetName="Get Director Credentials" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="Hacker: Able to violate electronical and informatic systems" targetName="Get Safe Combination" sourceType="Skill" targetType="Step"/>
   </aeg>
-  <adversary name="AdversaryName" codename="AdversaryName" horizon="4" detectionDiscount="0.1" costDiscount="0.1" payoffDiscount="0.8">
+  <adversary name="AdversaryName" codename="AdversaryName" detectionDiscount="0.1" costDiscount="0.1" payoffDiscount="0.8">
     <accessInit key="Phisical Access To Security Components of the building" value="securityComponentsAccess"/>
     <goalInit key="Stolen money from the bank" value="0"/>
     <goalPayoff key="Stolen money from the bank" value="3000"/>
