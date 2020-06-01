@@ -1701,8 +1701,6 @@ public:
   short* Breaker_Mobius_Mark;
   Knowledge *SafeCombination;
   short* SafeCombination_Mobius_Mark;
-  Knowledge *SecurityRoutines;
-  short* SecurityRoutines_Mobius_Mark;
   StepChosen *SafeBreakChosen;
   short *SafeBreakChosen_Mobius_Mark;
   StepWeight *GetAccessToAlarmsWeight;
@@ -1768,8 +1766,6 @@ public:
   short* Breaker_Mobius_Mark;
   Knowledge *SafeCombination;
   short* SafeCombination_Mobius_Mark;
-  Knowledge *SecurityRoutines;
-  short* SecurityRoutines_Mobius_Mark;
   StepChosen *SafeBreakChosen;
   short *SafeBreakChosen_Mobius_Mark;
   StepWeight *GetAccessToAlarmsWeight;

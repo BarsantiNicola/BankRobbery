@@ -118,7 +118,7 @@ void bankStudyRangeStudy::SetValues_securityComponentsAccess() {
 // set values for socialEngineerSkill
 //******************************************************
 void bankStudyRangeStudy::SetValues_socialEngineerSkill() {
-  socialEngineerSkillValues[0] = 1000;
+  socialEngineerSkillValues[0] = 0;
 }
 
 

@@ -3,7 +3,7 @@
 variablesPVModel::variablesPVModel(bool expandTimeArrays) {
   TheModel=new AttackModelADVISE();
   DefineName("variablesPVModel");
-  CreatePVList(7, expandTimeArrays);
+  CreatePVList(10, expandTimeArrays);
   Initialize();
 }
 
@@ -31,6 +31,15 @@ PerformanceVariableNode* variablesPVModel::createPVNode(int pvindex, int timeind
     break;
   case 6:
     return new variablesPV6(timeindex);
+    break;
+  case 7:
+    return new variablesPV7(timeindex);
+    break;
+  case 8:
+    return new variablesPV8(timeindex);
+    break;
+  case 9:
+    return new variablesPV9(timeindex);
     break;
   }
   return NULL;

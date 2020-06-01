@@ -313,7 +313,7 @@ AttackModelADVISE::AttackModelADVISE() {
 
   assignSVsToAttackSteps();
 
-  int AffectArcs[511][2] = {
+  int AffectArcs[509][2] = {
     {43,0}, {17,0}, {30,0}, {43,1}, {18,1}, {31,1}, {43,2}, {19,2}, 
     {32,2}, {43,3}, {20,3}, {33,3}, {43,4}, {21,4}, {34,4}, {43,5}, 
     {22,5}, {35,5}, {43,6}, {23,6}, {36,6}, {43,7}, {24,7}, {37,7}, 
@@ -370,16 +370,16 @@ AttackModelADVISE::AttackModelADVISE() {
     {34,35}, {35,35}, {36,35}, {37,35}, {38,35}, {39,35}, {40,35}, {41,35}, 
     {42,35}, {1,35}, {5,35}, {43,36}, {28,36}, {30,36}, {31,36}, {32,36}, 
     {33,36}, {34,36}, {35,36}, {36,36}, {37,36}, {38,36}, {39,36}, {40,36}, 
-    {41,36}, {42,36}, {16,36}, {2,36}, {0,36}, {3,36}, {7,36}, {6,36}, 
-    {43,37}, {28,37}, {30,37}, {31,37}, {32,37}, {33,37}, {34,37}, {35,37}, 
-    {36,37}, {37,37}, {38,37}, {39,37}, {40,37}, {41,37}, {42,37}, {16,37}, 
-    {2,37}, {0,37}, {3,37}, {7,37}, {6,37}, {43,38}, {29,38}, {30,38}, 
-    {31,38}, {32,38}, {33,38}, {34,38}, {35,38}, {36,38}, {37,38}, {38,38}, 
-    {39,38}, {40,38}, {41,38}, {42,38}, {5,38}, {9,38}, {43,39}, {29,39}, 
-    {30,39}, {31,39}, {32,39}, {33,39}, {34,39}, {35,39}, {36,39}, {37,39}, 
-    {38,39}, {39,39}, {40,39}, {41,39}, {42,39}, {5,39}, {9,39}
+    {41,36}, {42,36}, {16,36}, {2,36}, {0,36}, {3,36}, {7,36}, {43,37}, 
+    {28,37}, {30,37}, {31,37}, {32,37}, {33,37}, {34,37}, {35,37}, {36,37}, 
+    {37,37}, {38,37}, {39,37}, {40,37}, {41,37}, {42,37}, {16,37}, {2,37}, 
+    {0,37}, {3,37}, {7,37}, {43,38}, {29,38}, {30,38}, {31,38}, {32,38}, 
+    {33,38}, {34,38}, {35,38}, {36,38}, {37,38}, {38,38}, {39,38}, {40,38}, 
+    {41,38}, {42,38}, {5,38}, {9,38}, {43,39}, {29,39}, {30,39}, {31,39}, 
+    {32,39}, {33,39}, {34,39}, {35,39}, {36,39}, {37,39}, {38,39}, {39,39}, 
+    {40,39}, {41,39}, {42,39}, {5,39}, {9,39}
 };
-  for(int n = 0; n < 511;n++)
+  for(int n = 0; n < 509;n++)
     AddAffectArc(InitialSVs[AffectArcs[n][0]], InitialActions[AffectArcs[n][1]]);
   int EnableArcs[66][2] = {
     {43,0}, {43,1}, {43,2}, {43,3}, {43,4}, {43,5}, {43,6}, {43,7}, 
@@ -843,7 +843,6 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   SafeBreakFailure.AlarmsControl = AlarmsControl;
   SafeBreakFailure.Breaker = Breaker;
   SafeBreakFailure.SafeCombination = SafeCombination;
-  SafeBreakFailure.SecurityRoutines = SecurityRoutines;
   SafeBreakFailure.SafeBreakChosen = SafeBreakChosen;
   SafeBreakFailure.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
   SafeBreakFailure.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
@@ -866,7 +865,6 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   SafeBreakSuccess.AlarmsControl = AlarmsControl;
   SafeBreakSuccess.Breaker = Breaker;
   SafeBreakSuccess.SafeCombination = SafeCombination;
-  SafeBreakSuccess.SecurityRoutines = SecurityRoutines;
   SafeBreakSuccess.SafeBreakChosen = SafeBreakChosen;
   SafeBreakSuccess.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
   SafeBreakSuccess.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
@@ -1074,7 +1072,7 @@ int AttackModelADVISE::GetAccessToAlarmsFailureStep::Rank() {
 }
 
 bool AttackModelADVISE::GetAccessToAlarmsFailureStep::preconditionsMet() {
-return ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
+return (!AlarmsControl->Mark()) && ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
   return true;
 }
 
@@ -1164,7 +1162,7 @@ int AttackModelADVISE::GetAccessToAlarmsSuccessIWannaDiscreditStep::Rank() {
 }
 
 bool AttackModelADVISE::GetAccessToAlarmsSuccessIWannaDiscreditStep::preconditionsMet() {
-return ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
+return (!AlarmsControl->Mark()) && ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
   return true;
 }
 
@@ -1428,7 +1426,7 @@ int AttackModelADVISE::GetAccessToCamerasFailureStep::Rank() {
 }
 
 bool AttackModelADVISE::GetAccessToCamerasFailureStep::preconditionsMet() {
-return ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
+return (!CamerasControl->Mark()) && ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
   return true;
 }
 
@@ -1518,7 +1516,7 @@ int AttackModelADVISE::GetAccessToCamerasSuccessStep::Rank() {
 }
 
 bool AttackModelADVISE::GetAccessToCamerasSuccessStep::preconditionsMet() {
-return ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
+return (!CamerasControl->Mark()) && ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
   return true;
 }
 
@@ -2042,7 +2040,7 @@ int AttackModelADVISE::FindSecureAccessFailureStep::Rank() {
 }
 
 bool AttackModelADVISE::FindSecureAccessFailureStep::preconditionsMet() {
-return SecurityRoutines->Mark() && CamerasControl->Mark();
+return (!SecurePath->Mark()) && SecurityRoutines->Mark() && CamerasControl->Mark();
   return true;
 }
 
@@ -2130,7 +2128,7 @@ int AttackModelADVISE::FindSecureAccessSuccessStep::Rank() {
 }
 
 bool AttackModelADVISE::FindSecureAccessSuccessStep::preconditionsMet() {
-return SecurityRoutines->Mark() && CamerasControl->Mark();
+return (!SecurePath->Mark()) && SecurityRoutines->Mark() && CamerasControl->Mark();
   return true;
 }
 
@@ -2218,7 +2216,7 @@ int AttackModelADVISE::FindSecureAccessFailureCameraAccessFoundStep::Rank() {
 }
 
 bool AttackModelADVISE::FindSecureAccessFailureCameraAccessFoundStep::preconditionsMet() {
-return SecurityRoutines->Mark() && CamerasControl->Mark();
+return (!SecurePath->Mark()) && SecurityRoutines->Mark() && CamerasControl->Mark();
   return true;
 }
 
@@ -2480,7 +2478,7 @@ int AttackModelADVISE::StudySecurityRoutinesFailureStep::Rank() {
 }
 
 bool AttackModelADVISE::StudySecurityRoutinesFailureStep::preconditionsMet() {
-return CamerasControl->Mark();
+return (!SecurityRoutines->Mark()) && CamerasControl->Mark();
   return true;
 }
 
@@ -2567,7 +2565,7 @@ int AttackModelADVISE::StudySecurityRoutinesSuccessStep::Rank() {
 }
 
 bool AttackModelADVISE::StudySecurityRoutinesSuccessStep::preconditionsMet() {
-return CamerasControl->Mark();
+return (!SecurityRoutines->Mark()) && CamerasControl->Mark();
   return true;
 }
 
@@ -2654,7 +2652,7 @@ int AttackModelADVISE::StudySecurityRoutinesFailureCameraAccessFoundStep::Rank()
 }
 
 bool AttackModelADVISE::StudySecurityRoutinesFailureCameraAccessFoundStep::preconditionsMet() {
-return CamerasControl->Mark();
+return (!SecurityRoutines->Mark()) && CamerasControl->Mark();
   return true;
 }
 
@@ -3026,7 +3024,7 @@ return 0.10;
 
 AttackModelADVISE::SafeBreakFailureStep::SafeBreakFailureStep() {
   TheDistributionParameters = new double[1];
-  commonInit("SafeBreakFailureStep", 11, Deterministic, RaceEnabled, 22, 1, false);}
+  commonInit("SafeBreakFailureStep", 11, Deterministic, RaceEnabled, 21, 1, false);}
 
 AttackModelADVISE::SafeBreakFailureStep::~SafeBreakFailureStep() {
   delete[] TheDistributionParameters;
@@ -3039,7 +3037,6 @@ void AttackModelADVISE::SafeBreakFailureStep::LinkVariables() {
   AlarmsControl->Register(&AlarmsControl_Mobius_Mark);
   Breaker->Register(&Breaker_Mobius_Mark);
   SafeCombination->Register(&SafeCombination_Mobius_Mark);
-  SecurityRoutines->Register(&SecurityRoutines_Mobius_Mark);
   SafeBreakChosen->Register(&SafeBreakChosen_Mobius_Mark);
   GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
   TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
@@ -3094,7 +3091,7 @@ int AttackModelADVISE::SafeBreakFailureStep::Rank() {
 }
 
 bool AttackModelADVISE::SafeBreakFailureStep::preconditionsMet() {
-return ( Breaker->Mark()>800 || SafeCombination->Mark()) && AlarmsControl->Mark() && CamerasControl->Mark() && SecurePath->Mark();
+return (!Money->Mark()) && ( Breaker->Mark()>800 || SafeCombination->Mark()) && AlarmsControl->Mark() && CamerasControl->Mark() && SecurePath->Mark();
   return true;
 }
 
@@ -3118,7 +3115,7 @@ return 0;
 
 AttackModelADVISE::SafeBreakSuccessStep::SafeBreakSuccessStep() {
   TheDistributionParameters = new double[1];
-  commonInit("SafeBreakSuccessStep", 11, Deterministic, RaceEnabled, 22, 1, false);}
+  commonInit("SafeBreakSuccessStep", 11, Deterministic, RaceEnabled, 21, 1, false);}
 
 AttackModelADVISE::SafeBreakSuccessStep::~SafeBreakSuccessStep() {
   delete[] TheDistributionParameters;
@@ -3131,7 +3128,6 @@ void AttackModelADVISE::SafeBreakSuccessStep::LinkVariables() {
   AlarmsControl->Register(&AlarmsControl_Mobius_Mark);
   Breaker->Register(&Breaker_Mobius_Mark);
   SafeCombination->Register(&SafeCombination_Mobius_Mark);
-  SecurityRoutines->Register(&SecurityRoutines_Mobius_Mark);
   SafeBreakChosen->Register(&SafeBreakChosen_Mobius_Mark);
   GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
   TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
@@ -3186,7 +3182,7 @@ int AttackModelADVISE::SafeBreakSuccessStep::Rank() {
 }
 
 bool AttackModelADVISE::SafeBreakSuccessStep::preconditionsMet() {
-return ( Breaker->Mark()>800 || SafeCombination->Mark()) && AlarmsControl->Mark() && CamerasControl->Mark() && SecurePath->Mark();
+return (!Money->Mark()) && ( Breaker->Mark()>800 || SafeCombination->Mark()) && AlarmsControl->Mark() && CamerasControl->Mark() && SecurePath->Mark();
   return true;
 }
 
