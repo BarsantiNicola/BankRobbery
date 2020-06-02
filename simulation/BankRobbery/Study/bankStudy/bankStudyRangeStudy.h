@@ -8,10 +8,11 @@
 #include "Cpp/Study/BaseStudyClass.hpp"
 
 extern Short breakerSkill;
+extern Short cyberVulnerabilitiesKnowledge;
 extern Short hackerSkill;
-extern Short safeCombinationKnowledge;
 extern Short secVulnerabilitiesKnowledge;
 extern Short securityComponentsAccess;
+extern Short socialEngineerSkill;
 extern Short stealthSkill;
 
 class bankStudyRangeStudy : public BaseStudyClass {
@@ -23,17 +24,19 @@ bankStudyRangeStudy();
 private:
 
 short *breakerSkillValues;
+short *cyberVulnerabilitiesKnowledgeValues;
 short *hackerSkillValues;
-short *safeCombinationKnowledgeValues;
 short *secVulnerabilitiesKnowledgeValues;
 short *securityComponentsAccessValues;
+short *socialEngineerSkillValues;
 short *stealthSkillValues;
 
 void SetValues_breakerSkill();
+void SetValues_cyberVulnerabilitiesKnowledge();
 void SetValues_hackerSkill();
-void SetValues_safeCombinationKnowledge();
 void SetValues_secVulnerabilitiesKnowledge();
 void SetValues_securityComponentsAccess();
+void SetValues_socialEngineerSkill();
 void SetValues_stealthSkill();
 
 void PrintGlobalValues(int);

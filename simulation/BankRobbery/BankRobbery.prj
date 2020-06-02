@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<models:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/projects" name="BankRobbery" author="student" creationDate="2020-05-30T11:54:57.278+0200" lastSavedVersion="2.5.10.201907151645">
+<models:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/projects" name="BankRobbery" author="student" creationDate="2020-06-01T01:42:33.898+0200" lastSavedVersion="2.5.10.201907151645">
   <atomic key="AttackModel">
     <value name="AttackModel" type="ADVISE Model"/>
+  </atomic>
+  <atomic key="BackUp">
+    <value name="BackUp" type="ADVISE Model"/>
   </atomic>
   <reward key="variables">
     <value name="variables" category="Reward" type="Performance Variables Model"/>
@@ -15,7 +18,8 @@
   <globalVariable name="stealthSkill"/>
   <globalVariable name="hackerSkill"/>
   <globalVariable name="breakerSkill"/>
-  <globalVariable name="safeCombinationKnowledge"/>
   <globalVariable name="secVulnerabilitiesKnowledge"/>
   <globalVariable name="securityComponentsAccess"/>
+  <globalVariable name="socialEngineerSkill"/>
+  <globalVariable name="cyberVulnerabilitiesKnowledge"/>
 </models:Project>
