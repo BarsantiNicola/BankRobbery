@@ -6,18 +6,18 @@ Created on Sun May 31 20:47:30 2020
 """
 from matplotlib import pyplot as plt
 
-def getDatas( filename ):
+def getDatas( filename , varname ):
     
     f= open(filename,"r")
     fl = f.readlines()
     values = []
     for x in fl :
-        if x.find("money",18,25) != -1:
+        if x.find(varname,15,40) != -1:
             values.append(x.split(","));
     f.close();
     return values;
     
-def simplePlot(datas):
+def simplePlot(datas , linecolor):
     times = []
     vals = []
     low = []
@@ -27,7 +27,23 @@ def simplePlot(datas):
         vals.append(float(x[5]))
         low.append(float(x[5])-float(x[7]))
         up.append(float(x[5])+float(x[7]))
-    plt.plot(times,low)
-    plt.plot(times,up)
-    plt.plot(times,vals,color='red')
+    
+    plt.plot(times,vals)
+    plt.plot(times,low, color=linecolor)
+    plt.plot(times,up, color=linecolor)
+
+
+def getSimAvailableVars():
+    return ["control_alarms", "control_cameras","security_routines","safe_access",
+              "money","back_door","system_access","user_credentials","dir_credentials",
+              "safe_combination"]     
+              
+def showSimAvailableVara():
+    var = getSimAvailableVars()
+    for x in var:
+        print(x)
         
+def getMinTime( value , data ):
+    for x in range(0,len(data)):
+        if float(data[x][5]) > 0.1:
+            return data[x-1][4];
