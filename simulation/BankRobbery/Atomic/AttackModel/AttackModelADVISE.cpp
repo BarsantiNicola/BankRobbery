@@ -19,8 +19,8 @@ AttackModelADVISE::AttackModelADVISE() {
   InfectTheSystemAD.setParent(this);
   SafeBreakAD.setParent(this);
   CyberAttackAD.setParent(this);
-  GetAccessToAlarmsSuccess.setParent(this);
   GetAccessToAlarmsFailure.setParent(this);
+  GetAccessToAlarmsSuccess.setParent(this);
   TransferCustomerMoneyFailure.setParent(this);
   TransferCustomerMoneySuccess.setParent(this);
   GetAccessToCamerasFailure.setParent(this);
@@ -33,25 +33,25 @@ AttackModelADVISE::AttackModelADVISE() {
   FindSecureAccessFailure.setParent(this);
   FindSecureAccessSuccess.setParent(this);
   FindSecureAccessFailureCameraAccessFound.setParent(this);
-  GetDirectorCredentialsFailureBackdoorfound.setParent(this);
   GetDirectorCredentialsFailure.setParent(this);
+  GetDirectorCredentialsFailureBackdoorfound.setParent(this);
   GetDirectorCredentialsSuccess.setParent(this);
   StudySecurityRoutinesFailure.setParent(this);
   StudySecurityRoutinesSuccess.setParent(this);
   StudySecurityRoutinesFailureCameraAccessFound.setParent(this);
-  GetSafeCombinationFailureBackdoorfound.setParent(this);
   GetSafeCombinationFailure.setParent(this);
+  GetSafeCombinationFailureBackdoorfound.setParent(this);
   GetSafeCombinationSuccess.setParent(this);
-  InfectTheSystemFailureBackdoorfound.setParent(this);
   InfectTheSystemFailure.setParent(this);
+  InfectTheSystemFailureBackdoorfound.setParent(this);
   InfectTheSystemSuccess.setParent(this);
   SafeBreakFailure.setParent(this);
   SafeBreakSuccess.setParent(this);
   CyberAttackFailure.setParent(this);
   CyberAttackSuccess.setParent(this);
   GetAccessToAlarmsGroup.initialize(2, "GetAccessToAlarmsGroup");
-  GetAccessToAlarmsGroup.appendGroup((BaseGroupClass*) &GetAccessToAlarmsSuccess);
   GetAccessToAlarmsGroup.appendGroup((BaseGroupClass*) &GetAccessToAlarmsFailure);
+  GetAccessToAlarmsGroup.appendGroup((BaseGroupClass*) &GetAccessToAlarmsSuccess);
 
   TransferCustomerMoneyGroup.initialize(2, "TransferCustomerMoneyGroup");
   TransferCustomerMoneyGroup.appendGroup((BaseGroupClass*) &TransferCustomerMoneyFailure);
@@ -75,8 +75,8 @@ AttackModelADVISE::AttackModelADVISE() {
   FindSecureAccessGroup.appendGroup((BaseGroupClass*) &FindSecureAccessFailureCameraAccessFound);
 
   GetDirectorCredentialsGroup.initialize(3, "GetDirectorCredentialsGroup");
-  GetDirectorCredentialsGroup.appendGroup((BaseGroupClass*) &GetDirectorCredentialsFailureBackdoorfound);
   GetDirectorCredentialsGroup.appendGroup((BaseGroupClass*) &GetDirectorCredentialsFailure);
+  GetDirectorCredentialsGroup.appendGroup((BaseGroupClass*) &GetDirectorCredentialsFailureBackdoorfound);
   GetDirectorCredentialsGroup.appendGroup((BaseGroupClass*) &GetDirectorCredentialsSuccess);
 
   StudySecurityRoutinesGroup.initialize(3, "StudySecurityRoutinesGroup");
@@ -85,13 +85,13 @@ AttackModelADVISE::AttackModelADVISE() {
   StudySecurityRoutinesGroup.appendGroup((BaseGroupClass*) &StudySecurityRoutinesFailureCameraAccessFound);
 
   GetSafeCombinationGroup.initialize(3, "GetSafeCombinationGroup");
-  GetSafeCombinationGroup.appendGroup((BaseGroupClass*) &GetSafeCombinationFailureBackdoorfound);
   GetSafeCombinationGroup.appendGroup((BaseGroupClass*) &GetSafeCombinationFailure);
+  GetSafeCombinationGroup.appendGroup((BaseGroupClass*) &GetSafeCombinationFailureBackdoorfound);
   GetSafeCombinationGroup.appendGroup((BaseGroupClass*) &GetSafeCombinationSuccess);
 
   InfectTheSystemGroup.initialize(3, "InfectTheSystemGroup");
-  InfectTheSystemGroup.appendGroup((BaseGroupClass*) &InfectTheSystemFailureBackdoorfound);
   InfectTheSystemGroup.appendGroup((BaseGroupClass*) &InfectTheSystemFailure);
+  InfectTheSystemGroup.appendGroup((BaseGroupClass*) &InfectTheSystemFailureBackdoorfound);
   InfectTheSystemGroup.appendGroup((BaseGroupClass*) &InfectTheSystemSuccess);
 
   SafeBreakGroup.initialize(2, "SafeBreakGroup");
@@ -131,8 +131,8 @@ AttackModelADVISE::AttackModelADVISE() {
     &InfectTheSystemAD, // 10
     &SafeBreakAD, // 11
     &CyberAttackAD, // 12
-    &GetAccessToAlarmsSuccess, // 13
-    &GetAccessToAlarmsFailure, // 14
+    &GetAccessToAlarmsFailure, // 13
+    &GetAccessToAlarmsSuccess, // 14
     &TransferCustomerMoneyFailure, // 15
     &TransferCustomerMoneySuccess, // 16
     &GetAccessToCamerasFailure, // 17
@@ -145,17 +145,17 @@ AttackModelADVISE::AttackModelADVISE() {
     &FindSecureAccessFailure, // 24
     &FindSecureAccessSuccess, // 25
     &FindSecureAccessFailureCameraAccessFound, // 26
-    &GetDirectorCredentialsFailureBackdoorfound, // 27
-    &GetDirectorCredentialsFailure, // 28
+    &GetDirectorCredentialsFailure, // 27
+    &GetDirectorCredentialsFailureBackdoorfound, // 28
     &GetDirectorCredentialsSuccess, // 29
     &StudySecurityRoutinesFailure, // 30
     &StudySecurityRoutinesSuccess, // 31
     &StudySecurityRoutinesFailureCameraAccessFound, // 32
-    &GetSafeCombinationFailureBackdoorfound, // 33
-    &GetSafeCombinationFailure, // 34
+    &GetSafeCombinationFailure, // 33
+    &GetSafeCombinationFailureBackdoorfound, // 34
     &GetSafeCombinationSuccess, // 35
-    &InfectTheSystemFailureBackdoorfound, // 36
-    &InfectTheSystemFailure, // 37
+    &InfectTheSystemFailure, // 36
+    &InfectTheSystemFailureBackdoorfound, // 37
     &InfectTheSystemSuccess, // 38
     &SafeBreakFailure, // 39
     &SafeBreakSuccess, // 40
@@ -164,8 +164,8 @@ AttackModelADVISE::AttackModelADVISE() {
   };
 
   Step* InitialSteps[30] = {
-      &GetAccessToAlarmsSuccess,
       &GetAccessToAlarmsFailure,
+      &GetAccessToAlarmsSuccess,
       &TransferCustomerMoneyFailure,
       &TransferCustomerMoneySuccess,
       &GetAccessToCamerasFailure,
@@ -178,17 +178,17 @@ AttackModelADVISE::AttackModelADVISE() {
       &FindSecureAccessFailure,
       &FindSecureAccessSuccess,
       &FindSecureAccessFailureCameraAccessFound,
-      &GetDirectorCredentialsFailureBackdoorfound,
       &GetDirectorCredentialsFailure,
+      &GetDirectorCredentialsFailureBackdoorfound,
       &GetDirectorCredentialsSuccess,
       &StudySecurityRoutinesFailure,
       &StudySecurityRoutinesSuccess,
       &StudySecurityRoutinesFailureCameraAccessFound,
-      &GetSafeCombinationFailureBackdoorfound,
       &GetSafeCombinationFailure,
+      &GetSafeCombinationFailureBackdoorfound,
       &GetSafeCombinationSuccess,
-      &InfectTheSystemFailureBackdoorfound,
       &InfectTheSystemFailure,
+      &InfectTheSystemFailureBackdoorfound,
       &InfectTheSystemSuccess,
       &SafeBreakFailure,
       &SafeBreakSuccess,
@@ -231,6 +231,8 @@ AttackModelADVISE::AttackModelADVISE() {
   Stealth = new Skill("Stealth", stealthSkill);
   Money = new Goal("Money", 0);
   Money->setPayoff(3000);
+  DigitalMoney = new Goal("DigitalMoney", 0);
+  DigitalMoney->setPayoff(500);
   MakeDecision = new BeginAdversaryDecision("MakeDecision", 0);
   GetAccessToAlarmsWeight = new StepWeight("GetAccessToAlarmsWeight", 0);
   GetAccessToAlarmsChosen = new StepChosen("GetAccessToAlarmsChosen", 0);
@@ -259,11 +261,12 @@ AttackModelADVISE::AttackModelADVISE() {
   CyberAttackWeight = new StepWeight("CyberAttackWeight", 0);
   CyberAttackChosen = new StepChosen("CyberAttackChosen", 0);
 
-  Goal* InitialGoals[1] = {
-      Money
+  Goal* InitialGoals[2] = {
+      Money,
+      DigitalMoney
   };
 
-  ADVISEStateVariable* InitialSVs[44] = {
+  ADVISEStateVariable* InitialSVs[45] = {
     CamerasControl, // 0
     SystemAccess, // 1
     SecurePath, // 2
@@ -281,40 +284,41 @@ AttackModelADVISE::AttackModelADVISE() {
     SocialEngineer, // 14
     Stealth, // 15
     Money, // 16
-    GetAccessToAlarmsChosen, // 17
-    TransferCustomerMoneyChosen, // 18
-    GetAccessToCamerasChosen, // 19
-    DoNothingChosen, // 20
-    TransferBankMoneyChosen, // 21
-    PhishingChosen, // 22
-    FindSecureAccessChosen, // 23
-    GetDirectorCredentialsChosen, // 24
-    StudySecurityRoutinesChosen, // 25
-    GetSafeCombinationChosen, // 26
-    InfectTheSystemChosen, // 27
-    SafeBreakChosen, // 28
-    CyberAttackChosen, // 29
-    GetAccessToAlarmsWeight, // 30
-    TransferCustomerMoneyWeight, // 31
-    GetAccessToCamerasWeight, // 32
-    DoNothingWeight, // 33
-    TransferBankMoneyWeight, // 34
-    PhishingWeight, // 35
-    FindSecureAccessWeight, // 36
-    GetDirectorCredentialsWeight, // 37
-    StudySecurityRoutinesWeight, // 38
-    GetSafeCombinationWeight, // 39
-    InfectTheSystemWeight, // 40
-    SafeBreakWeight, // 41
-    CyberAttackWeight, // 42
-    MakeDecision // 43
+    DigitalMoney, // 17
+    GetAccessToAlarmsChosen, // 18
+    TransferCustomerMoneyChosen, // 19
+    GetAccessToCamerasChosen, // 20
+    DoNothingChosen, // 21
+    TransferBankMoneyChosen, // 22
+    PhishingChosen, // 23
+    FindSecureAccessChosen, // 24
+    GetDirectorCredentialsChosen, // 25
+    StudySecurityRoutinesChosen, // 26
+    GetSafeCombinationChosen, // 27
+    InfectTheSystemChosen, // 28
+    SafeBreakChosen, // 29
+    CyberAttackChosen, // 30
+    GetAccessToAlarmsWeight, // 31
+    TransferCustomerMoneyWeight, // 32
+    GetAccessToCamerasWeight, // 33
+    DoNothingWeight, // 34
+    TransferBankMoneyWeight, // 35
+    PhishingWeight, // 36
+    FindSecureAccessWeight, // 37
+    GetDirectorCredentialsWeight, // 38
+    StudySecurityRoutinesWeight, // 39
+    GetSafeCombinationWeight, // 40
+    InfectTheSystemWeight, // 41
+    SafeBreakWeight, // 42
+    CyberAttackWeight, // 43
+    MakeDecision // 44
 };
 
   int outCounts[13] = { 2, 2, 2, 1, 2, 2, 3, 3, 3, 3, 3, 2, 2 };
 
-  commonInit("AttackModel", 44, InitialSVs, 43, InitialActions, 14, InitialGroups, 13, outCounts, InitialSteps, 1, InitialGoals);
+  commonInit("AttackModel", 45, InitialSVs, 43, InitialActions, 14, InitialGroups, 13, outCounts, InitialSteps, 2, InitialGoals);
 
-  advCostPref = 0.1;
+  advCostPref = 0.8;
   advDetectPref = 0.1;
   advPayPref = 0.8;
 
@@ -326,90 +330,90 @@ AttackModelADVISE::AttackModelADVISE() {
   assignSVsToAttackSteps();
 
   int AffectArcs[560][2] = {
-    {43,0}, {17,0}, {30,0}, {43,1}, {18,1}, {31,1}, {43,2}, {19,2}, 
-    {32,2}, {43,3}, {20,3}, {33,3}, {43,4}, {21,4}, {34,4}, {43,5}, 
-    {22,5}, {35,5}, {43,6}, {23,6}, {36,6}, {43,7}, {24,7}, {37,7}, 
-    {43,8}, {25,8}, {38,8}, {43,9}, {26,9}, {39,9}, {43,10}, {27,10}, 
-    {40,10}, {43,11}, {28,11}, {41,11}, {43,12}, {29,12}, {42,12}, {43,13}, 
-    {17,13}, {30,13}, {31,13}, {32,13}, {33,13}, {34,13}, {35,13}, {36,13}, 
-    {37,13}, {38,13}, {39,13}, {40,13}, {41,13}, {42,13}, {3,13}, {8,13}, 
-    {4,13}, {43,14}, {17,14}, {30,14}, {31,14}, {32,14}, {33,14}, {34,14}, 
-    {35,14}, {36,14}, {37,14}, {38,14}, {39,14}, {40,14}, {41,14}, {42,14}, 
-    {3,14}, {8,14}, {4,14}, {43,15}, {18,15}, {30,15}, {31,15}, {32,15}, 
-    {33,15}, {34,15}, {35,15}, {36,15}, {37,15}, {38,15}, {39,15}, {40,15}, 
-    {41,15}, {42,15}, {16,15}, {11,15}, {43,16}, {18,16}, {30,16}, {31,16}, 
-    {32,16}, {33,16}, {34,16}, {35,16}, {36,16}, {37,16}, {38,16}, {39,16}, 
-    {40,16}, {41,16}, {42,16}, {16,16}, {11,16}, {43,17}, {19,17}, {30,17}, 
-    {31,17}, {32,17}, {33,17}, {34,17}, {35,17}, {36,17}, {37,17}, {38,17}, 
-    {39,17}, {40,17}, {41,17}, {42,17}, {0,17}, {8,17}, {4,17}, {43,18}, 
-    {19,18}, {30,18}, {31,18}, {32,18}, {33,18}, {34,18}, {35,18}, {36,18}, 
-    {37,18}, {38,18}, {39,18}, {40,18}, {41,18}, {42,18}, {0,18}, {8,18}, 
-    {4,18}, {43,19}, {20,19}, {30,19}, {31,19}, {32,19}, {33,19}, {34,19}, 
-    {35,19}, {36,19}, {37,19}, {38,19}, {39,19}, {40,19}, {41,19}, {42,19}, 
-    {43,20}, {21,20}, {30,20}, {31,20}, {32,20}, {33,20}, {34,20}, {35,20}, 
-    {36,20}, {37,20}, {38,20}, {39,20}, {40,20}, {41,20}, {42,20}, {16,20}, 
-    {1,20}, {10,20}, {43,21}, {21,21}, {30,21}, {31,21}, {32,21}, {33,21}, 
-    {34,21}, {35,21}, {36,21}, {37,21}, {38,21}, {39,21}, {40,21}, {41,21}, 
-    {42,21}, {16,21}, {1,21}, {10,21}, {43,22}, {22,22}, {30,22}, {31,22}, 
-    {32,22}, {33,22}, {34,22}, {35,22}, {36,22}, {37,22}, {38,22}, {39,22}, 
-    {40,22}, {41,22}, {42,22}, {11,22}, {43,23}, {22,23}, {30,23}, {31,23}, 
-    {32,23}, {33,23}, {34,23}, {35,23}, {36,23}, {37,23}, {38,23}, {39,23}, 
-    {40,23}, {41,23}, {42,23}, {11,23}, {43,24}, {23,24}, {30,24}, {31,24}, 
-    {32,24}, {33,24}, {34,24}, {35,24}, {36,24}, {37,24}, {38,24}, {39,24}, 
-    {40,24}, {41,24}, {42,24}, {2,24}, {6,24}, {0,24}, {43,25}, {23,25}, 
-    {30,25}, {31,25}, {32,25}, {33,25}, {34,25}, {35,25}, {36,25}, {37,25}, 
-    {38,25}, {39,25}, {40,25}, {41,25}, {42,25}, {2,25}, {6,25}, {0,25}, 
-    {43,26}, {23,26}, {30,26}, {31,26}, {32,26}, {33,26}, {34,26}, {35,26}, 
-    {36,26}, {37,26}, {38,26}, {39,26}, {40,26}, {41,26}, {42,26}, {2,26}, 
-    {6,26}, {0,26}, {43,27}, {24,27}, {30,27}, {31,27}, {32,27}, {33,27}, 
-    {34,27}, {35,27}, {36,27}, {37,27}, {38,27}, {39,27}, {40,27}, {41,27}, 
-    {42,27}, {10,27}, {5,27}, {43,28}, {24,28}, {30,28}, {31,28}, {32,28}, 
-    {33,28}, {34,28}, {35,28}, {36,28}, {37,28}, {38,28}, {39,28}, {40,28}, 
-    {41,28}, {42,28}, {10,28}, {5,28}, {43,29}, {24,29}, {30,29}, {31,29}, 
-    {32,29}, {33,29}, {34,29}, {35,29}, {36,29}, {37,29}, {38,29}, {39,29}, 
-    {40,29}, {41,29}, {42,29}, {10,29}, {5,29}, {43,30}, {25,30}, {30,30}, 
-    {31,30}, {32,30}, {33,30}, {34,30}, {35,30}, {36,30}, {37,30}, {38,30}, 
-    {39,30}, {40,30}, {41,30}, {42,30}, {6,30}, {0,30}, {43,31}, {25,31}, 
-    {30,31}, {31,31}, {32,31}, {33,31}, {34,31}, {35,31}, {36,31}, {37,31}, 
-    {38,31}, {39,31}, {40,31}, {41,31}, {42,31}, {6,31}, {0,31}, {43,32}, 
-    {25,32}, {30,32}, {31,32}, {32,32}, {33,32}, {34,32}, {35,32}, {36,32}, 
-    {37,32}, {38,32}, {39,32}, {40,32}, {41,32}, {42,32}, {6,32}, {0,32}, 
-    {43,33}, {26,33}, {30,33}, {31,33}, {32,33}, {33,33}, {34,33}, {35,33}, 
-    {36,33}, {37,33}, {38,33}, {39,33}, {40,33}, {41,33}, {42,33}, {7,33}, 
-    {5,33}, {43,34}, {26,34}, {30,34}, {31,34}, {32,34}, {33,34}, {34,34}, 
-    {35,34}, {36,34}, {37,34}, {38,34}, {39,34}, {40,34}, {41,34}, {42,34}, 
-    {7,34}, {5,34}, {43,35}, {26,35}, {30,35}, {31,35}, {32,35}, {33,35}, 
-    {34,35}, {35,35}, {36,35}, {37,35}, {38,35}, {39,35}, {40,35}, {41,35}, 
-    {42,35}, {7,35}, {5,35}, {43,36}, {27,36}, {30,36}, {31,36}, {32,36}, 
-    {33,36}, {34,36}, {35,36}, {36,36}, {37,36}, {38,36}, {39,36}, {40,36}, 
-    {41,36}, {42,36}, {1,36}, {5,36}, {43,37}, {27,37}, {30,37}, {31,37}, 
-    {32,37}, {33,37}, {34,37}, {35,37}, {36,37}, {37,37}, {38,37}, {39,37}, 
-    {40,37}, {41,37}, {42,37}, {1,37}, {5,37}, {43,38}, {27,38}, {30,38}, 
-    {31,38}, {32,38}, {33,38}, {34,38}, {35,38}, {36,38}, {37,38}, {38,38}, 
-    {39,38}, {40,38}, {41,38}, {42,38}, {1,38}, {5,38}, {43,39}, {28,39}, 
-    {30,39}, {31,39}, {32,39}, {33,39}, {34,39}, {35,39}, {36,39}, {37,39}, 
-    {38,39}, {39,39}, {40,39}, {41,39}, {42,39}, {16,39}, {2,39}, {0,39}, 
-    {3,39}, {7,39}, {43,40}, {28,40}, {30,40}, {31,40}, {32,40}, {33,40}, 
-    {34,40}, {35,40}, {36,40}, {37,40}, {38,40}, {39,40}, {40,40}, {41,40}, 
-    {42,40}, {16,40}, {2,40}, {0,40}, {3,40}, {7,40}, {43,41}, {29,41}, 
-    {30,41}, {31,41}, {32,41}, {33,41}, {34,41}, {35,41}, {36,41}, {37,41}, 
-    {38,41}, {39,41}, {40,41}, {41,41}, {42,41}, {5,41}, {9,41}, {43,42}, 
-    {29,42}, {30,42}, {31,42}, {32,42}, {33,42}, {34,42}, {35,42}, {36,42}, 
-    {37,42}, {38,42}, {39,42}, {40,42}, {41,42}, {42,42}, {5,42}, {9,42}
+    {44,0}, {18,0}, {31,0}, {44,1}, {19,1}, {32,1}, {44,2}, {20,2}, 
+    {33,2}, {44,3}, {21,3}, {34,3}, {44,4}, {22,4}, {35,4}, {44,5}, 
+    {23,5}, {36,5}, {44,6}, {24,6}, {37,6}, {44,7}, {25,7}, {38,7}, 
+    {44,8}, {26,8}, {39,8}, {44,9}, {27,9}, {40,9}, {44,10}, {28,10}, 
+    {41,10}, {44,11}, {29,11}, {42,11}, {44,12}, {30,12}, {43,12}, {44,13}, 
+    {18,13}, {31,13}, {32,13}, {33,13}, {34,13}, {35,13}, {36,13}, {37,13}, 
+    {38,13}, {39,13}, {40,13}, {41,13}, {42,13}, {43,13}, {3,13}, {8,13}, 
+    {4,13}, {44,14}, {18,14}, {31,14}, {32,14}, {33,14}, {34,14}, {35,14}, 
+    {36,14}, {37,14}, {38,14}, {39,14}, {40,14}, {41,14}, {42,14}, {43,14}, 
+    {3,14}, {8,14}, {4,14}, {44,15}, {19,15}, {31,15}, {32,15}, {33,15}, 
+    {34,15}, {35,15}, {36,15}, {37,15}, {38,15}, {39,15}, {40,15}, {41,15}, 
+    {42,15}, {43,15}, {17,15}, {11,15}, {44,16}, {19,16}, {31,16}, {32,16}, 
+    {33,16}, {34,16}, {35,16}, {36,16}, {37,16}, {38,16}, {39,16}, {40,16}, 
+    {41,16}, {42,16}, {43,16}, {17,16}, {11,16}, {44,17}, {20,17}, {31,17}, 
+    {32,17}, {33,17}, {34,17}, {35,17}, {36,17}, {37,17}, {38,17}, {39,17}, 
+    {40,17}, {41,17}, {42,17}, {43,17}, {0,17}, {8,17}, {4,17}, {44,18}, 
+    {20,18}, {31,18}, {32,18}, {33,18}, {34,18}, {35,18}, {36,18}, {37,18}, 
+    {38,18}, {39,18}, {40,18}, {41,18}, {42,18}, {43,18}, {0,18}, {8,18}, 
+    {4,18}, {44,19}, {21,19}, {31,19}, {32,19}, {33,19}, {34,19}, {35,19}, 
+    {36,19}, {37,19}, {38,19}, {39,19}, {40,19}, {41,19}, {42,19}, {43,19}, 
+    {44,20}, {22,20}, {31,20}, {32,20}, {33,20}, {34,20}, {35,20}, {36,20}, 
+    {37,20}, {38,20}, {39,20}, {40,20}, {41,20}, {42,20}, {43,20}, {17,20}, 
+    {1,20}, {10,20}, {44,21}, {22,21}, {31,21}, {32,21}, {33,21}, {34,21}, 
+    {35,21}, {36,21}, {37,21}, {38,21}, {39,21}, {40,21}, {41,21}, {42,21}, 
+    {43,21}, {17,21}, {1,21}, {10,21}, {44,22}, {23,22}, {31,22}, {32,22}, 
+    {33,22}, {34,22}, {35,22}, {36,22}, {37,22}, {38,22}, {39,22}, {40,22}, 
+    {41,22}, {42,22}, {43,22}, {11,22}, {44,23}, {23,23}, {31,23}, {32,23}, 
+    {33,23}, {34,23}, {35,23}, {36,23}, {37,23}, {38,23}, {39,23}, {40,23}, 
+    {41,23}, {42,23}, {43,23}, {11,23}, {44,24}, {24,24}, {31,24}, {32,24}, 
+    {33,24}, {34,24}, {35,24}, {36,24}, {37,24}, {38,24}, {39,24}, {40,24}, 
+    {41,24}, {42,24}, {43,24}, {2,24}, {6,24}, {0,24}, {44,25}, {24,25}, 
+    {31,25}, {32,25}, {33,25}, {34,25}, {35,25}, {36,25}, {37,25}, {38,25}, 
+    {39,25}, {40,25}, {41,25}, {42,25}, {43,25}, {2,25}, {6,25}, {0,25}, 
+    {44,26}, {24,26}, {31,26}, {32,26}, {33,26}, {34,26}, {35,26}, {36,26}, 
+    {37,26}, {38,26}, {39,26}, {40,26}, {41,26}, {42,26}, {43,26}, {2,26}, 
+    {6,26}, {0,26}, {44,27}, {25,27}, {31,27}, {32,27}, {33,27}, {34,27}, 
+    {35,27}, {36,27}, {37,27}, {38,27}, {39,27}, {40,27}, {41,27}, {42,27}, 
+    {43,27}, {10,27}, {5,27}, {44,28}, {25,28}, {31,28}, {32,28}, {33,28}, 
+    {34,28}, {35,28}, {36,28}, {37,28}, {38,28}, {39,28}, {40,28}, {41,28}, 
+    {42,28}, {43,28}, {10,28}, {5,28}, {44,29}, {25,29}, {31,29}, {32,29}, 
+    {33,29}, {34,29}, {35,29}, {36,29}, {37,29}, {38,29}, {39,29}, {40,29}, 
+    {41,29}, {42,29}, {43,29}, {10,29}, {5,29}, {44,30}, {26,30}, {31,30}, 
+    {32,30}, {33,30}, {34,30}, {35,30}, {36,30}, {37,30}, {38,30}, {39,30}, 
+    {40,30}, {41,30}, {42,30}, {43,30}, {6,30}, {0,30}, {44,31}, {26,31}, 
+    {31,31}, {32,31}, {33,31}, {34,31}, {35,31}, {36,31}, {37,31}, {38,31}, 
+    {39,31}, {40,31}, {41,31}, {42,31}, {43,31}, {6,31}, {0,31}, {44,32}, 
+    {26,32}, {31,32}, {32,32}, {33,32}, {34,32}, {35,32}, {36,32}, {37,32}, 
+    {38,32}, {39,32}, {40,32}, {41,32}, {42,32}, {43,32}, {6,32}, {0,32}, 
+    {44,33}, {27,33}, {31,33}, {32,33}, {33,33}, {34,33}, {35,33}, {36,33}, 
+    {37,33}, {38,33}, {39,33}, {40,33}, {41,33}, {42,33}, {43,33}, {7,33}, 
+    {5,33}, {44,34}, {27,34}, {31,34}, {32,34}, {33,34}, {34,34}, {35,34}, 
+    {36,34}, {37,34}, {38,34}, {39,34}, {40,34}, {41,34}, {42,34}, {43,34}, 
+    {7,34}, {5,34}, {44,35}, {27,35}, {31,35}, {32,35}, {33,35}, {34,35}, 
+    {35,35}, {36,35}, {37,35}, {38,35}, {39,35}, {40,35}, {41,35}, {42,35}, 
+    {43,35}, {7,35}, {5,35}, {44,36}, {28,36}, {31,36}, {32,36}, {33,36}, 
+    {34,36}, {35,36}, {36,36}, {37,36}, {38,36}, {39,36}, {40,36}, {41,36}, 
+    {42,36}, {43,36}, {1,36}, {5,36}, {44,37}, {28,37}, {31,37}, {32,37}, 
+    {33,37}, {34,37}, {35,37}, {36,37}, {37,37}, {38,37}, {39,37}, {40,37}, 
+    {41,37}, {42,37}, {43,37}, {1,37}, {5,37}, {44,38}, {28,38}, {31,38}, 
+    {32,38}, {33,38}, {34,38}, {35,38}, {36,38}, {37,38}, {38,38}, {39,38}, 
+    {40,38}, {41,38}, {42,38}, {43,38}, {1,38}, {5,38}, {44,39}, {29,39}, 
+    {31,39}, {32,39}, {33,39}, {34,39}, {35,39}, {36,39}, {37,39}, {38,39}, 
+    {39,39}, {40,39}, {41,39}, {42,39}, {43,39}, {16,39}, {2,39}, {0,39}, 
+    {3,39}, {7,39}, {44,40}, {29,40}, {31,40}, {32,40}, {33,40}, {34,40}, 
+    {35,40}, {36,40}, {37,40}, {38,40}, {39,40}, {40,40}, {41,40}, {42,40}, 
+    {43,40}, {16,40}, {2,40}, {0,40}, {3,40}, {7,40}, {44,41}, {30,41}, 
+    {31,41}, {32,41}, {33,41}, {34,41}, {35,41}, {36,41}, {37,41}, {38,41}, 
+    {39,41}, {40,41}, {41,41}, {42,41}, {43,41}, {5,41}, {9,41}, {44,42}, 
+    {30,42}, {31,42}, {32,42}, {33,42}, {34,42}, {35,42}, {36,42}, {37,42}, 
+    {38,42}, {39,42}, {40,42}, {41,42}, {42,42}, {43,42}, {5,42}, {9,42}
     
 };
   for(int n = 0; n < 560;n++)
     AddAffectArc(InitialSVs[AffectArcs[n][0]], InitialActions[AffectArcs[n][1]]);
   int EnableArcs[72][2] = {
-    {43,0}, {43,1}, {43,2}, {43,3}, {43,4}, {43,5}, {43,6}, {43,7}, 
-    {43,8}, {43,9}, {43,10}, {43,11}, {43,12}, {17,13}, {3,13}, {17,14}, 
-    {3,14}, {18,15}, {16,15}, {18,16}, {16,16}, {19,17}, {0,17}, {19,18}, 
-    {0,18}, {20,19}, {21,20}, {16,20}, {21,21}, {16,21}, {22,22}, {11,22}, 
-    {22,23}, {11,23}, {23,24}, {2,24}, {23,25}, {2,25}, {23,26}, {2,26}, 
-    {24,27}, {10,27}, {24,28}, {10,28}, {24,29}, {10,29}, {25,30}, {6,30}, 
-    {25,31}, {6,31}, {25,32}, {6,32}, {26,33}, {7,33}, {26,34}, {7,34}, 
-    {26,35}, {7,35}, {27,36}, {1,36}, {27,37}, {1,37}, {27,38}, {1,38}, 
-    {28,39}, {16,39}, {28,40}, {16,40}, {29,41}, {5,41}, {29,42}, {5,42}
+    {44,0}, {44,1}, {44,2}, {44,3}, {44,4}, {44,5}, {44,6}, {44,7}, 
+    {44,8}, {44,9}, {44,10}, {44,11}, {44,12}, {18,13}, {3,13}, {18,14}, 
+    {3,14}, {19,15}, {17,15}, {19,16}, {17,16}, {20,17}, {0,17}, {20,18}, 
+    {0,18}, {21,19}, {22,20}, {17,20}, {22,21}, {17,21}, {23,22}, {11,22}, 
+    {23,23}, {11,23}, {24,24}, {2,24}, {24,25}, {2,25}, {24,26}, {2,26}, 
+    {25,27}, {10,27}, {25,28}, {10,28}, {25,29}, {10,29}, {26,30}, {6,30}, 
+    {26,31}, {6,31}, {26,32}, {6,32}, {27,33}, {7,33}, {27,34}, {7,34}, 
+    {27,35}, {7,35}, {28,36}, {1,36}, {28,37}, {1,37}, {28,38}, {1,38}, 
+    {29,39}, {16,39}, {29,40}, {16,40}, {30,41}, {5,41}, {30,42}, {5,42}
     
 };
   for(int n = 0; n < 72;n++)
@@ -428,27 +432,6 @@ AttackModelADVISE::~AttackModelADVISE() {
 }
 
 void AttackModelADVISE::assignSVsToAttackSteps() {
-  GetAccessToAlarmsSuccess.AlarmsControl = AlarmsControl;
-  GetAccessToAlarmsSuccess.Hacker = Hacker;
-  GetAccessToAlarmsSuccess.Stealth = Stealth;
-  GetAccessToAlarmsSuccess.SecVulnerabilities = SecVulnerabilities;
-  GetAccessToAlarmsSuccess.PhisicalAccess = PhisicalAccess;
-  GetAccessToAlarmsSuccess.GetAccessToAlarmsChosen = GetAccessToAlarmsChosen;
-  GetAccessToAlarmsSuccess.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
-  GetAccessToAlarmsSuccess.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
-  GetAccessToAlarmsSuccess.GetAccessToCamerasWeight = GetAccessToCamerasWeight;
-  GetAccessToAlarmsSuccess.DoNothingWeight = DoNothingWeight;
-  GetAccessToAlarmsSuccess.TransferBankMoneyWeight = TransferBankMoneyWeight;
-  GetAccessToAlarmsSuccess.PhishingWeight = PhishingWeight;
-  GetAccessToAlarmsSuccess.FindSecureAccessWeight = FindSecureAccessWeight;
-  GetAccessToAlarmsSuccess.GetDirectorCredentialsWeight = GetDirectorCredentialsWeight;
-  GetAccessToAlarmsSuccess.StudySecurityRoutinesWeight = StudySecurityRoutinesWeight;
-  GetAccessToAlarmsSuccess.GetSafeCombinationWeight = GetSafeCombinationWeight;
-  GetAccessToAlarmsSuccess.InfectTheSystemWeight = InfectTheSystemWeight;
-  GetAccessToAlarmsSuccess.SafeBreakWeight = SafeBreakWeight;
-  GetAccessToAlarmsSuccess.CyberAttackWeight = CyberAttackWeight;
-  GetAccessToAlarmsSuccess.MakeDecision = MakeDecision;
-  GetAccessToAlarmsSuccess.setSVs(GetAccessToAlarmsChosen, GetAccessToAlarmsWeight);
   GetAccessToAlarmsFailure.AlarmsControl = AlarmsControl;
   GetAccessToAlarmsFailure.Hacker = Hacker;
   GetAccessToAlarmsFailure.Stealth = Stealth;
@@ -470,7 +453,28 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   GetAccessToAlarmsFailure.CyberAttackWeight = CyberAttackWeight;
   GetAccessToAlarmsFailure.MakeDecision = MakeDecision;
   GetAccessToAlarmsFailure.setSVs(GetAccessToAlarmsChosen, GetAccessToAlarmsWeight);
-  TransferCustomerMoneyFailure.Money = Money;
+  GetAccessToAlarmsSuccess.AlarmsControl = AlarmsControl;
+  GetAccessToAlarmsSuccess.Hacker = Hacker;
+  GetAccessToAlarmsSuccess.Stealth = Stealth;
+  GetAccessToAlarmsSuccess.SecVulnerabilities = SecVulnerabilities;
+  GetAccessToAlarmsSuccess.PhisicalAccess = PhisicalAccess;
+  GetAccessToAlarmsSuccess.GetAccessToAlarmsChosen = GetAccessToAlarmsChosen;
+  GetAccessToAlarmsSuccess.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
+  GetAccessToAlarmsSuccess.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
+  GetAccessToAlarmsSuccess.GetAccessToCamerasWeight = GetAccessToCamerasWeight;
+  GetAccessToAlarmsSuccess.DoNothingWeight = DoNothingWeight;
+  GetAccessToAlarmsSuccess.TransferBankMoneyWeight = TransferBankMoneyWeight;
+  GetAccessToAlarmsSuccess.PhishingWeight = PhishingWeight;
+  GetAccessToAlarmsSuccess.FindSecureAccessWeight = FindSecureAccessWeight;
+  GetAccessToAlarmsSuccess.GetDirectorCredentialsWeight = GetDirectorCredentialsWeight;
+  GetAccessToAlarmsSuccess.StudySecurityRoutinesWeight = StudySecurityRoutinesWeight;
+  GetAccessToAlarmsSuccess.GetSafeCombinationWeight = GetSafeCombinationWeight;
+  GetAccessToAlarmsSuccess.InfectTheSystemWeight = InfectTheSystemWeight;
+  GetAccessToAlarmsSuccess.SafeBreakWeight = SafeBreakWeight;
+  GetAccessToAlarmsSuccess.CyberAttackWeight = CyberAttackWeight;
+  GetAccessToAlarmsSuccess.MakeDecision = MakeDecision;
+  GetAccessToAlarmsSuccess.setSVs(GetAccessToAlarmsChosen, GetAccessToAlarmsWeight);
+  TransferCustomerMoneyFailure.DigitalMoney = DigitalMoney;
   TransferCustomerMoneyFailure.UserCredentials = UserCredentials;
   TransferCustomerMoneyFailure.TransferCustomerMoneyChosen = TransferCustomerMoneyChosen;
   TransferCustomerMoneyFailure.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
@@ -488,7 +492,7 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   TransferCustomerMoneyFailure.CyberAttackWeight = CyberAttackWeight;
   TransferCustomerMoneyFailure.MakeDecision = MakeDecision;
   TransferCustomerMoneyFailure.setSVs(TransferCustomerMoneyChosen, TransferCustomerMoneyWeight);
-  TransferCustomerMoneySuccess.Money = Money;
+  TransferCustomerMoneySuccess.DigitalMoney = DigitalMoney;
   TransferCustomerMoneySuccess.UserCredentials = UserCredentials;
   TransferCustomerMoneySuccess.TransferCustomerMoneyChosen = TransferCustomerMoneyChosen;
   TransferCustomerMoneySuccess.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
@@ -564,7 +568,7 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   DoNothingOutcome1.CyberAttackWeight = CyberAttackWeight;
   DoNothingOutcome1.MakeDecision = MakeDecision;
   DoNothingOutcome1.setSVs(DoNothingChosen, DoNothingWeight);
-  TransferBankMoneyFailure.Money = Money;
+  TransferBankMoneyFailure.DigitalMoney = DigitalMoney;
   TransferBankMoneyFailure.SystemAccess = SystemAccess;
   TransferBankMoneyFailure.DirectorCredentials = DirectorCredentials;
   TransferBankMoneyFailure.TransferBankMoneyChosen = TransferBankMoneyChosen;
@@ -583,7 +587,7 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   TransferBankMoneyFailure.CyberAttackWeight = CyberAttackWeight;
   TransferBankMoneyFailure.MakeDecision = MakeDecision;
   TransferBankMoneyFailure.setSVs(TransferBankMoneyChosen, TransferBankMoneyWeight);
-  TransferBankMoneySuccess.Money = Money;
+  TransferBankMoneySuccess.DigitalMoney = DigitalMoney;
   TransferBankMoneySuccess.SystemAccess = SystemAccess;
   TransferBankMoneySuccess.DirectorCredentials = DirectorCredentials;
   TransferBankMoneySuccess.TransferBankMoneyChosen = TransferBankMoneyChosen;
@@ -695,25 +699,6 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   FindSecureAccessFailureCameraAccessFound.CyberAttackWeight = CyberAttackWeight;
   FindSecureAccessFailureCameraAccessFound.MakeDecision = MakeDecision;
   FindSecureAccessFailureCameraAccessFound.setSVs(FindSecureAccessChosen, FindSecureAccessWeight);
-  GetDirectorCredentialsFailureBackdoorfound.DirectorCredentials = DirectorCredentials;
-  GetDirectorCredentialsFailureBackdoorfound.BackDoor = BackDoor;
-  GetDirectorCredentialsFailureBackdoorfound.Hacker = Hacker;
-  GetDirectorCredentialsFailureBackdoorfound.GetDirectorCredentialsChosen = GetDirectorCredentialsChosen;
-  GetDirectorCredentialsFailureBackdoorfound.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
-  GetDirectorCredentialsFailureBackdoorfound.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
-  GetDirectorCredentialsFailureBackdoorfound.GetAccessToCamerasWeight = GetAccessToCamerasWeight;
-  GetDirectorCredentialsFailureBackdoorfound.DoNothingWeight = DoNothingWeight;
-  GetDirectorCredentialsFailureBackdoorfound.TransferBankMoneyWeight = TransferBankMoneyWeight;
-  GetDirectorCredentialsFailureBackdoorfound.PhishingWeight = PhishingWeight;
-  GetDirectorCredentialsFailureBackdoorfound.FindSecureAccessWeight = FindSecureAccessWeight;
-  GetDirectorCredentialsFailureBackdoorfound.GetDirectorCredentialsWeight = GetDirectorCredentialsWeight;
-  GetDirectorCredentialsFailureBackdoorfound.StudySecurityRoutinesWeight = StudySecurityRoutinesWeight;
-  GetDirectorCredentialsFailureBackdoorfound.GetSafeCombinationWeight = GetSafeCombinationWeight;
-  GetDirectorCredentialsFailureBackdoorfound.InfectTheSystemWeight = InfectTheSystemWeight;
-  GetDirectorCredentialsFailureBackdoorfound.SafeBreakWeight = SafeBreakWeight;
-  GetDirectorCredentialsFailureBackdoorfound.CyberAttackWeight = CyberAttackWeight;
-  GetDirectorCredentialsFailureBackdoorfound.MakeDecision = MakeDecision;
-  GetDirectorCredentialsFailureBackdoorfound.setSVs(GetDirectorCredentialsChosen, GetDirectorCredentialsWeight);
   GetDirectorCredentialsFailure.DirectorCredentials = DirectorCredentials;
   GetDirectorCredentialsFailure.BackDoor = BackDoor;
   GetDirectorCredentialsFailure.Hacker = Hacker;
@@ -733,6 +718,25 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   GetDirectorCredentialsFailure.CyberAttackWeight = CyberAttackWeight;
   GetDirectorCredentialsFailure.MakeDecision = MakeDecision;
   GetDirectorCredentialsFailure.setSVs(GetDirectorCredentialsChosen, GetDirectorCredentialsWeight);
+  GetDirectorCredentialsFailureBackdoorfound.DirectorCredentials = DirectorCredentials;
+  GetDirectorCredentialsFailureBackdoorfound.BackDoor = BackDoor;
+  GetDirectorCredentialsFailureBackdoorfound.Hacker = Hacker;
+  GetDirectorCredentialsFailureBackdoorfound.GetDirectorCredentialsChosen = GetDirectorCredentialsChosen;
+  GetDirectorCredentialsFailureBackdoorfound.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
+  GetDirectorCredentialsFailureBackdoorfound.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
+  GetDirectorCredentialsFailureBackdoorfound.GetAccessToCamerasWeight = GetAccessToCamerasWeight;
+  GetDirectorCredentialsFailureBackdoorfound.DoNothingWeight = DoNothingWeight;
+  GetDirectorCredentialsFailureBackdoorfound.TransferBankMoneyWeight = TransferBankMoneyWeight;
+  GetDirectorCredentialsFailureBackdoorfound.PhishingWeight = PhishingWeight;
+  GetDirectorCredentialsFailureBackdoorfound.FindSecureAccessWeight = FindSecureAccessWeight;
+  GetDirectorCredentialsFailureBackdoorfound.GetDirectorCredentialsWeight = GetDirectorCredentialsWeight;
+  GetDirectorCredentialsFailureBackdoorfound.StudySecurityRoutinesWeight = StudySecurityRoutinesWeight;
+  GetDirectorCredentialsFailureBackdoorfound.GetSafeCombinationWeight = GetSafeCombinationWeight;
+  GetDirectorCredentialsFailureBackdoorfound.InfectTheSystemWeight = InfectTheSystemWeight;
+  GetDirectorCredentialsFailureBackdoorfound.SafeBreakWeight = SafeBreakWeight;
+  GetDirectorCredentialsFailureBackdoorfound.CyberAttackWeight = CyberAttackWeight;
+  GetDirectorCredentialsFailureBackdoorfound.MakeDecision = MakeDecision;
+  GetDirectorCredentialsFailureBackdoorfound.setSVs(GetDirectorCredentialsChosen, GetDirectorCredentialsWeight);
   GetDirectorCredentialsSuccess.DirectorCredentials = DirectorCredentials;
   GetDirectorCredentialsSuccess.BackDoor = BackDoor;
   GetDirectorCredentialsSuccess.Hacker = Hacker;
@@ -806,25 +810,6 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   StudySecurityRoutinesFailureCameraAccessFound.CyberAttackWeight = CyberAttackWeight;
   StudySecurityRoutinesFailureCameraAccessFound.MakeDecision = MakeDecision;
   StudySecurityRoutinesFailureCameraAccessFound.setSVs(StudySecurityRoutinesChosen, StudySecurityRoutinesWeight);
-  GetSafeCombinationFailureBackdoorfound.SafeCombination = SafeCombination;
-  GetSafeCombinationFailureBackdoorfound.BackDoor = BackDoor;
-  GetSafeCombinationFailureBackdoorfound.Hacker = Hacker;
-  GetSafeCombinationFailureBackdoorfound.GetSafeCombinationChosen = GetSafeCombinationChosen;
-  GetSafeCombinationFailureBackdoorfound.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
-  GetSafeCombinationFailureBackdoorfound.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
-  GetSafeCombinationFailureBackdoorfound.GetAccessToCamerasWeight = GetAccessToCamerasWeight;
-  GetSafeCombinationFailureBackdoorfound.DoNothingWeight = DoNothingWeight;
-  GetSafeCombinationFailureBackdoorfound.TransferBankMoneyWeight = TransferBankMoneyWeight;
-  GetSafeCombinationFailureBackdoorfound.PhishingWeight = PhishingWeight;
-  GetSafeCombinationFailureBackdoorfound.FindSecureAccessWeight = FindSecureAccessWeight;
-  GetSafeCombinationFailureBackdoorfound.GetDirectorCredentialsWeight = GetDirectorCredentialsWeight;
-  GetSafeCombinationFailureBackdoorfound.StudySecurityRoutinesWeight = StudySecurityRoutinesWeight;
-  GetSafeCombinationFailureBackdoorfound.GetSafeCombinationWeight = GetSafeCombinationWeight;
-  GetSafeCombinationFailureBackdoorfound.InfectTheSystemWeight = InfectTheSystemWeight;
-  GetSafeCombinationFailureBackdoorfound.SafeBreakWeight = SafeBreakWeight;
-  GetSafeCombinationFailureBackdoorfound.CyberAttackWeight = CyberAttackWeight;
-  GetSafeCombinationFailureBackdoorfound.MakeDecision = MakeDecision;
-  GetSafeCombinationFailureBackdoorfound.setSVs(GetSafeCombinationChosen, GetSafeCombinationWeight);
   GetSafeCombinationFailure.SafeCombination = SafeCombination;
   GetSafeCombinationFailure.BackDoor = BackDoor;
   GetSafeCombinationFailure.Hacker = Hacker;
@@ -844,6 +829,25 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   GetSafeCombinationFailure.CyberAttackWeight = CyberAttackWeight;
   GetSafeCombinationFailure.MakeDecision = MakeDecision;
   GetSafeCombinationFailure.setSVs(GetSafeCombinationChosen, GetSafeCombinationWeight);
+  GetSafeCombinationFailureBackdoorfound.SafeCombination = SafeCombination;
+  GetSafeCombinationFailureBackdoorfound.BackDoor = BackDoor;
+  GetSafeCombinationFailureBackdoorfound.Hacker = Hacker;
+  GetSafeCombinationFailureBackdoorfound.GetSafeCombinationChosen = GetSafeCombinationChosen;
+  GetSafeCombinationFailureBackdoorfound.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
+  GetSafeCombinationFailureBackdoorfound.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
+  GetSafeCombinationFailureBackdoorfound.GetAccessToCamerasWeight = GetAccessToCamerasWeight;
+  GetSafeCombinationFailureBackdoorfound.DoNothingWeight = DoNothingWeight;
+  GetSafeCombinationFailureBackdoorfound.TransferBankMoneyWeight = TransferBankMoneyWeight;
+  GetSafeCombinationFailureBackdoorfound.PhishingWeight = PhishingWeight;
+  GetSafeCombinationFailureBackdoorfound.FindSecureAccessWeight = FindSecureAccessWeight;
+  GetSafeCombinationFailureBackdoorfound.GetDirectorCredentialsWeight = GetDirectorCredentialsWeight;
+  GetSafeCombinationFailureBackdoorfound.StudySecurityRoutinesWeight = StudySecurityRoutinesWeight;
+  GetSafeCombinationFailureBackdoorfound.GetSafeCombinationWeight = GetSafeCombinationWeight;
+  GetSafeCombinationFailureBackdoorfound.InfectTheSystemWeight = InfectTheSystemWeight;
+  GetSafeCombinationFailureBackdoorfound.SafeBreakWeight = SafeBreakWeight;
+  GetSafeCombinationFailureBackdoorfound.CyberAttackWeight = CyberAttackWeight;
+  GetSafeCombinationFailureBackdoorfound.MakeDecision = MakeDecision;
+  GetSafeCombinationFailureBackdoorfound.setSVs(GetSafeCombinationChosen, GetSafeCombinationWeight);
   GetSafeCombinationSuccess.SafeCombination = SafeCombination;
   GetSafeCombinationSuccess.BackDoor = BackDoor;
   GetSafeCombinationSuccess.Hacker = Hacker;
@@ -863,25 +867,6 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   GetSafeCombinationSuccess.CyberAttackWeight = CyberAttackWeight;
   GetSafeCombinationSuccess.MakeDecision = MakeDecision;
   GetSafeCombinationSuccess.setSVs(GetSafeCombinationChosen, GetSafeCombinationWeight);
-  InfectTheSystemFailureBackdoorfound.SystemAccess = SystemAccess;
-  InfectTheSystemFailureBackdoorfound.BackDoor = BackDoor;
-  InfectTheSystemFailureBackdoorfound.Hacker = Hacker;
-  InfectTheSystemFailureBackdoorfound.InfectTheSystemChosen = InfectTheSystemChosen;
-  InfectTheSystemFailureBackdoorfound.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
-  InfectTheSystemFailureBackdoorfound.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
-  InfectTheSystemFailureBackdoorfound.GetAccessToCamerasWeight = GetAccessToCamerasWeight;
-  InfectTheSystemFailureBackdoorfound.DoNothingWeight = DoNothingWeight;
-  InfectTheSystemFailureBackdoorfound.TransferBankMoneyWeight = TransferBankMoneyWeight;
-  InfectTheSystemFailureBackdoorfound.PhishingWeight = PhishingWeight;
-  InfectTheSystemFailureBackdoorfound.FindSecureAccessWeight = FindSecureAccessWeight;
-  InfectTheSystemFailureBackdoorfound.GetDirectorCredentialsWeight = GetDirectorCredentialsWeight;
-  InfectTheSystemFailureBackdoorfound.StudySecurityRoutinesWeight = StudySecurityRoutinesWeight;
-  InfectTheSystemFailureBackdoorfound.GetSafeCombinationWeight = GetSafeCombinationWeight;
-  InfectTheSystemFailureBackdoorfound.InfectTheSystemWeight = InfectTheSystemWeight;
-  InfectTheSystemFailureBackdoorfound.SafeBreakWeight = SafeBreakWeight;
-  InfectTheSystemFailureBackdoorfound.CyberAttackWeight = CyberAttackWeight;
-  InfectTheSystemFailureBackdoorfound.MakeDecision = MakeDecision;
-  InfectTheSystemFailureBackdoorfound.setSVs(InfectTheSystemChosen, InfectTheSystemWeight);
   InfectTheSystemFailure.SystemAccess = SystemAccess;
   InfectTheSystemFailure.BackDoor = BackDoor;
   InfectTheSystemFailure.Hacker = Hacker;
@@ -901,6 +886,25 @@ void AttackModelADVISE::assignSVsToAttackSteps() {
   InfectTheSystemFailure.CyberAttackWeight = CyberAttackWeight;
   InfectTheSystemFailure.MakeDecision = MakeDecision;
   InfectTheSystemFailure.setSVs(InfectTheSystemChosen, InfectTheSystemWeight);
+  InfectTheSystemFailureBackdoorfound.SystemAccess = SystemAccess;
+  InfectTheSystemFailureBackdoorfound.BackDoor = BackDoor;
+  InfectTheSystemFailureBackdoorfound.Hacker = Hacker;
+  InfectTheSystemFailureBackdoorfound.InfectTheSystemChosen = InfectTheSystemChosen;
+  InfectTheSystemFailureBackdoorfound.GetAccessToAlarmsWeight = GetAccessToAlarmsWeight;
+  InfectTheSystemFailureBackdoorfound.TransferCustomerMoneyWeight = TransferCustomerMoneyWeight;
+  InfectTheSystemFailureBackdoorfound.GetAccessToCamerasWeight = GetAccessToCamerasWeight;
+  InfectTheSystemFailureBackdoorfound.DoNothingWeight = DoNothingWeight;
+  InfectTheSystemFailureBackdoorfound.TransferBankMoneyWeight = TransferBankMoneyWeight;
+  InfectTheSystemFailureBackdoorfound.PhishingWeight = PhishingWeight;
+  InfectTheSystemFailureBackdoorfound.FindSecureAccessWeight = FindSecureAccessWeight;
+  InfectTheSystemFailureBackdoorfound.GetDirectorCredentialsWeight = GetDirectorCredentialsWeight;
+  InfectTheSystemFailureBackdoorfound.StudySecurityRoutinesWeight = StudySecurityRoutinesWeight;
+  InfectTheSystemFailureBackdoorfound.GetSafeCombinationWeight = GetSafeCombinationWeight;
+  InfectTheSystemFailureBackdoorfound.InfectTheSystemWeight = InfectTheSystemWeight;
+  InfectTheSystemFailureBackdoorfound.SafeBreakWeight = SafeBreakWeight;
+  InfectTheSystemFailureBackdoorfound.CyberAttackWeight = CyberAttackWeight;
+  InfectTheSystemFailureBackdoorfound.MakeDecision = MakeDecision;
+  InfectTheSystemFailureBackdoorfound.setSVs(InfectTheSystemChosen, InfectTheSystemWeight);
   InfectTheSystemSuccess.SystemAccess = SystemAccess;
   InfectTheSystemSuccess.BackDoor = BackDoor;
   InfectTheSystemSuccess.Hacker = Hacker;
@@ -1085,96 +1089,6 @@ void AttackModelADVISE::customInitialization() {
 /*                   Attack Step Definitions                     */
 /*****************************************************************/
 
-/*====================== GetAccessToAlarmsSuccessStep ========================*/
-
-AttackModelADVISE::GetAccessToAlarmsSuccessStep::GetAccessToAlarmsSuccessStep() {
-  TheDistributionParameters = new double[1];
-  commonInit("GetAccessToAlarmsSuccessStep", 0, Deterministic, RaceEnabled, 20, 1, false);}
-
-AttackModelADVISE::GetAccessToAlarmsSuccessStep::~GetAccessToAlarmsSuccessStep() {
-  delete[] TheDistributionParameters;
-}
-
-void AttackModelADVISE::GetAccessToAlarmsSuccessStep::LinkVariables() {
-  AlarmsControl->Register(&AlarmsControl_Mobius_Mark);
-  Hacker->Register(&Hacker_Mobius_Mark);
-  Stealth->Register(&Stealth_Mobius_Mark);
-  SecVulnerabilities->Register(&SecVulnerabilities_Mobius_Mark);
-  PhisicalAccess->Register(&PhisicalAccess_Mobius_Mark);
-  GetAccessToAlarmsChosen->Register(&GetAccessToAlarmsChosen_Mobius_Mark);
-  GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
-  TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
-  GetAccessToCamerasWeight->Register(&GetAccessToCamerasWeight_Mobius_Mark);
-  DoNothingWeight->Register(&DoNothingWeight_Mobius_Mark);
-  TransferBankMoneyWeight->Register(&TransferBankMoneyWeight_Mobius_Mark);
-  PhishingWeight->Register(&PhishingWeight_Mobius_Mark);
-  FindSecureAccessWeight->Register(&FindSecureAccessWeight_Mobius_Mark);
-  GetDirectorCredentialsWeight->Register(&GetDirectorCredentialsWeight_Mobius_Mark);
-  StudySecurityRoutinesWeight->Register(&StudySecurityRoutinesWeight_Mobius_Mark);
-  GetSafeCombinationWeight->Register(&GetSafeCombinationWeight_Mobius_Mark);
-  InfectTheSystemWeight->Register(&InfectTheSystemWeight_Mobius_Mark);
-  SafeBreakWeight->Register(&SafeBreakWeight_Mobius_Mark);
-  CyberAttackWeight->Register(&CyberAttackWeight_Mobius_Mark);
-  MakeDecision->Register(&MakeDecision_Mobius_Mark);
-
-}
-
-bool AttackModelADVISE::GetAccessToAlarmsSuccessStep::Enabled() {
-  OldEnabled = NewEnabled;
-  NewEnabled = (((*(GetAccessToAlarmsChosen_Mobius_Mark)) >= 1));
-  return NewEnabled;
-}
-
-double AttackModelADVISE::GetAccessToAlarmsSuccessStep::timeDistributionParameter0() {
-return 30-Hacker->Mark()*25/1000;
-}
-
-double AttackModelADVISE::GetAccessToAlarmsSuccessStep::Weight() {
-return 0.3;
-}
-
-bool AttackModelADVISE::GetAccessToAlarmsSuccessStep::ReactivationPredicate() {
-  return false;
-}
-
-bool AttackModelADVISE::GetAccessToAlarmsSuccessStep::ReactivationFunction() {
-  return false;
-}
-
-double AttackModelADVISE::GetAccessToAlarmsSuccessStep::SampleDistribution() {
-  return TheDistribution->Deterministic(timeDistributionParameter0());
-}
-
-double *AttackModelADVISE::GetAccessToAlarmsSuccessStep::ReturnDistributionParameters() {
-  TheDistributionParameters[0] = timeDistributionParameter0();
-  return TheDistributionParameters;
-}
-
-int AttackModelADVISE::GetAccessToAlarmsSuccessStep::Rank() {
-  return 1;
-}
-
-bool AttackModelADVISE::GetAccessToAlarmsSuccessStep::preconditionsMet() {
-return (!AlarmsControl->Mark()) && ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
-  return true;
-}
-
-void AttackModelADVISE::GetAccessToAlarmsSuccessStep::executeEffects() {
-AlarmsControl->Mark() = true;
-}
-
-double AttackModelADVISE::GetAccessToAlarmsSuccessStep::getCost() {
-return 30;
-}
-
-double AttackModelADVISE::GetAccessToAlarmsSuccessStep::getOutcomeProbability() {
-return 0.3;
-}
-
-double AttackModelADVISE::GetAccessToAlarmsSuccessStep::getDetection() {
-return 0.05;
-}
-
 /*====================== GetAccessToAlarmsFailureStep ========================*/
 
 AttackModelADVISE::GetAccessToAlarmsFailureStep::GetAccessToAlarmsFailureStep() {
@@ -1265,6 +1179,96 @@ double AttackModelADVISE::GetAccessToAlarmsFailureStep::getDetection() {
 return 0.75;
 }
 
+/*====================== GetAccessToAlarmsSuccessStep ========================*/
+
+AttackModelADVISE::GetAccessToAlarmsSuccessStep::GetAccessToAlarmsSuccessStep() {
+  TheDistributionParameters = new double[1];
+  commonInit("GetAccessToAlarmsSuccessStep", 0, Deterministic, RaceEnabled, 20, 1, false);}
+
+AttackModelADVISE::GetAccessToAlarmsSuccessStep::~GetAccessToAlarmsSuccessStep() {
+  delete[] TheDistributionParameters;
+}
+
+void AttackModelADVISE::GetAccessToAlarmsSuccessStep::LinkVariables() {
+  AlarmsControl->Register(&AlarmsControl_Mobius_Mark);
+  Hacker->Register(&Hacker_Mobius_Mark);
+  Stealth->Register(&Stealth_Mobius_Mark);
+  SecVulnerabilities->Register(&SecVulnerabilities_Mobius_Mark);
+  PhisicalAccess->Register(&PhisicalAccess_Mobius_Mark);
+  GetAccessToAlarmsChosen->Register(&GetAccessToAlarmsChosen_Mobius_Mark);
+  GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
+  TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
+  GetAccessToCamerasWeight->Register(&GetAccessToCamerasWeight_Mobius_Mark);
+  DoNothingWeight->Register(&DoNothingWeight_Mobius_Mark);
+  TransferBankMoneyWeight->Register(&TransferBankMoneyWeight_Mobius_Mark);
+  PhishingWeight->Register(&PhishingWeight_Mobius_Mark);
+  FindSecureAccessWeight->Register(&FindSecureAccessWeight_Mobius_Mark);
+  GetDirectorCredentialsWeight->Register(&GetDirectorCredentialsWeight_Mobius_Mark);
+  StudySecurityRoutinesWeight->Register(&StudySecurityRoutinesWeight_Mobius_Mark);
+  GetSafeCombinationWeight->Register(&GetSafeCombinationWeight_Mobius_Mark);
+  InfectTheSystemWeight->Register(&InfectTheSystemWeight_Mobius_Mark);
+  SafeBreakWeight->Register(&SafeBreakWeight_Mobius_Mark);
+  CyberAttackWeight->Register(&CyberAttackWeight_Mobius_Mark);
+  MakeDecision->Register(&MakeDecision_Mobius_Mark);
+
+}
+
+bool AttackModelADVISE::GetAccessToAlarmsSuccessStep::Enabled() {
+  OldEnabled = NewEnabled;
+  NewEnabled = (((*(GetAccessToAlarmsChosen_Mobius_Mark)) >= 1));
+  return NewEnabled;
+}
+
+double AttackModelADVISE::GetAccessToAlarmsSuccessStep::timeDistributionParameter0() {
+return 30-Hacker->Mark()*25/1000;
+}
+
+double AttackModelADVISE::GetAccessToAlarmsSuccessStep::Weight() {
+return 0.3;
+}
+
+bool AttackModelADVISE::GetAccessToAlarmsSuccessStep::ReactivationPredicate() {
+  return false;
+}
+
+bool AttackModelADVISE::GetAccessToAlarmsSuccessStep::ReactivationFunction() {
+  return false;
+}
+
+double AttackModelADVISE::GetAccessToAlarmsSuccessStep::SampleDistribution() {
+  return TheDistribution->Deterministic(timeDistributionParameter0());
+}
+
+double *AttackModelADVISE::GetAccessToAlarmsSuccessStep::ReturnDistributionParameters() {
+  TheDistributionParameters[0] = timeDistributionParameter0();
+  return TheDistributionParameters;
+}
+
+int AttackModelADVISE::GetAccessToAlarmsSuccessStep::Rank() {
+  return 1;
+}
+
+bool AttackModelADVISE::GetAccessToAlarmsSuccessStep::preconditionsMet() {
+return (!AlarmsControl->Mark()) && ((Hacker->Mark()>600 && Stealth->Mark()>300) || (Hacker->Mark()>200 && Stealth->Mark()>800)) && PhisicalAccess->Mark() && SecVulnerabilities->Mark();
+  return true;
+}
+
+void AttackModelADVISE::GetAccessToAlarmsSuccessStep::executeEffects() {
+AlarmsControl->Mark() = true;
+}
+
+double AttackModelADVISE::GetAccessToAlarmsSuccessStep::getCost() {
+return 30;
+}
+
+double AttackModelADVISE::GetAccessToAlarmsSuccessStep::getOutcomeProbability() {
+return 0.3;
+}
+
+double AttackModelADVISE::GetAccessToAlarmsSuccessStep::getDetection() {
+return 0.05;
+}
+
 /*====================== TransferCustomerMoneyFailureStep ========================*/
 
 AttackModelADVISE::TransferCustomerMoneyFailureStep::TransferCustomerMoneyFailureStep() {
@@ -1276,7 +1280,7 @@ AttackModelADVISE::TransferCustomerMoneyFailureStep::~TransferCustomerMoneyFailu
 }
 
 void AttackModelADVISE::TransferCustomerMoneyFailureStep::LinkVariables() {
-  Money->Register(&Money_Mobius_Mark);
+  DigitalMoney->Register(&DigitalMoney_Mobius_Mark);
   UserCredentials->Register(&UserCredentials_Mobius_Mark);
   TransferCustomerMoneyChosen->Register(&TransferCustomerMoneyChosen_Mobius_Mark);
   GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
@@ -1332,7 +1336,7 @@ int AttackModelADVISE::TransferCustomerMoneyFailureStep::Rank() {
 }
 
 bool AttackModelADVISE::TransferCustomerMoneyFailureStep::preconditionsMet() {
-return(!Money->Mark()&&UserCredentials->Mark());
+return(!DigitalMoney->Mark()&&UserCredentials->Mark());
   return true;
 }
 
@@ -1363,7 +1367,7 @@ AttackModelADVISE::TransferCustomerMoneySuccessStep::~TransferCustomerMoneySucce
 }
 
 void AttackModelADVISE::TransferCustomerMoneySuccessStep::LinkVariables() {
-  Money->Register(&Money_Mobius_Mark);
+  DigitalMoney->Register(&DigitalMoney_Mobius_Mark);
   UserCredentials->Register(&UserCredentials_Mobius_Mark);
   TransferCustomerMoneyChosen->Register(&TransferCustomerMoneyChosen_Mobius_Mark);
   GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
@@ -1419,12 +1423,12 @@ int AttackModelADVISE::TransferCustomerMoneySuccessStep::Rank() {
 }
 
 bool AttackModelADVISE::TransferCustomerMoneySuccessStep::preconditionsMet() {
-return(!Money->Mark()&&UserCredentials->Mark());
+return(!DigitalMoney->Mark()&&UserCredentials->Mark());
   return true;
 }
 
 void AttackModelADVISE::TransferCustomerMoneySuccessStep::executeEffects() {
-Money->Mark()=true;
+DigitalMoney->Mark()=true;
 }
 
 double AttackModelADVISE::TransferCustomerMoneySuccessStep::getCost() {
@@ -1715,7 +1719,7 @@ AttackModelADVISE::TransferBankMoneyFailureStep::~TransferBankMoneyFailureStep()
 }
 
 void AttackModelADVISE::TransferBankMoneyFailureStep::LinkVariables() {
-  Money->Register(&Money_Mobius_Mark);
+  DigitalMoney->Register(&DigitalMoney_Mobius_Mark);
   SystemAccess->Register(&SystemAccess_Mobius_Mark);
   DirectorCredentials->Register(&DirectorCredentials_Mobius_Mark);
   TransferBankMoneyChosen->Register(&TransferBankMoneyChosen_Mobius_Mark);
@@ -1772,7 +1776,7 @@ int AttackModelADVISE::TransferBankMoneyFailureStep::Rank() {
 }
 
 bool AttackModelADVISE::TransferBankMoneyFailureStep::preconditionsMet() {
-return(!Money->Mark()&&SystemAccess->Mark()&&DirectorCredentials->Mark());
+return(!DigitalMoney->Mark()&&SystemAccess->Mark()&&DirectorCredentials->Mark());
   return true;
 }
 
@@ -1803,7 +1807,7 @@ AttackModelADVISE::TransferBankMoneySuccessStep::~TransferBankMoneySuccessStep()
 }
 
 void AttackModelADVISE::TransferBankMoneySuccessStep::LinkVariables() {
-  Money->Register(&Money_Mobius_Mark);
+  DigitalMoney->Register(&DigitalMoney_Mobius_Mark);
   SystemAccess->Register(&SystemAccess_Mobius_Mark);
   DirectorCredentials->Register(&DirectorCredentials_Mobius_Mark);
   TransferBankMoneyChosen->Register(&TransferBankMoneyChosen_Mobius_Mark);
@@ -1860,12 +1864,12 @@ int AttackModelADVISE::TransferBankMoneySuccessStep::Rank() {
 }
 
 bool AttackModelADVISE::TransferBankMoneySuccessStep::preconditionsMet() {
-return(!Money->Mark()&&SystemAccess->Mark()&&DirectorCredentials->Mark());
+return(!DigitalMoney->Mark()&&SystemAccess->Mark()&&DirectorCredentials->Mark());
   return true;
 }
 
 void AttackModelADVISE::TransferBankMoneySuccessStep::executeEffects() {
-Money->Mark()=true;
+DigitalMoney->Mark() = true;
 }
 
 double AttackModelADVISE::TransferBankMoneySuccessStep::getCost() {
@@ -2319,94 +2323,6 @@ double AttackModelADVISE::FindSecureAccessFailureCameraAccessFoundStep::getDetec
 return 0.1;
 }
 
-/*====================== GetDirectorCredentialsFailureBackdoorfoundStep ========================*/
-
-AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::GetDirectorCredentialsFailureBackdoorfoundStep() {
-  TheDistributionParameters = new double[1];
-  commonInit("GetDirectorCredentialsFailureBackdoorfoundStep", 7, Deterministic, RaceEnabled, 18, 1, false);}
-
-AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::~GetDirectorCredentialsFailureBackdoorfoundStep() {
-  delete[] TheDistributionParameters;
-}
-
-void AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::LinkVariables() {
-  DirectorCredentials->Register(&DirectorCredentials_Mobius_Mark);
-  BackDoor->Register(&BackDoor_Mobius_Mark);
-  Hacker->Register(&Hacker_Mobius_Mark);
-  GetDirectorCredentialsChosen->Register(&GetDirectorCredentialsChosen_Mobius_Mark);
-  GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
-  TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
-  GetAccessToCamerasWeight->Register(&GetAccessToCamerasWeight_Mobius_Mark);
-  DoNothingWeight->Register(&DoNothingWeight_Mobius_Mark);
-  TransferBankMoneyWeight->Register(&TransferBankMoneyWeight_Mobius_Mark);
-  PhishingWeight->Register(&PhishingWeight_Mobius_Mark);
-  FindSecureAccessWeight->Register(&FindSecureAccessWeight_Mobius_Mark);
-  GetDirectorCredentialsWeight->Register(&GetDirectorCredentialsWeight_Mobius_Mark);
-  StudySecurityRoutinesWeight->Register(&StudySecurityRoutinesWeight_Mobius_Mark);
-  GetSafeCombinationWeight->Register(&GetSafeCombinationWeight_Mobius_Mark);
-  InfectTheSystemWeight->Register(&InfectTheSystemWeight_Mobius_Mark);
-  SafeBreakWeight->Register(&SafeBreakWeight_Mobius_Mark);
-  CyberAttackWeight->Register(&CyberAttackWeight_Mobius_Mark);
-  MakeDecision->Register(&MakeDecision_Mobius_Mark);
-
-}
-
-bool AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::Enabled() {
-  OldEnabled = NewEnabled;
-  NewEnabled = (((*(GetDirectorCredentialsChosen_Mobius_Mark)) >= 1));
-  return NewEnabled;
-}
-
-double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::timeDistributionParameter0() {
-return 25-Hacker->Mark()*2/100;
-}
-
-double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::Weight() {
-return 0.30;
-}
-
-bool AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::ReactivationPredicate() {
-  return false;
-}
-
-bool AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::ReactivationFunction() {
-  return false;
-}
-
-double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::SampleDistribution() {
-  return TheDistribution->Deterministic(timeDistributionParameter0());
-}
-
-double *AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::ReturnDistributionParameters() {
-  TheDistributionParameters[0] = timeDistributionParameter0();
-  return TheDistributionParameters;
-}
-
-int AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::Rank() {
-  return 1;
-}
-
-bool AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::preconditionsMet() {
-return (!DirectorCredentials->Mark()&&BackDoor->Mark()&&Hacker->Mark()>600);
-  return true;
-}
-
-void AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::executeEffects() {
-BackDoor->Mark() = false;
-}
-
-double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::getCost() {
-return 55;
-}
-
-double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::getOutcomeProbability() {
-return 0.30;
-}
-
-double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::getDetection() {
-return 0.05;
-}
-
 /*====================== GetDirectorCredentialsFailureStep ========================*/
 
 AttackModelADVISE::GetDirectorCredentialsFailureStep::GetDirectorCredentialsFailureStep() {
@@ -2492,6 +2408,94 @@ return 0.5;
 }
 
 double AttackModelADVISE::GetDirectorCredentialsFailureStep::getDetection() {
+return 0.05;
+}
+
+/*====================== GetDirectorCredentialsFailureBackdoorfoundStep ========================*/
+
+AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::GetDirectorCredentialsFailureBackdoorfoundStep() {
+  TheDistributionParameters = new double[1];
+  commonInit("GetDirectorCredentialsFailureBackdoorfoundStep", 7, Deterministic, RaceEnabled, 18, 1, false);}
+
+AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::~GetDirectorCredentialsFailureBackdoorfoundStep() {
+  delete[] TheDistributionParameters;
+}
+
+void AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::LinkVariables() {
+  DirectorCredentials->Register(&DirectorCredentials_Mobius_Mark);
+  BackDoor->Register(&BackDoor_Mobius_Mark);
+  Hacker->Register(&Hacker_Mobius_Mark);
+  GetDirectorCredentialsChosen->Register(&GetDirectorCredentialsChosen_Mobius_Mark);
+  GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
+  TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
+  GetAccessToCamerasWeight->Register(&GetAccessToCamerasWeight_Mobius_Mark);
+  DoNothingWeight->Register(&DoNothingWeight_Mobius_Mark);
+  TransferBankMoneyWeight->Register(&TransferBankMoneyWeight_Mobius_Mark);
+  PhishingWeight->Register(&PhishingWeight_Mobius_Mark);
+  FindSecureAccessWeight->Register(&FindSecureAccessWeight_Mobius_Mark);
+  GetDirectorCredentialsWeight->Register(&GetDirectorCredentialsWeight_Mobius_Mark);
+  StudySecurityRoutinesWeight->Register(&StudySecurityRoutinesWeight_Mobius_Mark);
+  GetSafeCombinationWeight->Register(&GetSafeCombinationWeight_Mobius_Mark);
+  InfectTheSystemWeight->Register(&InfectTheSystemWeight_Mobius_Mark);
+  SafeBreakWeight->Register(&SafeBreakWeight_Mobius_Mark);
+  CyberAttackWeight->Register(&CyberAttackWeight_Mobius_Mark);
+  MakeDecision->Register(&MakeDecision_Mobius_Mark);
+
+}
+
+bool AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::Enabled() {
+  OldEnabled = NewEnabled;
+  NewEnabled = (((*(GetDirectorCredentialsChosen_Mobius_Mark)) >= 1));
+  return NewEnabled;
+}
+
+double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::timeDistributionParameter0() {
+return 25-Hacker->Mark()*2/100;
+}
+
+double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::Weight() {
+return 0.30;
+}
+
+bool AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::ReactivationPredicate() {
+  return false;
+}
+
+bool AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::ReactivationFunction() {
+  return false;
+}
+
+double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::SampleDistribution() {
+  return TheDistribution->Deterministic(timeDistributionParameter0());
+}
+
+double *AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::ReturnDistributionParameters() {
+  TheDistributionParameters[0] = timeDistributionParameter0();
+  return TheDistributionParameters;
+}
+
+int AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::Rank() {
+  return 1;
+}
+
+bool AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::preconditionsMet() {
+return (!DirectorCredentials->Mark()&&BackDoor->Mark()&&Hacker->Mark()>600);
+  return true;
+}
+
+void AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::executeEffects() {
+BackDoor->Mark() = false;
+}
+
+double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::getCost() {
+return 55;
+}
+
+double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::getOutcomeProbability() {
+return 0.30;
+}
+
+double AttackModelADVISE::GetDirectorCredentialsFailureBackdoorfoundStep::getDetection() {
 return 0.05;
 }
 
@@ -2844,94 +2848,6 @@ double AttackModelADVISE::StudySecurityRoutinesFailureCameraAccessFoundStep::get
 return 0.1;
 }
 
-/*====================== GetSafeCombinationFailureBackdoorfoundStep ========================*/
-
-AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::GetSafeCombinationFailureBackdoorfoundStep() {
-  TheDistributionParameters = new double[1];
-  commonInit("GetSafeCombinationFailureBackdoorfoundStep", 9, Deterministic, RaceEnabled, 18, 1, false);}
-
-AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::~GetSafeCombinationFailureBackdoorfoundStep() {
-  delete[] TheDistributionParameters;
-}
-
-void AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::LinkVariables() {
-  SafeCombination->Register(&SafeCombination_Mobius_Mark);
-  BackDoor->Register(&BackDoor_Mobius_Mark);
-  Hacker->Register(&Hacker_Mobius_Mark);
-  GetSafeCombinationChosen->Register(&GetSafeCombinationChosen_Mobius_Mark);
-  GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
-  TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
-  GetAccessToCamerasWeight->Register(&GetAccessToCamerasWeight_Mobius_Mark);
-  DoNothingWeight->Register(&DoNothingWeight_Mobius_Mark);
-  TransferBankMoneyWeight->Register(&TransferBankMoneyWeight_Mobius_Mark);
-  PhishingWeight->Register(&PhishingWeight_Mobius_Mark);
-  FindSecureAccessWeight->Register(&FindSecureAccessWeight_Mobius_Mark);
-  GetDirectorCredentialsWeight->Register(&GetDirectorCredentialsWeight_Mobius_Mark);
-  StudySecurityRoutinesWeight->Register(&StudySecurityRoutinesWeight_Mobius_Mark);
-  GetSafeCombinationWeight->Register(&GetSafeCombinationWeight_Mobius_Mark);
-  InfectTheSystemWeight->Register(&InfectTheSystemWeight_Mobius_Mark);
-  SafeBreakWeight->Register(&SafeBreakWeight_Mobius_Mark);
-  CyberAttackWeight->Register(&CyberAttackWeight_Mobius_Mark);
-  MakeDecision->Register(&MakeDecision_Mobius_Mark);
-
-}
-
-bool AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::Enabled() {
-  OldEnabled = NewEnabled;
-  NewEnabled = (((*(GetSafeCombinationChosen_Mobius_Mark)) >= 1));
-  return NewEnabled;
-}
-
-double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::timeDistributionParameter0() {
-return 25-Hacker->Mark()*2/100;
-}
-
-double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::Weight() {
-return 0.30;
-}
-
-bool AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::ReactivationPredicate() {
-  return false;
-}
-
-bool AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::ReactivationFunction() {
-  return false;
-}
-
-double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::SampleDistribution() {
-  return TheDistribution->Deterministic(timeDistributionParameter0());
-}
-
-double *AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::ReturnDistributionParameters() {
-  TheDistributionParameters[0] = timeDistributionParameter0();
-  return TheDistributionParameters;
-}
-
-int AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::Rank() {
-  return 1;
-}
-
-bool AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::preconditionsMet() {
-return(!SafeCombination->Mark()&&BackDoor->Mark()&&Hacker->Mark()>600);
-  return true;
-}
-
-void AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::executeEffects() {
-BackDoor->Mark() = false;
-}
-
-double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::getCost() {
-return 60;
-}
-
-double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::getOutcomeProbability() {
-return 0.30;
-}
-
-double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::getDetection() {
-return 0.05;
-}
-
 /*====================== GetSafeCombinationFailureStep ========================*/
 
 AttackModelADVISE::GetSafeCombinationFailureStep::GetSafeCombinationFailureStep() {
@@ -3018,6 +2934,94 @@ return 0.65;
 
 double AttackModelADVISE::GetSafeCombinationFailureStep::getDetection() {
 return 0.15;
+}
+
+/*====================== GetSafeCombinationFailureBackdoorfoundStep ========================*/
+
+AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::GetSafeCombinationFailureBackdoorfoundStep() {
+  TheDistributionParameters = new double[1];
+  commonInit("GetSafeCombinationFailureBackdoorfoundStep", 9, Deterministic, RaceEnabled, 18, 1, false);}
+
+AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::~GetSafeCombinationFailureBackdoorfoundStep() {
+  delete[] TheDistributionParameters;
+}
+
+void AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::LinkVariables() {
+  SafeCombination->Register(&SafeCombination_Mobius_Mark);
+  BackDoor->Register(&BackDoor_Mobius_Mark);
+  Hacker->Register(&Hacker_Mobius_Mark);
+  GetSafeCombinationChosen->Register(&GetSafeCombinationChosen_Mobius_Mark);
+  GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
+  TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
+  GetAccessToCamerasWeight->Register(&GetAccessToCamerasWeight_Mobius_Mark);
+  DoNothingWeight->Register(&DoNothingWeight_Mobius_Mark);
+  TransferBankMoneyWeight->Register(&TransferBankMoneyWeight_Mobius_Mark);
+  PhishingWeight->Register(&PhishingWeight_Mobius_Mark);
+  FindSecureAccessWeight->Register(&FindSecureAccessWeight_Mobius_Mark);
+  GetDirectorCredentialsWeight->Register(&GetDirectorCredentialsWeight_Mobius_Mark);
+  StudySecurityRoutinesWeight->Register(&StudySecurityRoutinesWeight_Mobius_Mark);
+  GetSafeCombinationWeight->Register(&GetSafeCombinationWeight_Mobius_Mark);
+  InfectTheSystemWeight->Register(&InfectTheSystemWeight_Mobius_Mark);
+  SafeBreakWeight->Register(&SafeBreakWeight_Mobius_Mark);
+  CyberAttackWeight->Register(&CyberAttackWeight_Mobius_Mark);
+  MakeDecision->Register(&MakeDecision_Mobius_Mark);
+
+}
+
+bool AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::Enabled() {
+  OldEnabled = NewEnabled;
+  NewEnabled = (((*(GetSafeCombinationChosen_Mobius_Mark)) >= 1));
+  return NewEnabled;
+}
+
+double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::timeDistributionParameter0() {
+return 25-Hacker->Mark()*2/100;
+}
+
+double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::Weight() {
+return 0.30;
+}
+
+bool AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::ReactivationPredicate() {
+  return false;
+}
+
+bool AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::ReactivationFunction() {
+  return false;
+}
+
+double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::SampleDistribution() {
+  return TheDistribution->Deterministic(timeDistributionParameter0());
+}
+
+double *AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::ReturnDistributionParameters() {
+  TheDistributionParameters[0] = timeDistributionParameter0();
+  return TheDistributionParameters;
+}
+
+int AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::Rank() {
+  return 1;
+}
+
+bool AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::preconditionsMet() {
+return(!SafeCombination->Mark()&&BackDoor->Mark()&&Hacker->Mark()>600);
+  return true;
+}
+
+void AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::executeEffects() {
+BackDoor->Mark() = false;
+}
+
+double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::getCost() {
+return 60;
+}
+
+double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::getOutcomeProbability() {
+return 0.30;
+}
+
+double AttackModelADVISE::GetSafeCombinationFailureBackdoorfoundStep::getDetection() {
+return 0.05;
 }
 
 /*====================== GetSafeCombinationSuccessStep ========================*/
@@ -3108,94 +3112,6 @@ double AttackModelADVISE::GetSafeCombinationSuccessStep::getDetection() {
 return 0.05;
 }
 
-/*====================== InfectTheSystemFailureBackdoorfoundStep ========================*/
-
-AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::InfectTheSystemFailureBackdoorfoundStep() {
-  TheDistributionParameters = new double[1];
-  commonInit("InfectTheSystemFailureBackdoorfoundStep", 10, Deterministic, RaceEnabled, 18, 1, false);}
-
-AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::~InfectTheSystemFailureBackdoorfoundStep() {
-  delete[] TheDistributionParameters;
-}
-
-void AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::LinkVariables() {
-  SystemAccess->Register(&SystemAccess_Mobius_Mark);
-  BackDoor->Register(&BackDoor_Mobius_Mark);
-  Hacker->Register(&Hacker_Mobius_Mark);
-  InfectTheSystemChosen->Register(&InfectTheSystemChosen_Mobius_Mark);
-  GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
-  TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
-  GetAccessToCamerasWeight->Register(&GetAccessToCamerasWeight_Mobius_Mark);
-  DoNothingWeight->Register(&DoNothingWeight_Mobius_Mark);
-  TransferBankMoneyWeight->Register(&TransferBankMoneyWeight_Mobius_Mark);
-  PhishingWeight->Register(&PhishingWeight_Mobius_Mark);
-  FindSecureAccessWeight->Register(&FindSecureAccessWeight_Mobius_Mark);
-  GetDirectorCredentialsWeight->Register(&GetDirectorCredentialsWeight_Mobius_Mark);
-  StudySecurityRoutinesWeight->Register(&StudySecurityRoutinesWeight_Mobius_Mark);
-  GetSafeCombinationWeight->Register(&GetSafeCombinationWeight_Mobius_Mark);
-  InfectTheSystemWeight->Register(&InfectTheSystemWeight_Mobius_Mark);
-  SafeBreakWeight->Register(&SafeBreakWeight_Mobius_Mark);
-  CyberAttackWeight->Register(&CyberAttackWeight_Mobius_Mark);
-  MakeDecision->Register(&MakeDecision_Mobius_Mark);
-
-}
-
-bool AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::Enabled() {
-  OldEnabled = NewEnabled;
-  NewEnabled = (((*(InfectTheSystemChosen_Mobius_Mark)) >= 1));
-  return NewEnabled;
-}
-
-double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::timeDistributionParameter0() {
-return 30-Hacker->Mark()*2/100;
-}
-
-double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::Weight() {
-return 0.30;
-}
-
-bool AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::ReactivationPredicate() {
-  return false;
-}
-
-bool AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::ReactivationFunction() {
-  return false;
-}
-
-double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::SampleDistribution() {
-  return TheDistribution->Deterministic(timeDistributionParameter0());
-}
-
-double *AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::ReturnDistributionParameters() {
-  TheDistributionParameters[0] = timeDistributionParameter0();
-  return TheDistributionParameters;
-}
-
-int AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::Rank() {
-  return 1;
-}
-
-bool AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::preconditionsMet() {
-return (!SystemAccess->Mark()&&BackDoor->Mark()&&Hacker->Mark()>600);
-  return true;
-}
-
-void AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::executeEffects() {
-BackDoor->Mark() = false;
-}
-
-double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::getCost() {
-return 65;
-}
-
-double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::getOutcomeProbability() {
-return 0.30;
-}
-
-double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::getDetection() {
-return 0.05;
-}
-
 /*====================== InfectTheSystemFailureStep ========================*/
 
 AttackModelADVISE::InfectTheSystemFailureStep::InfectTheSystemFailureStep() {
@@ -3281,6 +3197,94 @@ return 0.65;
 }
 
 double AttackModelADVISE::InfectTheSystemFailureStep::getDetection() {
+return 0.05;
+}
+
+/*====================== InfectTheSystemFailureBackdoorfoundStep ========================*/
+
+AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::InfectTheSystemFailureBackdoorfoundStep() {
+  TheDistributionParameters = new double[1];
+  commonInit("InfectTheSystemFailureBackdoorfoundStep", 10, Deterministic, RaceEnabled, 18, 1, false);}
+
+AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::~InfectTheSystemFailureBackdoorfoundStep() {
+  delete[] TheDistributionParameters;
+}
+
+void AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::LinkVariables() {
+  SystemAccess->Register(&SystemAccess_Mobius_Mark);
+  BackDoor->Register(&BackDoor_Mobius_Mark);
+  Hacker->Register(&Hacker_Mobius_Mark);
+  InfectTheSystemChosen->Register(&InfectTheSystemChosen_Mobius_Mark);
+  GetAccessToAlarmsWeight->Register(&GetAccessToAlarmsWeight_Mobius_Mark);
+  TransferCustomerMoneyWeight->Register(&TransferCustomerMoneyWeight_Mobius_Mark);
+  GetAccessToCamerasWeight->Register(&GetAccessToCamerasWeight_Mobius_Mark);
+  DoNothingWeight->Register(&DoNothingWeight_Mobius_Mark);
+  TransferBankMoneyWeight->Register(&TransferBankMoneyWeight_Mobius_Mark);
+  PhishingWeight->Register(&PhishingWeight_Mobius_Mark);
+  FindSecureAccessWeight->Register(&FindSecureAccessWeight_Mobius_Mark);
+  GetDirectorCredentialsWeight->Register(&GetDirectorCredentialsWeight_Mobius_Mark);
+  StudySecurityRoutinesWeight->Register(&StudySecurityRoutinesWeight_Mobius_Mark);
+  GetSafeCombinationWeight->Register(&GetSafeCombinationWeight_Mobius_Mark);
+  InfectTheSystemWeight->Register(&InfectTheSystemWeight_Mobius_Mark);
+  SafeBreakWeight->Register(&SafeBreakWeight_Mobius_Mark);
+  CyberAttackWeight->Register(&CyberAttackWeight_Mobius_Mark);
+  MakeDecision->Register(&MakeDecision_Mobius_Mark);
+
+}
+
+bool AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::Enabled() {
+  OldEnabled = NewEnabled;
+  NewEnabled = (((*(InfectTheSystemChosen_Mobius_Mark)) >= 1));
+  return NewEnabled;
+}
+
+double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::timeDistributionParameter0() {
+return 30-Hacker->Mark()*2/100;
+}
+
+double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::Weight() {
+return 0.30;
+}
+
+bool AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::ReactivationPredicate() {
+  return false;
+}
+
+bool AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::ReactivationFunction() {
+  return false;
+}
+
+double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::SampleDistribution() {
+  return TheDistribution->Deterministic(timeDistributionParameter0());
+}
+
+double *AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::ReturnDistributionParameters() {
+  TheDistributionParameters[0] = timeDistributionParameter0();
+  return TheDistributionParameters;
+}
+
+int AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::Rank() {
+  return 1;
+}
+
+bool AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::preconditionsMet() {
+return (!SystemAccess->Mark()&&BackDoor->Mark()&&Hacker->Mark()>600);
+  return true;
+}
+
+void AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::executeEffects() {
+BackDoor->Mark() = false;
+}
+
+double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::getCost() {
+return 65;
+}
+
+double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::getOutcomeProbability() {
+return 0.30;
+}
+
+double AttackModelADVISE::InfectTheSystemFailureBackdoorfoundStep::getDetection() {
 return 0.05;
 }
 

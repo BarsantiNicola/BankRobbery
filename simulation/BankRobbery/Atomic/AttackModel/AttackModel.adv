@@ -2,10 +2,10 @@
 <models:AdviseAtomicModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/atomic/advise/" name="AttackModel">
   <aeg adviseModel="/">
     <skillElements key="Stealth: Able to come inside protected building and performs actions without be identified">
-      <value name="Stealth: Able to come inside protected building and performs actions without be identified" codename="Stealth" useDefault="false" xpos="791" ypos="38" sourceArcs="//@aeg/@arcElements.32 //@aeg/@arcElements.33" attackExecutionGraph="//@aeg"/>
+      <value name="Stealth: Able to come inside protected building and performs actions without be identified" codename="Stealth" useDefault="false" xpos="791" ypos="38" sourceArcs="//@aeg/@arcElements.30 //@aeg/@arcElements.31" attackExecutionGraph="//@aeg"/>
     </skillElements>
     <skillElements key="Hacker: Able to violate electronical and informatic systems">
-      <value name="Hacker: Able to violate electronical and informatic systems" codename="Hacker" useDefault="false" xpos="695" ypos="50" sourceArcs="//@aeg/@arcElements.26 //@aeg/@arcElements.27 //@aeg/@arcElements.28 //@aeg/@arcElements.29 //@aeg/@arcElements.30 //@aeg/@arcElements.31" attackExecutionGraph="//@aeg"/>
+      <value name="Hacker: Able to violate electronical and informatic systems" codename="Hacker" useDefault="false" xpos="695" ypos="50" sourceArcs="//@aeg/@arcElements.24 //@aeg/@arcElements.25 //@aeg/@arcElements.26 //@aeg/@arcElements.27 //@aeg/@arcElements.28 //@aeg/@arcElements.29" attackExecutionGraph="//@aeg"/>
     </skillElements>
     <skillElements key="Breaker: Able to violate locks and break safes">
       <value name="Breaker: Able to violate locks and break safes" codename="Breaker" useDefault="false" xpos="756" ypos="511" sourceArcs="//@aeg/@arcElements.8" attackExecutionGraph="//@aeg"/>
@@ -20,7 +20,7 @@
       <value name="The combination used to open the safe" codename="SafeCombination" useDefault="false" xpos="695" ypos="593" sourceArcs="//@aeg/@arcElements.9" targetArcs="//@aeg/@arcElements.23" attackExecutionGraph="//@aeg"/>
     </knowledgeElements>
     <knowledgeElements key="Know the vulnerabilities of the security device used into the building">
-      <value name="Know the vulnerabilities of the security device used into the building" codename="SecVulnerabilities" useDefault="false" xpos="877" ypos="42" sourceArcs="//@aeg/@arcElements.34 //@aeg/@arcElements.35" attackExecutionGraph="//@aeg"/>
+      <value name="Know the vulnerabilities of the security device used into the building" codename="SecVulnerabilities" useDefault="false" xpos="877" ypos="42" sourceArcs="//@aeg/@arcElements.32 //@aeg/@arcElements.33" attackExecutionGraph="//@aeg"/>
     </knowledgeElements>
     <knowledgeElements key="Know the vulnerability of the bank network and online servive of the bank">
       <value name="Know the vulnerability of the bank network and online servive of the bank" codename="CyberVulnerability" useDefault="false" xpos="317" ypos="36" sourceArcs="//@aeg/@arcElements.11" attackExecutionGraph="//@aeg"/>
@@ -32,16 +32,16 @@
       <value name="User Credentials" codename="UserCredentials" xpos="12" ypos="532" sourceArcs="//@aeg/@arcElements.18" targetArcs="//@aeg/@arcElements.17" attackExecutionGraph="//@aeg"/>
     </knowledgeElements>
     <accessElements key="Control alarms and can disable them">
-      <value name="Control alarms and can disable them" codename="AlarmsControl" useDefault="false" xpos="790" ypos="346" sourceArcs="//@aeg/@arcElements.7" targetArcs="//@aeg/@arcElements.38" attackExecutionGraph="//@aeg"/>
+      <value name="Control alarms and can disable them" codename="AlarmsControl" useDefault="false" xpos="790" ypos="346" sourceArcs="//@aeg/@arcElements.7" targetArcs="//@aeg/@arcElements.36" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <accessElements key="Control cameras to see their records or delete them">
-      <value name="Control cameras to see their records or delete them" codename="CamerasControl" useDefault="false" xpos="976" ypos="344" sourceArcs="//@aeg/@arcElements.0 //@aeg/@arcElements.3 //@aeg/@arcElements.6" targetArcs="//@aeg/@arcElements.39" attackExecutionGraph="//@aeg"/>
+      <value name="Control cameras to see their records or delete them" codename="CamerasControl" useDefault="false" xpos="976" ypos="344" sourceArcs="//@aeg/@arcElements.0 //@aeg/@arcElements.3 //@aeg/@arcElements.6" targetArcs="//@aeg/@arcElements.37" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <accessElements key="Secure Path to go to the safe and take money back">
       <value name="Secure Path to go to the safe and take money back" codename="SecurePath" useDefault="false" xpos="1092" ypos="578" sourceArcs="//@aeg/@arcElements.5" targetArcs="//@aeg/@arcElements.4" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <accessElements key="Phisical Access To Security Components of the building">
-      <value name="Phisical Access To Security Components of the building" codename="PhisicalAccess" useDefault="false" xpos="1030" ypos="48" sourceArcs="//@aeg/@arcElements.36 //@aeg/@arcElements.37" attackExecutionGraph="//@aeg"/>
+      <value name="Phisical Access To Security Components of the building" codename="PhisicalAccess" useDefault="false" xpos="1030" ypos="48" sourceArcs="//@aeg/@arcElements.34 //@aeg/@arcElements.35" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <accessElements key="Back Door">
       <value name="Back Door" codename="BackDoor" xpos="315" ypos="226" sourceArcs="//@aeg/@arcElements.13 //@aeg/@arcElements.14 //@aeg/@arcElements.15" targetArcs="//@aeg/@arcElements.12" attackExecutionGraph="//@aeg"/>
@@ -106,7 +106,7 @@ else return 60;</parameters>
       </value>
     </stepElements>
     <stepElements key="Cyber Attack">
-      <value name="Cyber Attack" codename="CyberAttack" xpos="268" ypos="131" sourceArcs="//@aeg/@arcElements.12" targetArcs="//@aeg/@arcElements.11 //@aeg/@arcElements.26" attackExecutionGraph="//@aeg" width="150" preconditions="return(!BackDoor->Mark()&amp;&amp;CyberVulnerability->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 70;">
+      <value name="Cyber Attack" codename="CyberAttack" xpos="268" ypos="131" sourceArcs="//@aeg/@arcElements.12" targetArcs="//@aeg/@arcElements.11 //@aeg/@arcElements.24" attackExecutionGraph="//@aeg" width="150" preconditions="return(!BackDoor->Mark()&amp;&amp;CyberVulnerability->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 70;">
         <outcomes key="Outcome 1">
           <value name="Success" probability="return 0.15;" detection="return 0.05;" effects="BackDoor->Mark()=true;"/>
         </outcomes>
@@ -119,7 +119,7 @@ else return 60;</parameters>
       </value>
     </stepElements>
     <stepElements key="Infect The System">
-      <value name="Infect The System" codename="InfectTheSystem" xpos="130" ypos="390" sourceArcs="//@aeg/@arcElements.19" targetArcs="//@aeg/@arcElements.13 //@aeg/@arcElements.27" attackExecutionGraph="//@aeg" width="150" preconditions="return (!SystemAccess->Mark()&amp;&amp;BackDoor->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 65;">
+      <value name="Infect The System" codename="InfectTheSystem" xpos="130" ypos="390" sourceArcs="//@aeg/@arcElements.19" targetArcs="//@aeg/@arcElements.13 //@aeg/@arcElements.25" attackExecutionGraph="//@aeg" width="150" preconditions="return (!SystemAccess->Mark()&amp;&amp;BackDoor->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 65;">
         <outcomes key="Outcome 1">
           <value name="Success" probability="return 0.05;" detection="return 0.05;" effects="SystemAccess->Mark()=true;"/>
         </outcomes>
@@ -135,7 +135,7 @@ else return 60;</parameters>
       </value>
     </stepElements>
     <stepElements key="Get Director Credentials">
-      <value name="Get Director Credentials" codename="GetDirectorCredentials" xpos="303" ypos="387" sourceArcs="//@aeg/@arcElements.22" targetArcs="//@aeg/@arcElements.14 //@aeg/@arcElements.28" attackExecutionGraph="//@aeg" width="150" preconditions="return (!DirectorCredentials->Mark()&amp;&amp;BackDoor->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 55;">
+      <value name="Get Director Credentials" codename="GetDirectorCredentials" xpos="303" ypos="387" sourceArcs="//@aeg/@arcElements.22" targetArcs="//@aeg/@arcElements.14 //@aeg/@arcElements.26" attackExecutionGraph="//@aeg" width="150" preconditions="return (!DirectorCredentials->Mark()&amp;&amp;BackDoor->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 55;">
         <outcomes key="Outcome 1">
           <value name="Success" probability="return 0.20;" detection="return 0.05;" effects="DirectorCredentials->Mark()=true;"/>
         </outcomes>
@@ -151,7 +151,7 @@ else return 60;</parameters>
       </value>
     </stepElements>
     <stepElements key="Get Safe Combination">
-      <value name="Get Safe Combination" codename="GetSafeCombination" xpos="469" ypos="386" sourceArcs="//@aeg/@arcElements.23" targetArcs="//@aeg/@arcElements.15 //@aeg/@arcElements.29" attackExecutionGraph="//@aeg" width="150" preconditions="return(!SafeCombination->Mark()&amp;&amp;BackDoor->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 60;">
+      <value name="Get Safe Combination" codename="GetSafeCombination" xpos="469" ypos="386" sourceArcs="//@aeg/@arcElements.23" targetArcs="//@aeg/@arcElements.15 //@aeg/@arcElements.27" attackExecutionGraph="//@aeg" width="150" preconditions="return(!SafeCombination->Mark()&amp;&amp;BackDoor->Mark()&amp;&amp;Hacker->Mark()>600);" cost="return 60;">
         <outcomes key="Outcome 1">
           <value name="Success" probability="return 0.05;" detection="return 0.05;" effects="SafeCombination->Mark()=true;"/>
         </outcomes>
@@ -180,9 +180,9 @@ else return 60;</parameters>
       </value>
     </stepElements>
     <stepElements key="Transfer Customer Money">
-      <value name="Transfer Customer Money" codename="TransferCustomerMoney" xpos="-29" ypos="719" sourceArcs="//@aeg/@arcElements.25" targetArcs="//@aeg/@arcElements.18" attackExecutionGraph="//@aeg" width="150" preconditions="return(!Money->Mark()&amp;&amp;UserCredentials->Mark());" cost="return 5;">
+      <value name="Transfer Customer Money" codename="TransferCustomerMoney" xpos="-29" ypos="719" sourceArcs="//@aeg/@arcElements.39" targetArcs="//@aeg/@arcElements.18" attackExecutionGraph="//@aeg" width="150" preconditions="return(!DigitalMoney->Mark()&amp;&amp;UserCredentials->Mark());" cost="return 5;">
         <outcomes key="Outcome 1">
-          <value name="Success" probability="return 0.8;" detection="return 0.05;" effects="Money->Mark()=true;"/>
+          <value name="Success" probability="return 0.8;" detection="return 0.05;" effects="DigitalMoney->Mark()=true;"/>
         </outcomes>
         <outcomes key="Failure">
           <value name="Failure" probability="return 0.20;" detection="return 0.1;" effects=""/>
@@ -193,9 +193,9 @@ else return 60;</parameters>
       </value>
     </stepElements>
     <stepElements key="Transfer Bank Money">
-      <value name="Transfer Bank Money" codename="TransferBankMoney" xpos="185" ypos="677" sourceArcs="//@aeg/@arcElements.24" targetArcs="//@aeg/@arcElements.20 //@aeg/@arcElements.21" attackExecutionGraph="//@aeg" width="150" preconditions="return(!Money->Mark()&amp;&amp;SystemAccess->Mark()&amp;&amp;DirectorCredentials->Mark());" cost="return 5;">
+      <value name="Transfer Bank Money" codename="TransferBankMoney" xpos="185" ypos="677" sourceArcs="//@aeg/@arcElements.38" targetArcs="//@aeg/@arcElements.20 //@aeg/@arcElements.21" attackExecutionGraph="//@aeg" width="150" preconditions="return(!DigitalMoney->Mark()&amp;&amp;SystemAccess->Mark()&amp;&amp;DirectorCredentials->Mark());" cost="return 5;">
         <outcomes key="Outcome 1">
-          <value name="Success" probability="return 0.80;" detection="return 0.05;" effects="Money->Mark()=true;"/>
+          <value name="Success" probability="return 0.80;" detection="return 0.05;" effects="DigitalMoney->Mark() = true;"/>
         </outcomes>
         <outcomes key="Failure">
           <value name="Failure" probability="return 0.20;" detection="return 0.1;" effects=""/>
@@ -206,7 +206,7 @@ else return 60;</parameters>
       </value>
     </stepElements>
     <stepElements key="Get Access To Alarms">
-      <value name="Get Access To Alarms" codename="GetAccessToAlarms" xpos="729" ypos="180" sourceArcs="//@aeg/@arcElements.38" targetArcs="//@aeg/@arcElements.30 //@aeg/@arcElements.32 //@aeg/@arcElements.34 //@aeg/@arcElements.36" attackExecutionGraph="//@aeg" width="150" preconditions="return (!AlarmsControl->Mark()) &amp;&amp; ((Hacker->Mark()>600 &amp;&amp; Stealth->Mark()>300) || (Hacker->Mark()>200 &amp;&amp; Stealth->Mark()>800)) &amp;&amp; PhisicalAccess->Mark() &amp;&amp; SecVulnerabilities->Mark();" cost="return 30;">
+      <value name="Get Access To Alarms" codename="GetAccessToAlarms" xpos="729" ypos="180" sourceArcs="//@aeg/@arcElements.36" targetArcs="//@aeg/@arcElements.28 //@aeg/@arcElements.30 //@aeg/@arcElements.32 //@aeg/@arcElements.34" attackExecutionGraph="//@aeg" width="150" preconditions="return (!AlarmsControl->Mark()) &amp;&amp; ((Hacker->Mark()>600 &amp;&amp; Stealth->Mark()>300) || (Hacker->Mark()>200 &amp;&amp; Stealth->Mark()>800)) &amp;&amp; PhisicalAccess->Mark() &amp;&amp; SecVulnerabilities->Mark();" cost="return 30;">
         <outcomes key="Success">
           <value name="Success" probability="return 0.3;" detection="return 0.05;" effects="AlarmsControl->Mark() = true;"/>
         </outcomes>
@@ -219,7 +219,7 @@ else return 60;</parameters>
       </value>
     </stepElements>
     <stepElements key="Get Access To Cameras">
-      <value name="Get Access To Cameras" codename="GetAccessToCameras" xpos="928" ypos="183" sourceArcs="//@aeg/@arcElements.39" targetArcs="//@aeg/@arcElements.31 //@aeg/@arcElements.33 //@aeg/@arcElements.35 //@aeg/@arcElements.37" attackExecutionGraph="//@aeg" width="150" preconditions="return (!CamerasControl->Mark()) &amp;&amp; ((Hacker->Mark()>600 &amp;&amp; Stealth->Mark()>300) || (Hacker->Mark()>200 &amp;&amp; Stealth->Mark()>800)) &amp;&amp; PhisicalAccess->Mark() &amp;&amp; SecVulnerabilities->Mark();" cost="return 30;">
+      <value name="Get Access To Cameras" codename="GetAccessToCameras" xpos="928" ypos="183" sourceArcs="//@aeg/@arcElements.37" targetArcs="//@aeg/@arcElements.29 //@aeg/@arcElements.31 //@aeg/@arcElements.33 //@aeg/@arcElements.35" attackExecutionGraph="//@aeg" width="150" preconditions="return (!CamerasControl->Mark()) &amp;&amp; ((Hacker->Mark()>600 &amp;&amp; Stealth->Mark()>300) || (Hacker->Mark()>200 &amp;&amp; Stealth->Mark()>800)) &amp;&amp; PhisicalAccess->Mark() &amp;&amp; SecVulnerabilities->Mark();" cost="return 30;">
         <outcomes key="Success">
           <value name="Success" probability="return 0.3;" detection="return 0.15;" effects="CamerasControl->Mark() = true;"/>
         </outcomes>
@@ -232,7 +232,10 @@ else return 60;</parameters>
       </value>
     </stepElements>
     <goalElements key="Stolen money from the bank">
-      <value name="Stolen money from the bank" codename="Money" useDefault="false" xpos="856" ypos="799" targetArcs="//@aeg/@arcElements.10 //@aeg/@arcElements.24 //@aeg/@arcElements.25" attackExecutionGraph="//@aeg" width="75"/>
+      <value name="Stolen money from the bank" codename="Money" useDefault="false" xpos="856" ypos="799" targetArcs="//@aeg/@arcElements.10" attackExecutionGraph="//@aeg" width="75"/>
+    </goalElements>
+    <goalElements key="Transfer a credit into a personal bank account">
+      <value name="Transfer a credit into a personal bank account" codename="DigitalMoney" useDefault="false" xpos="223" ypos="825" targetArcs="//@aeg/@arcElements.38 //@aeg/@arcElements.39" attackExecutionGraph="//@aeg" width="75"/>
     </goalElements>
     <arcElements sourceName="Control cameras to see their records or delete them" targetName="Study Security Routines" targetType="Step"/>
     <arcElements sourceName="Study Security Routines" targetName="Know security paths and their timing" sourceType="Step" targetType="Knowledge"/>
@@ -258,8 +261,6 @@ else return 60;</parameters>
     <arcElements sourceName="Director Credentials" targetName="Transfer Bank Money" sourceType="Knowledge" targetType="Step"/>
     <arcElements sourceName="Get Director Credentials" targetName="Director Credentials" sourceType="Step" targetType="Knowledge"/>
     <arcElements sourceName="Get Safe Combination" targetName="The combination used to open the safe" sourceType="Step" targetType="Knowledge"/>
-    <arcElements sourceName="Transfer Bank Money" targetName="Stolen money from the bank" sourceType="Step" targetType="Goal"/>
-    <arcElements sourceName="Transfer Customer Money" targetName="Stolen money from the bank" sourceType="Step" targetType="Goal"/>
     <arcElements sourceName="Hacker: Able to violate electronical and informatic systems" targetName="Cyber Attack" sourceType="Skill" targetType="Step"/>
     <arcElements sourceName="Hacker: Able to violate electronical and informatic systems" targetName="Infect The System" sourceType="Skill" targetType="Step"/>
     <arcElements sourceName="Hacker: Able to violate electronical and informatic systems" targetName="Get Director Credentials" sourceType="Skill" targetType="Step"/>
@@ -274,11 +275,15 @@ else return 60;</parameters>
     <arcElements sourceName="Phisical Access To Security Components of the building" targetName="Get Access To Cameras" targetType="Step"/>
     <arcElements sourceName="Get Access To Alarms" targetName="Control alarms and can disable them" sourceType="Step"/>
     <arcElements sourceName="Get Access To Cameras" targetName="Control cameras to see their records or delete them" sourceType="Step"/>
+    <arcElements sourceName="Transfer Bank Money" targetName="Transfer a credit into a personal bank account" sourceType="Step" targetType="Goal"/>
+    <arcElements sourceName="Transfer Customer Money" targetName="Transfer a credit into a personal bank account" sourceType="Step" targetType="Goal"/>
   </aeg>
-  <adversary name="AdversaryName" codename="AdversaryName" detectionDiscount="0.1" costDiscount="0.1" payoffDiscount="0.8">
+  <adversary name="AdversaryName" codename="AdversaryName" costSW="0.8" detectionDiscount="0.1" costDiscount="0.1" payoffDiscount="0.8">
     <accessInit key="Phisical Access To Security Components of the building" value="securityComponentsAccess"/>
     <goalInit key="Stolen money from the bank" value="0"/>
+    <goalInit key="Transfer a credit into a personal bank account" value="0"/>
     <goalPayoff key="Stolen money from the bank" value="3000"/>
+    <goalPayoff key="Transfer a credit into a personal bank account" value="500"/>
     <knowledgeInit key="Know the vulnerabilities of the security device used into the building" value="secVulnerabilitiesKnowledge"/>
     <knowledgeInit key="Know the vulnerability of the bank network and online servive of the bank" value="cyberVulnerabilitiesKnowledge"/>
     <skillInit key="Stealth: Able to come inside protected building and performs actions without be identified" value="stealthSkill"/>

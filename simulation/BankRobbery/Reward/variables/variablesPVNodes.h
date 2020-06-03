@@ -226,4 +226,48 @@ class variablesPV9:public PerformanceVariableNode
   void CreateWorkerList(void);
 };
 
+class variablesPV10Worker:public InstantOfTime
+{
+ public:
+  AttackModelADVISE *AttackModel;
+  
+  variablesPV10Worker();
+  ~variablesPV10Worker();
+  double Reward_Function();
+};
+
+class variablesPV10:public PerformanceVariableNode
+{
+ public:
+  AttackModelADVISE *TheAttackModelADVISE;
+
+  variablesPV10Worker *variablesPV10WorkerList;
+
+  variablesPV10(int timeindex=0);
+  ~variablesPV10();
+  void CreateWorkerList(void);
+};
+
+class variablesPV11Worker:public InstantOfTime
+{
+ public:
+  AttackModelADVISE *AttackModel;
+  
+  variablesPV11Worker();
+  ~variablesPV11Worker();
+  double Reward_Function();
+};
+
+class variablesPV11:public PerformanceVariableNode
+{
+ public:
+  AttackModelADVISE *TheAttackModelADVISE;
+
+  variablesPV11Worker *variablesPV11WorkerList;
+
+  variablesPV11(int timeindex=0);
+  ~variablesPV11();
+  void CreateWorkerList(void);
+};
+
 #endif

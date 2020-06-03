@@ -345,69 +345,6 @@ public:
   BaseActionClass *Fire();
 }; // CyberAttackAdversaryDecision
 
-class GetAccessToAlarmsSuccessStep : public Step {
-public:
-
-  Access *AlarmsControl;
-  short* AlarmsControl_Mobius_Mark;
-  Skill *Hacker;
-  short* Hacker_Mobius_Mark;
-  Skill *Stealth;
-  short* Stealth_Mobius_Mark;
-  Knowledge *SecVulnerabilities;
-  short* SecVulnerabilities_Mobius_Mark;
-  Access *PhisicalAccess;
-  short* PhisicalAccess_Mobius_Mark;
-  StepChosen *GetAccessToAlarmsChosen;
-  short *GetAccessToAlarmsChosen_Mobius_Mark;
-  StepWeight *GetAccessToAlarmsWeight;
-  short *GetAccessToAlarmsWeight_Mobius_Mark;
-  StepWeight *TransferCustomerMoneyWeight;
-  short *TransferCustomerMoneyWeight_Mobius_Mark;
-  StepWeight *GetAccessToCamerasWeight;
-  short *GetAccessToCamerasWeight_Mobius_Mark;
-  StepWeight *DoNothingWeight;
-  short *DoNothingWeight_Mobius_Mark;
-  StepWeight *TransferBankMoneyWeight;
-  short *TransferBankMoneyWeight_Mobius_Mark;
-  StepWeight *PhishingWeight;
-  short *PhishingWeight_Mobius_Mark;
-  StepWeight *FindSecureAccessWeight;
-  short *FindSecureAccessWeight_Mobius_Mark;
-  StepWeight *GetDirectorCredentialsWeight;
-  short *GetDirectorCredentialsWeight_Mobius_Mark;
-  StepWeight *StudySecurityRoutinesWeight;
-  short *StudySecurityRoutinesWeight_Mobius_Mark;
-  StepWeight *GetSafeCombinationWeight;
-  short *GetSafeCombinationWeight_Mobius_Mark;
-  StepWeight *InfectTheSystemWeight;
-  short *InfectTheSystemWeight_Mobius_Mark;
-  StepWeight *SafeBreakWeight;
-  short *SafeBreakWeight_Mobius_Mark;
-  StepWeight *CyberAttackWeight;
-  short *CyberAttackWeight_Mobius_Mark;
-  BeginAdversaryDecision *MakeDecision;
-  short *MakeDecision_Mobius_Mark;
-  double *TheDistributionParameters;
-
-  GetAccessToAlarmsSuccessStep();
-  ~GetAccessToAlarmsSuccessStep();
-  bool Enabled();
-  void LinkVariables();
-  double Weight();
-  bool ReactivationPredicate();
-  bool ReactivationFunction();
-  double SampleDistribution();
-  double* ReturnDistributionParameters();
-  double getCost();
-  double getOutcomeProbability();
-  double getDetection();
-  int Rank();
-  double timeDistributionParameter0();
-  bool preconditionsMet();
-  void executeEffects();
-}; // GetAccessToAlarmsSuccessStep
-
 class GetAccessToAlarmsFailureStep : public Step {
 public:
 
@@ -471,11 +408,74 @@ public:
   void executeEffects();
 }; // GetAccessToAlarmsFailureStep
 
+class GetAccessToAlarmsSuccessStep : public Step {
+public:
+
+  Access *AlarmsControl;
+  short* AlarmsControl_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
+  Skill *Stealth;
+  short* Stealth_Mobius_Mark;
+  Knowledge *SecVulnerabilities;
+  short* SecVulnerabilities_Mobius_Mark;
+  Access *PhisicalAccess;
+  short* PhisicalAccess_Mobius_Mark;
+  StepChosen *GetAccessToAlarmsChosen;
+  short *GetAccessToAlarmsChosen_Mobius_Mark;
+  StepWeight *GetAccessToAlarmsWeight;
+  short *GetAccessToAlarmsWeight_Mobius_Mark;
+  StepWeight *TransferCustomerMoneyWeight;
+  short *TransferCustomerMoneyWeight_Mobius_Mark;
+  StepWeight *GetAccessToCamerasWeight;
+  short *GetAccessToCamerasWeight_Mobius_Mark;
+  StepWeight *DoNothingWeight;
+  short *DoNothingWeight_Mobius_Mark;
+  StepWeight *TransferBankMoneyWeight;
+  short *TransferBankMoneyWeight_Mobius_Mark;
+  StepWeight *PhishingWeight;
+  short *PhishingWeight_Mobius_Mark;
+  StepWeight *FindSecureAccessWeight;
+  short *FindSecureAccessWeight_Mobius_Mark;
+  StepWeight *GetDirectorCredentialsWeight;
+  short *GetDirectorCredentialsWeight_Mobius_Mark;
+  StepWeight *StudySecurityRoutinesWeight;
+  short *StudySecurityRoutinesWeight_Mobius_Mark;
+  StepWeight *GetSafeCombinationWeight;
+  short *GetSafeCombinationWeight_Mobius_Mark;
+  StepWeight *InfectTheSystemWeight;
+  short *InfectTheSystemWeight_Mobius_Mark;
+  StepWeight *SafeBreakWeight;
+  short *SafeBreakWeight_Mobius_Mark;
+  StepWeight *CyberAttackWeight;
+  short *CyberAttackWeight_Mobius_Mark;
+  BeginAdversaryDecision *MakeDecision;
+  short *MakeDecision_Mobius_Mark;
+  double *TheDistributionParameters;
+
+  GetAccessToAlarmsSuccessStep();
+  ~GetAccessToAlarmsSuccessStep();
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  double getCost();
+  double getOutcomeProbability();
+  double getDetection();
+  int Rank();
+  double timeDistributionParameter0();
+  bool preconditionsMet();
+  void executeEffects();
+}; // GetAccessToAlarmsSuccessStep
+
 class TransferCustomerMoneyFailureStep : public Step {
 public:
 
-  Goal *Money;
-  short* Money_Mobius_Mark;
+  Goal *DigitalMoney;
+  short* DigitalMoney_Mobius_Mark;
   Knowledge *UserCredentials;
   short* UserCredentials_Mobius_Mark;
   StepChosen *TransferCustomerMoneyChosen;
@@ -531,8 +531,8 @@ public:
 class TransferCustomerMoneySuccessStep : public Step {
 public:
 
-  Goal *Money;
-  short* Money_Mobius_Mark;
+  Goal *DigitalMoney;
+  short* DigitalMoney_Mobius_Mark;
   Knowledge *UserCredentials;
   short* UserCredentials_Mobius_Mark;
   StepChosen *TransferCustomerMoneyChosen;
@@ -767,8 +767,8 @@ public:
 class TransferBankMoneyFailureStep : public Step {
 public:
 
-  Goal *Money;
-  short* Money_Mobius_Mark;
+  Goal *DigitalMoney;
+  short* DigitalMoney_Mobius_Mark;
   Access *SystemAccess;
   short* SystemAccess_Mobius_Mark;
   Knowledge *DirectorCredentials;
@@ -826,8 +826,8 @@ public:
 class TransferBankMoneySuccessStep : public Step {
 public:
 
-  Goal *Money;
-  short* Money_Mobius_Mark;
+  Goal *DigitalMoney;
+  short* DigitalMoney_Mobius_Mark;
   Access *SystemAccess;
   short* SystemAccess_Mobius_Mark;
   Knowledge *DirectorCredentials;
@@ -1173,65 +1173,6 @@ public:
   void executeEffects();
 }; // FindSecureAccessFailureCameraAccessFoundStep
 
-class GetDirectorCredentialsFailureBackdoorfoundStep : public Step {
-public:
-
-  Knowledge *DirectorCredentials;
-  short* DirectorCredentials_Mobius_Mark;
-  Access *BackDoor;
-  short* BackDoor_Mobius_Mark;
-  Skill *Hacker;
-  short* Hacker_Mobius_Mark;
-  StepChosen *GetDirectorCredentialsChosen;
-  short *GetDirectorCredentialsChosen_Mobius_Mark;
-  StepWeight *GetAccessToAlarmsWeight;
-  short *GetAccessToAlarmsWeight_Mobius_Mark;
-  StepWeight *TransferCustomerMoneyWeight;
-  short *TransferCustomerMoneyWeight_Mobius_Mark;
-  StepWeight *GetAccessToCamerasWeight;
-  short *GetAccessToCamerasWeight_Mobius_Mark;
-  StepWeight *DoNothingWeight;
-  short *DoNothingWeight_Mobius_Mark;
-  StepWeight *TransferBankMoneyWeight;
-  short *TransferBankMoneyWeight_Mobius_Mark;
-  StepWeight *PhishingWeight;
-  short *PhishingWeight_Mobius_Mark;
-  StepWeight *FindSecureAccessWeight;
-  short *FindSecureAccessWeight_Mobius_Mark;
-  StepWeight *GetDirectorCredentialsWeight;
-  short *GetDirectorCredentialsWeight_Mobius_Mark;
-  StepWeight *StudySecurityRoutinesWeight;
-  short *StudySecurityRoutinesWeight_Mobius_Mark;
-  StepWeight *GetSafeCombinationWeight;
-  short *GetSafeCombinationWeight_Mobius_Mark;
-  StepWeight *InfectTheSystemWeight;
-  short *InfectTheSystemWeight_Mobius_Mark;
-  StepWeight *SafeBreakWeight;
-  short *SafeBreakWeight_Mobius_Mark;
-  StepWeight *CyberAttackWeight;
-  short *CyberAttackWeight_Mobius_Mark;
-  BeginAdversaryDecision *MakeDecision;
-  short *MakeDecision_Mobius_Mark;
-  double *TheDistributionParameters;
-
-  GetDirectorCredentialsFailureBackdoorfoundStep();
-  ~GetDirectorCredentialsFailureBackdoorfoundStep();
-  bool Enabled();
-  void LinkVariables();
-  double Weight();
-  bool ReactivationPredicate();
-  bool ReactivationFunction();
-  double SampleDistribution();
-  double* ReturnDistributionParameters();
-  double getCost();
-  double getOutcomeProbability();
-  double getDetection();
-  int Rank();
-  double timeDistributionParameter0();
-  bool preconditionsMet();
-  void executeEffects();
-}; // GetDirectorCredentialsFailureBackdoorfoundStep
-
 class GetDirectorCredentialsFailureStep : public Step {
 public:
 
@@ -1290,6 +1231,65 @@ public:
   bool preconditionsMet();
   void executeEffects();
 }; // GetDirectorCredentialsFailureStep
+
+class GetDirectorCredentialsFailureBackdoorfoundStep : public Step {
+public:
+
+  Knowledge *DirectorCredentials;
+  short* DirectorCredentials_Mobius_Mark;
+  Access *BackDoor;
+  short* BackDoor_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
+  StepChosen *GetDirectorCredentialsChosen;
+  short *GetDirectorCredentialsChosen_Mobius_Mark;
+  StepWeight *GetAccessToAlarmsWeight;
+  short *GetAccessToAlarmsWeight_Mobius_Mark;
+  StepWeight *TransferCustomerMoneyWeight;
+  short *TransferCustomerMoneyWeight_Mobius_Mark;
+  StepWeight *GetAccessToCamerasWeight;
+  short *GetAccessToCamerasWeight_Mobius_Mark;
+  StepWeight *DoNothingWeight;
+  short *DoNothingWeight_Mobius_Mark;
+  StepWeight *TransferBankMoneyWeight;
+  short *TransferBankMoneyWeight_Mobius_Mark;
+  StepWeight *PhishingWeight;
+  short *PhishingWeight_Mobius_Mark;
+  StepWeight *FindSecureAccessWeight;
+  short *FindSecureAccessWeight_Mobius_Mark;
+  StepWeight *GetDirectorCredentialsWeight;
+  short *GetDirectorCredentialsWeight_Mobius_Mark;
+  StepWeight *StudySecurityRoutinesWeight;
+  short *StudySecurityRoutinesWeight_Mobius_Mark;
+  StepWeight *GetSafeCombinationWeight;
+  short *GetSafeCombinationWeight_Mobius_Mark;
+  StepWeight *InfectTheSystemWeight;
+  short *InfectTheSystemWeight_Mobius_Mark;
+  StepWeight *SafeBreakWeight;
+  short *SafeBreakWeight_Mobius_Mark;
+  StepWeight *CyberAttackWeight;
+  short *CyberAttackWeight_Mobius_Mark;
+  BeginAdversaryDecision *MakeDecision;
+  short *MakeDecision_Mobius_Mark;
+  double *TheDistributionParameters;
+
+  GetDirectorCredentialsFailureBackdoorfoundStep();
+  ~GetDirectorCredentialsFailureBackdoorfoundStep();
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  double getCost();
+  double getOutcomeProbability();
+  double getDetection();
+  int Rank();
+  double timeDistributionParameter0();
+  bool preconditionsMet();
+  void executeEffects();
+}; // GetDirectorCredentialsFailureBackdoorfoundStep
 
 class GetDirectorCredentialsSuccessStep : public Step {
 public:
@@ -1521,65 +1521,6 @@ public:
   void executeEffects();
 }; // StudySecurityRoutinesFailureCameraAccessFoundStep
 
-class GetSafeCombinationFailureBackdoorfoundStep : public Step {
-public:
-
-  Knowledge *SafeCombination;
-  short* SafeCombination_Mobius_Mark;
-  Access *BackDoor;
-  short* BackDoor_Mobius_Mark;
-  Skill *Hacker;
-  short* Hacker_Mobius_Mark;
-  StepChosen *GetSafeCombinationChosen;
-  short *GetSafeCombinationChosen_Mobius_Mark;
-  StepWeight *GetAccessToAlarmsWeight;
-  short *GetAccessToAlarmsWeight_Mobius_Mark;
-  StepWeight *TransferCustomerMoneyWeight;
-  short *TransferCustomerMoneyWeight_Mobius_Mark;
-  StepWeight *GetAccessToCamerasWeight;
-  short *GetAccessToCamerasWeight_Mobius_Mark;
-  StepWeight *DoNothingWeight;
-  short *DoNothingWeight_Mobius_Mark;
-  StepWeight *TransferBankMoneyWeight;
-  short *TransferBankMoneyWeight_Mobius_Mark;
-  StepWeight *PhishingWeight;
-  short *PhishingWeight_Mobius_Mark;
-  StepWeight *FindSecureAccessWeight;
-  short *FindSecureAccessWeight_Mobius_Mark;
-  StepWeight *GetDirectorCredentialsWeight;
-  short *GetDirectorCredentialsWeight_Mobius_Mark;
-  StepWeight *StudySecurityRoutinesWeight;
-  short *StudySecurityRoutinesWeight_Mobius_Mark;
-  StepWeight *GetSafeCombinationWeight;
-  short *GetSafeCombinationWeight_Mobius_Mark;
-  StepWeight *InfectTheSystemWeight;
-  short *InfectTheSystemWeight_Mobius_Mark;
-  StepWeight *SafeBreakWeight;
-  short *SafeBreakWeight_Mobius_Mark;
-  StepWeight *CyberAttackWeight;
-  short *CyberAttackWeight_Mobius_Mark;
-  BeginAdversaryDecision *MakeDecision;
-  short *MakeDecision_Mobius_Mark;
-  double *TheDistributionParameters;
-
-  GetSafeCombinationFailureBackdoorfoundStep();
-  ~GetSafeCombinationFailureBackdoorfoundStep();
-  bool Enabled();
-  void LinkVariables();
-  double Weight();
-  bool ReactivationPredicate();
-  bool ReactivationFunction();
-  double SampleDistribution();
-  double* ReturnDistributionParameters();
-  double getCost();
-  double getOutcomeProbability();
-  double getDetection();
-  int Rank();
-  double timeDistributionParameter0();
-  bool preconditionsMet();
-  void executeEffects();
-}; // GetSafeCombinationFailureBackdoorfoundStep
-
 class GetSafeCombinationFailureStep : public Step {
 public:
 
@@ -1638,6 +1579,65 @@ public:
   bool preconditionsMet();
   void executeEffects();
 }; // GetSafeCombinationFailureStep
+
+class GetSafeCombinationFailureBackdoorfoundStep : public Step {
+public:
+
+  Knowledge *SafeCombination;
+  short* SafeCombination_Mobius_Mark;
+  Access *BackDoor;
+  short* BackDoor_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
+  StepChosen *GetSafeCombinationChosen;
+  short *GetSafeCombinationChosen_Mobius_Mark;
+  StepWeight *GetAccessToAlarmsWeight;
+  short *GetAccessToAlarmsWeight_Mobius_Mark;
+  StepWeight *TransferCustomerMoneyWeight;
+  short *TransferCustomerMoneyWeight_Mobius_Mark;
+  StepWeight *GetAccessToCamerasWeight;
+  short *GetAccessToCamerasWeight_Mobius_Mark;
+  StepWeight *DoNothingWeight;
+  short *DoNothingWeight_Mobius_Mark;
+  StepWeight *TransferBankMoneyWeight;
+  short *TransferBankMoneyWeight_Mobius_Mark;
+  StepWeight *PhishingWeight;
+  short *PhishingWeight_Mobius_Mark;
+  StepWeight *FindSecureAccessWeight;
+  short *FindSecureAccessWeight_Mobius_Mark;
+  StepWeight *GetDirectorCredentialsWeight;
+  short *GetDirectorCredentialsWeight_Mobius_Mark;
+  StepWeight *StudySecurityRoutinesWeight;
+  short *StudySecurityRoutinesWeight_Mobius_Mark;
+  StepWeight *GetSafeCombinationWeight;
+  short *GetSafeCombinationWeight_Mobius_Mark;
+  StepWeight *InfectTheSystemWeight;
+  short *InfectTheSystemWeight_Mobius_Mark;
+  StepWeight *SafeBreakWeight;
+  short *SafeBreakWeight_Mobius_Mark;
+  StepWeight *CyberAttackWeight;
+  short *CyberAttackWeight_Mobius_Mark;
+  BeginAdversaryDecision *MakeDecision;
+  short *MakeDecision_Mobius_Mark;
+  double *TheDistributionParameters;
+
+  GetSafeCombinationFailureBackdoorfoundStep();
+  ~GetSafeCombinationFailureBackdoorfoundStep();
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  double getCost();
+  double getOutcomeProbability();
+  double getDetection();
+  int Rank();
+  double timeDistributionParameter0();
+  bool preconditionsMet();
+  void executeEffects();
+}; // GetSafeCombinationFailureBackdoorfoundStep
 
 class GetSafeCombinationSuccessStep : public Step {
 public:
@@ -1698,65 +1698,6 @@ public:
   void executeEffects();
 }; // GetSafeCombinationSuccessStep
 
-class InfectTheSystemFailureBackdoorfoundStep : public Step {
-public:
-
-  Access *SystemAccess;
-  short* SystemAccess_Mobius_Mark;
-  Access *BackDoor;
-  short* BackDoor_Mobius_Mark;
-  Skill *Hacker;
-  short* Hacker_Mobius_Mark;
-  StepChosen *InfectTheSystemChosen;
-  short *InfectTheSystemChosen_Mobius_Mark;
-  StepWeight *GetAccessToAlarmsWeight;
-  short *GetAccessToAlarmsWeight_Mobius_Mark;
-  StepWeight *TransferCustomerMoneyWeight;
-  short *TransferCustomerMoneyWeight_Mobius_Mark;
-  StepWeight *GetAccessToCamerasWeight;
-  short *GetAccessToCamerasWeight_Mobius_Mark;
-  StepWeight *DoNothingWeight;
-  short *DoNothingWeight_Mobius_Mark;
-  StepWeight *TransferBankMoneyWeight;
-  short *TransferBankMoneyWeight_Mobius_Mark;
-  StepWeight *PhishingWeight;
-  short *PhishingWeight_Mobius_Mark;
-  StepWeight *FindSecureAccessWeight;
-  short *FindSecureAccessWeight_Mobius_Mark;
-  StepWeight *GetDirectorCredentialsWeight;
-  short *GetDirectorCredentialsWeight_Mobius_Mark;
-  StepWeight *StudySecurityRoutinesWeight;
-  short *StudySecurityRoutinesWeight_Mobius_Mark;
-  StepWeight *GetSafeCombinationWeight;
-  short *GetSafeCombinationWeight_Mobius_Mark;
-  StepWeight *InfectTheSystemWeight;
-  short *InfectTheSystemWeight_Mobius_Mark;
-  StepWeight *SafeBreakWeight;
-  short *SafeBreakWeight_Mobius_Mark;
-  StepWeight *CyberAttackWeight;
-  short *CyberAttackWeight_Mobius_Mark;
-  BeginAdversaryDecision *MakeDecision;
-  short *MakeDecision_Mobius_Mark;
-  double *TheDistributionParameters;
-
-  InfectTheSystemFailureBackdoorfoundStep();
-  ~InfectTheSystemFailureBackdoorfoundStep();
-  bool Enabled();
-  void LinkVariables();
-  double Weight();
-  bool ReactivationPredicate();
-  bool ReactivationFunction();
-  double SampleDistribution();
-  double* ReturnDistributionParameters();
-  double getCost();
-  double getOutcomeProbability();
-  double getDetection();
-  int Rank();
-  double timeDistributionParameter0();
-  bool preconditionsMet();
-  void executeEffects();
-}; // InfectTheSystemFailureBackdoorfoundStep
-
 class InfectTheSystemFailureStep : public Step {
 public:
 
@@ -1815,6 +1756,65 @@ public:
   bool preconditionsMet();
   void executeEffects();
 }; // InfectTheSystemFailureStep
+
+class InfectTheSystemFailureBackdoorfoundStep : public Step {
+public:
+
+  Access *SystemAccess;
+  short* SystemAccess_Mobius_Mark;
+  Access *BackDoor;
+  short* BackDoor_Mobius_Mark;
+  Skill *Hacker;
+  short* Hacker_Mobius_Mark;
+  StepChosen *InfectTheSystemChosen;
+  short *InfectTheSystemChosen_Mobius_Mark;
+  StepWeight *GetAccessToAlarmsWeight;
+  short *GetAccessToAlarmsWeight_Mobius_Mark;
+  StepWeight *TransferCustomerMoneyWeight;
+  short *TransferCustomerMoneyWeight_Mobius_Mark;
+  StepWeight *GetAccessToCamerasWeight;
+  short *GetAccessToCamerasWeight_Mobius_Mark;
+  StepWeight *DoNothingWeight;
+  short *DoNothingWeight_Mobius_Mark;
+  StepWeight *TransferBankMoneyWeight;
+  short *TransferBankMoneyWeight_Mobius_Mark;
+  StepWeight *PhishingWeight;
+  short *PhishingWeight_Mobius_Mark;
+  StepWeight *FindSecureAccessWeight;
+  short *FindSecureAccessWeight_Mobius_Mark;
+  StepWeight *GetDirectorCredentialsWeight;
+  short *GetDirectorCredentialsWeight_Mobius_Mark;
+  StepWeight *StudySecurityRoutinesWeight;
+  short *StudySecurityRoutinesWeight_Mobius_Mark;
+  StepWeight *GetSafeCombinationWeight;
+  short *GetSafeCombinationWeight_Mobius_Mark;
+  StepWeight *InfectTheSystemWeight;
+  short *InfectTheSystemWeight_Mobius_Mark;
+  StepWeight *SafeBreakWeight;
+  short *SafeBreakWeight_Mobius_Mark;
+  StepWeight *CyberAttackWeight;
+  short *CyberAttackWeight_Mobius_Mark;
+  BeginAdversaryDecision *MakeDecision;
+  short *MakeDecision_Mobius_Mark;
+  double *TheDistributionParameters;
+
+  InfectTheSystemFailureBackdoorfoundStep();
+  ~InfectTheSystemFailureBackdoorfoundStep();
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  double getCost();
+  double getOutcomeProbability();
+  double getDetection();
+  int Rank();
+  double timeDistributionParameter0();
+  bool preconditionsMet();
+  void executeEffects();
+}; // InfectTheSystemFailureBackdoorfoundStep
 
 class InfectTheSystemSuccessStep : public Step {
 public:
@@ -2141,6 +2141,7 @@ public:
   Skill *SocialEngineer;
   Skill *Stealth;
   Goal *Money;
+  Goal *DigitalMoney;
   //List of attack step weight state variables
   StepWeight *GetAccessToAlarmsWeight;
   StepWeight *TransferCustomerMoneyWeight;
@@ -2170,8 +2171,8 @@ public:
   StepChosen *SafeBreakChosen;
   StepChosen *CyberAttackChosen;
   //List of attack steps
-  GetAccessToAlarmsSuccessStep GetAccessToAlarmsSuccess;
   GetAccessToAlarmsFailureStep GetAccessToAlarmsFailure;
+  GetAccessToAlarmsSuccessStep GetAccessToAlarmsSuccess;
   TransferCustomerMoneyFailureStep TransferCustomerMoneyFailure;
   TransferCustomerMoneySuccessStep TransferCustomerMoneySuccess;
   GetAccessToCamerasFailureStep GetAccessToCamerasFailure;
@@ -2184,17 +2185,17 @@ public:
   FindSecureAccessFailureStep FindSecureAccessFailure;
   FindSecureAccessSuccessStep FindSecureAccessSuccess;
   FindSecureAccessFailureCameraAccessFoundStep FindSecureAccessFailureCameraAccessFound;
-  GetDirectorCredentialsFailureBackdoorfoundStep GetDirectorCredentialsFailureBackdoorfound;
   GetDirectorCredentialsFailureStep GetDirectorCredentialsFailure;
+  GetDirectorCredentialsFailureBackdoorfoundStep GetDirectorCredentialsFailureBackdoorfound;
   GetDirectorCredentialsSuccessStep GetDirectorCredentialsSuccess;
   StudySecurityRoutinesFailureStep StudySecurityRoutinesFailure;
   StudySecurityRoutinesSuccessStep StudySecurityRoutinesSuccess;
   StudySecurityRoutinesFailureCameraAccessFoundStep StudySecurityRoutinesFailureCameraAccessFound;
-  GetSafeCombinationFailureBackdoorfoundStep GetSafeCombinationFailureBackdoorfound;
   GetSafeCombinationFailureStep GetSafeCombinationFailure;
+  GetSafeCombinationFailureBackdoorfoundStep GetSafeCombinationFailureBackdoorfound;
   GetSafeCombinationSuccessStep GetSafeCombinationSuccess;
-  InfectTheSystemFailureBackdoorfoundStep InfectTheSystemFailureBackdoorfound;
   InfectTheSystemFailureStep InfectTheSystemFailure;
+  InfectTheSystemFailureBackdoorfoundStep InfectTheSystemFailureBackdoorfound;
   InfectTheSystemSuccessStep InfectTheSystemSuccess;
   SafeBreakFailureStep SafeBreakFailure;
   SafeBreakSuccessStep SafeBreakSuccess;
