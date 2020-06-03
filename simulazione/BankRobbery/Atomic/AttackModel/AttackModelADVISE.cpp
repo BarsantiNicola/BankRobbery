@@ -318,14 +318,14 @@ AttackModelADVISE::AttackModelADVISE() {
 
   commonInit("AttackModel", 45, InitialSVs, 43, InitialActions, 14, InitialGroups, 13, outCounts, InitialSteps, 2, InitialGoals);
 
-  advCostPref = 0.8;
+  advCostPref = 0.1;
   advDetectPref = 0.1;
   advPayPref = 0.8;
 
   planningHorizon = 1;
-  costDiscount = 0.1;
-  detectionDiscount = 0.1;
-  payoffDiscount = 0.8;
+  costDiscount = 1.0;
+  detectionDiscount = 0;
+  payoffDiscount = 1.0;
 
   assignSVsToAttackSteps();
 
@@ -1134,7 +1134,7 @@ return 30-Hacker->Mark()*25/1000;
 }
 
 double AttackModelADVISE::GetAccessToAlarmsFailureStep::Weight() {
-return 0.8;
+return 0.99;
 }
 
 bool AttackModelADVISE::GetAccessToAlarmsFailureStep::ReactivationPredicate() {
@@ -1172,11 +1172,11 @@ return 30;
 }
 
 double AttackModelADVISE::GetAccessToAlarmsFailureStep::getOutcomeProbability() {
-return 0.8;
+return 0.99;
 }
 
 double AttackModelADVISE::GetAccessToAlarmsFailureStep::getDetection() {
-return 0.75;
+return 0.3;
 }
 
 /*====================== GetAccessToAlarmsSuccessStep ========================*/
@@ -1224,7 +1224,7 @@ return 30-Hacker->Mark()*25/1000;
 }
 
 double AttackModelADVISE::GetAccessToAlarmsSuccessStep::Weight() {
-return 0.3;
+return 0.01;
 }
 
 bool AttackModelADVISE::GetAccessToAlarmsSuccessStep::ReactivationPredicate() {
@@ -1262,7 +1262,7 @@ return 30;
 }
 
 double AttackModelADVISE::GetAccessToAlarmsSuccessStep::getOutcomeProbability() {
-return 0.3;
+return 0.01;
 }
 
 double AttackModelADVISE::GetAccessToAlarmsSuccessStep::getDetection() {
@@ -1488,7 +1488,7 @@ return 30-Hacker->Mark()*25/1000;
 }
 
 double AttackModelADVISE::GetAccessToCamerasFailureStep::Weight() {
-return 0.8;
+return 0.99;
 }
 
 bool AttackModelADVISE::GetAccessToCamerasFailureStep::ReactivationPredicate() {
@@ -1526,11 +1526,11 @@ return 30;
 }
 
 double AttackModelADVISE::GetAccessToCamerasFailureStep::getOutcomeProbability() {
-return 0.8;
+return 0.99;
 }
 
 double AttackModelADVISE::GetAccessToCamerasFailureStep::getDetection() {
-return 0.75;
+return 0.4;
 }
 
 /*====================== GetAccessToCamerasSuccessStep ========================*/
@@ -1578,7 +1578,7 @@ return 30-Hacker->Mark()*25/1000;
 }
 
 double AttackModelADVISE::GetAccessToCamerasSuccessStep::Weight() {
-return 0.3;
+return 0.01;
 }
 
 bool AttackModelADVISE::GetAccessToCamerasSuccessStep::ReactivationPredicate() {
@@ -1616,7 +1616,7 @@ return 30;
 }
 
 double AttackModelADVISE::GetAccessToCamerasSuccessStep::getOutcomeProbability() {
-return 0.3;
+return 0.01;
 }
 
 double AttackModelADVISE::GetAccessToCamerasSuccessStep::getDetection() {
@@ -1705,7 +1705,7 @@ return 1;
 }
 
 double AttackModelADVISE::DoNothingOutcome1Step::getDetection() {
-return 0;
+return 0.3;
 }
 
 /*====================== TransferBankMoneyFailureStep ========================*/
@@ -1926,7 +1926,7 @@ return 5000-SocialEngineer->Mark()*2;
 }
 
 double AttackModelADVISE::PhishingFailureStep::Weight() {
-return 0.80;
+return 0.9;
 }
 
 bool AttackModelADVISE::PhishingFailureStep::ReactivationPredicate() {
@@ -1964,7 +1964,7 @@ return 50;
 }
 
 double AttackModelADVISE::PhishingFailureStep::getOutcomeProbability() {
-return 0.80;
+return 0.9;
 }
 
 double AttackModelADVISE::PhishingFailureStep::getDetection() {
@@ -2013,7 +2013,7 @@ return 5000-SocialEngineer->Mark()*2;
 }
 
 double AttackModelADVISE::PhishingSuccessStep::Weight() {
-return 0.05;
+return 0.1;
 }
 
 bool AttackModelADVISE::PhishingSuccessStep::ReactivationPredicate() {
@@ -2051,7 +2051,7 @@ return 50;
 }
 
 double AttackModelADVISE::PhishingSuccessStep::getOutcomeProbability() {
-return 0.05;
+return 0.1;
 }
 
 double AttackModelADVISE::PhishingSuccessStep::getDetection() {
@@ -2101,7 +2101,7 @@ return 2000;
 }
 
 double AttackModelADVISE::FindSecureAccessFailureStep::Weight() {
-return 0.70;
+return 0.75;
 }
 
 bool AttackModelADVISE::FindSecureAccessFailureStep::ReactivationPredicate() {
@@ -2139,7 +2139,7 @@ return 5;
 }
 
 double AttackModelADVISE::FindSecureAccessFailureStep::getOutcomeProbability() {
-return 0.70;
+return 0.75;
 }
 
 double AttackModelADVISE::FindSecureAccessFailureStep::getDetection() {
@@ -2189,7 +2189,7 @@ return 2000;
 }
 
 double AttackModelADVISE::FindSecureAccessSuccessStep::Weight() {
-return 0.1;
+return 0.05;
 }
 
 bool AttackModelADVISE::FindSecureAccessSuccessStep::ReactivationPredicate() {
@@ -2227,7 +2227,7 @@ return 5;
 }
 
 double AttackModelADVISE::FindSecureAccessSuccessStep::getOutcomeProbability() {
-return 0.1;
+return 0.05;
 }
 
 double AttackModelADVISE::FindSecureAccessSuccessStep::getDetection() {
@@ -2366,7 +2366,7 @@ return 25-Hacker->Mark()*2/100;
 }
 
 double AttackModelADVISE::GetDirectorCredentialsFailureStep::Weight() {
-return 0.5;
+return 0.6;
 }
 
 bool AttackModelADVISE::GetDirectorCredentialsFailureStep::ReactivationPredicate() {
@@ -2404,7 +2404,7 @@ return 55;
 }
 
 double AttackModelADVISE::GetDirectorCredentialsFailureStep::getOutcomeProbability() {
-return 0.5;
+return 0.6;
 }
 
 double AttackModelADVISE::GetDirectorCredentialsFailureStep::getDetection() {
@@ -2542,7 +2542,7 @@ return 25-Hacker->Mark()*2/100;
 }
 
 double AttackModelADVISE::GetDirectorCredentialsSuccessStep::Weight() {
-return 0.20;
+return 0.10;
 }
 
 bool AttackModelADVISE::GetDirectorCredentialsSuccessStep::ReactivationPredicate() {
@@ -2580,7 +2580,7 @@ return 55;
 }
 
 double AttackModelADVISE::GetDirectorCredentialsSuccessStep::getOutcomeProbability() {
-return 0.20;
+return 0.10;
 }
 
 double AttackModelADVISE::GetDirectorCredentialsSuccessStep::getDetection() {
@@ -2629,7 +2629,7 @@ return 1000;
 }
 
 double AttackModelADVISE::StudySecurityRoutinesFailureStep::Weight() {
-return 0.05;
+return 0.15;
 }
 
 bool AttackModelADVISE::StudySecurityRoutinesFailureStep::ReactivationPredicate() {
@@ -2667,7 +2667,7 @@ return 5;
 }
 
 double AttackModelADVISE::StudySecurityRoutinesFailureStep::getOutcomeProbability() {
-return 0.05;
+return 0.15;
 }
 
 double AttackModelADVISE::StudySecurityRoutinesFailureStep::getDetection() {
@@ -2716,7 +2716,7 @@ return 1000;
 }
 
 double AttackModelADVISE::StudySecurityRoutinesSuccessStep::Weight() {
-return 0.85;
+return 0.75;
 }
 
 bool AttackModelADVISE::StudySecurityRoutinesSuccessStep::ReactivationPredicate() {
@@ -2754,7 +2754,7 @@ return 5;
 }
 
 double AttackModelADVISE::StudySecurityRoutinesSuccessStep::getOutcomeProbability() {
-return 0.85;
+return 0.75;
 }
 
 double AttackModelADVISE::StudySecurityRoutinesSuccessStep::getDetection() {
@@ -3423,7 +3423,7 @@ else return 60;
 }
 
 double AttackModelADVISE::SafeBreakFailureStep::Weight() {
-return 0.15;
+return 0.35;
 }
 
 bool AttackModelADVISE::SafeBreakFailureStep::ReactivationPredicate() {
@@ -3462,7 +3462,7 @@ else return 70;
 }
 
 double AttackModelADVISE::SafeBreakFailureStep::getOutcomeProbability() {
-return 0.15;
+return 0.35;
 }
 
 double AttackModelADVISE::SafeBreakFailureStep::getDetection() {
@@ -3516,7 +3516,7 @@ else return 60;
 }
 
 double AttackModelADVISE::SafeBreakSuccessStep::Weight() {
-return 0.85;
+return 0.65;
 }
 
 bool AttackModelADVISE::SafeBreakSuccessStep::ReactivationPredicate() {
@@ -3555,7 +3555,7 @@ else return 70;
 }
 
 double AttackModelADVISE::SafeBreakSuccessStep::getOutcomeProbability() {
-return 0.85;
+return 0.65;
 }
 
 double AttackModelADVISE::SafeBreakSuccessStep::getDetection() {
@@ -3605,7 +3605,7 @@ return 60-Hacker->Mark()*3/100;
 }
 
 double AttackModelADVISE::CyberAttackFailureStep::Weight() {
-return 0.85;
+return 0.99;
 }
 
 bool AttackModelADVISE::CyberAttackFailureStep::ReactivationPredicate() {
@@ -3643,11 +3643,11 @@ return 70;
 }
 
 double AttackModelADVISE::CyberAttackFailureStep::getOutcomeProbability() {
-return 0.85;
+return 0.99;
 }
 
 double AttackModelADVISE::CyberAttackFailureStep::getDetection() {
-return 0.30;
+return 0.01;
 }
 
 /*====================== CyberAttackSuccessStep ========================*/
@@ -3693,7 +3693,7 @@ return 60-Hacker->Mark()*3/100;
 }
 
 double AttackModelADVISE::CyberAttackSuccessStep::Weight() {
-return 0.15;
+return 0.01;
 }
 
 bool AttackModelADVISE::CyberAttackSuccessStep::ReactivationPredicate() {
@@ -3731,7 +3731,7 @@ return 70;
 }
 
 double AttackModelADVISE::CyberAttackSuccessStep::getOutcomeProbability() {
-return 0.15;
+return 0.01;
 }
 
 double AttackModelADVISE::CyberAttackSuccessStep::getDetection() {

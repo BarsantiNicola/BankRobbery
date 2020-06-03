@@ -23,7 +23,7 @@
 			<byte id="BuildType">0</byte>
 			<string id="BuildArch">64-bit</string>
 			<byte id="TraceLevel">1</byte>
-			<string id="Runname">Results</string>
+			<string id="Runname">GeneralAttack</string>
 			<int id="DisplayUpdateFrequency">1000</int>
 			<boolean id="MaximizeProcessorUsage">false</boolean>
 			<int id="ProcessorsPerExperiment">1</int>
