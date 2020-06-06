@@ -22,4 +22,5 @@
   <globalVariable name="securityComponentsAccess"/>
   <globalVariable name="socialEngineerSkill"/>
   <globalVariable name="cyberVulnerabilitiesKnowledge"/>
+  <globalVariable name="adversaryCostPreference" type="Float"/>
 </models:Project>

@@ -278,7 +278,7 @@ else return 60;</parameters>
     <arcElements sourceName="Transfer Bank Money" targetName="Transfer a credit into a personal bank account" sourceType="Step" targetType="Goal"/>
     <arcElements sourceName="Transfer Customer Money" targetName="Transfer a credit into a personal bank account" sourceType="Step" targetType="Goal"/>
   </aeg>
-  <adversary name="BankRobbers" codename="BankRobbers" detectionDiscount="0">
+  <adversary name="BankRobbers" codename="BankRobbers" detectionSW="0.4-0.4*adversaryCostPreference" costSW="0.4*adversaryCostPreference" payoffSW="0.6" detectionDiscount="1.0-adversaryCostPreference" costDiscount="adversaryCostPreference">
     <accessInit key="Phisical Access To Security Components of the building" value="securityComponentsAccess"/>
     <goalInit key="Stolen money from the bank" value="0"/>
     <goalInit key="Transfer a credit into a personal bank account" value="0"/>

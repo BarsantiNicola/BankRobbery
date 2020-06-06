@@ -32,29 +32,77 @@
 					<string id="PVModelName">variables</string>
 					<vector id="ActiveExpVector">
 						<boolean id="0">true</boolean>
+						<boolean id="1">true</boolean>
+						<boolean id="2">true</boolean>
+						<boolean id="3">true</boolean>
+						<boolean id="4">true</boolean>
+						<boolean id="5">true</boolean>
+						<boolean id="6">true</boolean>
+						<boolean id="7">true</boolean>
+						<boolean id="8">true</boolean>
+						<boolean id="9">true</boolean>
+						<boolean id="10">true</boolean>
+						<boolean id="11">true</boolean>
+						<boolean id="12">true</boolean>
+						<boolean id="13">true</boolean>
+						<boolean id="14">true</boolean>
+						<boolean id="15">true</boolean>
+						<boolean id="16">true</boolean>
+						<boolean id="17">true</boolean>
+						<boolean id="18">true</boolean>
+						<boolean id="19">true</boolean>
+						<boolean id="20">true</boolean>
+						<boolean id="21">true</boolean>
+						<boolean id="22">true</boolean>
+						<boolean id="23">true</boolean>
 					</vector>
 					<vector id="GVNameVector">
-						<string id="0">breakerSkill</string>
-						<string id="1">cyberVulnerabilitiesKnowledge</string>
-						<string id="2">hackerSkill</string>
-						<string id="3">secVulnerabilitiesKnowledge</string>
-						<string id="4">securityComponentsAccess</string>
-						<string id="5">socialEngineerSkill</string>
-						<string id="6">stealthSkill</string>
+						<string id="0">adversaryCostPreference</string>
+						<string id="1">breakerSkill</string>
+						<string id="2">cyberVulnerabilitiesKnowledge</string>
+						<string id="3">hackerSkill</string>
+						<string id="4">secVulnerabilitiesKnowledge</string>
+						<string id="5">securityComponentsAccess</string>
+						<string id="6">socialEngineerSkill</string>
+						<string id="7">stealthSkill</string>
 					</vector>
 					<vector id="GVTypeStringVector">
-						<string id="0">short</string>
+						<string id="0">float</string>
 						<string id="1">short</string>
 						<string id="2">short</string>
 						<string id="3">short</string>
 						<string id="4">short</string>
 						<string id="5">short</string>
 						<string id="6">short</string>
+						<string id="7">short</string>
 					</vector>
 				</class>
-				<int id="VectorLength">7</int>
+				<int id="VectorLength">8</int>
+				<vector id="e">
+					<string id="0">Manual Range</string>
+					<string id="1">0</string>
+					<string id="2">0</string>
+				</vector>
 				<vector id="e">
 					<string id="0">Fixed Value</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Manual Range</string>
+					<string id="1">0</string>
+					<string id="2">0</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Fixed Value</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Manual Range</string>
+					<string id="1">0</string>
+					<string id="2">0</string>
+				</vector>
+				<vector id="e">
+					<string id="0">Manual Range</string>
+					<string id="1">0</string>
+					<string id="2">0</string>
 				</vector>
 				<vector id="e">
 					<string id="0">Fixed Value</string>
@@ -62,32 +110,28 @@
 				<vector id="e">
 					<string id="0">Fixed Value</string>
 				</vector>
-				<vector id="e">
-					<string id="0">Fixed Value</string>
-				</vector>
-				<vector id="e">
-					<string id="0">Fixed Value</string>
-				</vector>
-				<vector id="e">
-					<string id="0">Fixed Value</string>
-				</vector>
-				<vector id="e">
-					<string id="0">Fixed Value</string>
+				<vector id="g">
+					<string id="0">0.0</string>
+					<string id="1">0.5</string>
+					<string id="2">1.0</string>
 				</vector>
 				<vector id="g">
 					<string id="0">1000</string>
 				</vector>
 				<vector id="g">
 					<string id="0">1</string>
+					<string id="1">0</string>
 				</vector>
 				<vector id="g">
 					<string id="0">1000</string>
 				</vector>
 				<vector id="g">
 					<string id="0">1</string>
+					<string id="1">0</string>
 				</vector>
 				<vector id="g">
 					<string id="0">1</string>
+					<string id="1">0</string>
 				</vector>
 				<vector id="g">
 					<string id="0">1000</string>

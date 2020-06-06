@@ -318,13 +318,13 @@ AttackModelADVISE::AttackModelADVISE() {
 
   commonInit("AttackModel", 45, InitialSVs, 43, InitialActions, 14, InitialGroups, 13, outCounts, InitialSteps, 2, InitialGoals);
 
-  advCostPref = 0.1;
-  advDetectPref = 0.1;
-  advPayPref = 0.8;
+  advCostPref = 0.4*adversaryCostPreference;
+  advDetectPref = 0.4-0.4*adversaryCostPreference;
+  advPayPref = 0.6;
 
   planningHorizon = 1;
-  costDiscount = 1.0;
-  detectionDiscount = 0;
+  costDiscount = adversaryCostPreference;
+  detectionDiscount = 1.0-adversaryCostPreference;
   payoffDiscount = 1.0;
 
   assignSVsToAttackSteps();
