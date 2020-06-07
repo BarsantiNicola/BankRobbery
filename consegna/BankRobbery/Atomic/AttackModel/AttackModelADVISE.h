@@ -24,6 +24,7 @@ extern Short secVulnerabilitiesKnowledge;
 extern Short securityComponentsAccess;
 extern Short socialEngineerSkill;
 extern Short cyberVulnerabilitiesKnowledge;
+extern Float adversaryCostPreference;
 extern UserDistributions* TheDistribution;
 
 /*********************************************************************

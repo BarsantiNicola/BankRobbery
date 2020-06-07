@@ -18,12 +18,12 @@
 			<byte id="RandomNumberGenerator">2</byte>
 			<long id="RandomNumberSeed">31415</long>
 			<long id="MaximumBatches">1000</long>
-			<long id="MinimumBatches">1000</long>
+			<long id="MinimumBatches">100</long>
 			<long id="ReportFrequency">1000</long>
 			<byte id="BuildType">0</byte>
 			<string id="BuildArch">64-bit</string>
 			<byte id="TraceLevel">1</byte>
-			<string id="Runname">CyberAttack</string>
+			<string id="Runname">GeneralAttack</string>
 			<int id="DisplayUpdateFrequency">1000</int>
 			<boolean id="MaximizeProcessorUsage">false</boolean>
 			<int id="ProcessorsPerExperiment">1</int>

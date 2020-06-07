@@ -318,13 +318,13 @@ AttackModelADVISE::AttackModelADVISE() {
 
   commonInit("AttackModel", 45, InitialSVs, 43, InitialActions, 14, InitialGroups, 13, outCounts, InitialSteps, 2, InitialGoals);
 
-  advCostPref = 0;
-  advDetectPref = 0.4;
+  advCostPref = 0.4*adversaryCostPreference;
+  advDetectPref = 0.4-0.4*adversaryCostPreference;
   advPayPref = 0.6;
 
   planningHorizon = 1;
-  costDiscount = 0;
-  detectionDiscount = 1.0;
+  costDiscount = adversaryCostPreference;
+  detectionDiscount = 1.0-adversaryCostPreference;
   payoffDiscount = 1.0;
 
   assignSVsToAttackSteps();
@@ -1926,7 +1926,7 @@ return 5000-SocialEngineer->Mark()*2;
 }
 
 double AttackModelADVISE::PhishingFailureStep::Weight() {
-return 0.99;
+return 0.9;
 }
 
 bool AttackModelADVISE::PhishingFailureStep::ReactivationPredicate() {
@@ -1964,7 +1964,7 @@ return 50;
 }
 
 double AttackModelADVISE::PhishingFailureStep::getOutcomeProbability() {
-return 0.99;
+return 0.9;
 }
 
 double AttackModelADVISE::PhishingFailureStep::getDetection() {
@@ -2013,7 +2013,7 @@ return 5000-SocialEngineer->Mark()*2;
 }
 
 double AttackModelADVISE::PhishingSuccessStep::Weight() {
-return 0.01;
+return 0.1;
 }
 
 bool AttackModelADVISE::PhishingSuccessStep::ReactivationPredicate() {
@@ -2051,7 +2051,7 @@ return 50;
 }
 
 double AttackModelADVISE::PhishingSuccessStep::getOutcomeProbability() {
-return 0.01;
+return 0.1;
 }
 
 double AttackModelADVISE::PhishingSuccessStep::getDetection() {
@@ -2101,7 +2101,7 @@ return 2000;
 }
 
 double AttackModelADVISE::FindSecureAccessFailureStep::Weight() {
-return 0.70;
+return 0.75;
 }
 
 bool AttackModelADVISE::FindSecureAccessFailureStep::ReactivationPredicate() {
@@ -2139,7 +2139,7 @@ return 5;
 }
 
 double AttackModelADVISE::FindSecureAccessFailureStep::getOutcomeProbability() {
-return 0.70;
+return 0.75;
 }
 
 double AttackModelADVISE::FindSecureAccessFailureStep::getDetection() {
@@ -2189,7 +2189,7 @@ return 2000;
 }
 
 double AttackModelADVISE::FindSecureAccessSuccessStep::Weight() {
-return 0.1;
+return 0.05;
 }
 
 bool AttackModelADVISE::FindSecureAccessSuccessStep::ReactivationPredicate() {
@@ -2227,7 +2227,7 @@ return 5;
 }
 
 double AttackModelADVISE::FindSecureAccessSuccessStep::getOutcomeProbability() {
-return 0.1;
+return 0.05;
 }
 
 double AttackModelADVISE::FindSecureAccessSuccessStep::getDetection() {
@@ -3423,7 +3423,7 @@ else return 60;
 }
 
 double AttackModelADVISE::SafeBreakFailureStep::Weight() {
-return 0.25;
+return 0.35;
 }
 
 bool AttackModelADVISE::SafeBreakFailureStep::ReactivationPredicate() {
@@ -3462,7 +3462,7 @@ else return 70;
 }
 
 double AttackModelADVISE::SafeBreakFailureStep::getOutcomeProbability() {
-return 0.25;
+return 0.35;
 }
 
 double AttackModelADVISE::SafeBreakFailureStep::getDetection() {
@@ -3516,7 +3516,7 @@ else return 60;
 }
 
 double AttackModelADVISE::SafeBreakSuccessStep::Weight() {
-return 0.75;
+return 0.65;
 }
 
 bool AttackModelADVISE::SafeBreakSuccessStep::ReactivationPredicate() {
@@ -3555,7 +3555,7 @@ else return 70;
 }
 
 double AttackModelADVISE::SafeBreakSuccessStep::getOutcomeProbability() {
-return 0.75;
+return 0.65;
 }
 
 double AttackModelADVISE::SafeBreakSuccessStep::getDetection() {

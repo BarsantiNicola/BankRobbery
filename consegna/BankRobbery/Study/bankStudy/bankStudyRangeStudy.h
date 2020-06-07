@@ -7,6 +7,7 @@
 #include "Cpp/BaseClasses/GlobalVariables.h"
 #include "Cpp/Study/BaseStudyClass.hpp"
 
+extern Float adversaryCostPreference;
 extern Short breakerSkill;
 extern Short cyberVulnerabilitiesKnowledge;
 extern Short hackerSkill;
@@ -23,6 +24,7 @@ bankStudyRangeStudy();
 
 private:
 
+float *adversaryCostPreferenceValues;
 short *breakerSkillValues;
 short *cyberVulnerabilitiesKnowledgeValues;
 short *hackerSkillValues;
@@ -31,6 +33,7 @@ short *securityComponentsAccessValues;
 short *socialEngineerSkillValues;
 short *stealthSkillValues;
 
+void SetValues_adversaryCostPreference();
 void SetValues_breakerSkill();
 void SetValues_cyberVulnerabilitiesKnowledge();
 void SetValues_hackerSkill();

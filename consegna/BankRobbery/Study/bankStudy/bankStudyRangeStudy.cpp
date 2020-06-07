@@ -4,6 +4,7 @@
 //******************************************************
 //Global Variables
 //******************************************************
+Float adversaryCostPreference;
 Short breakerSkill;
 Short cyberVulnerabilitiesKnowledge;
 Short hackerSkill;
@@ -18,27 +19,30 @@ Short stealthSkill;
 bankStudyRangeStudy::bankStudyRangeStudy() {
 
   // define arrays of global variable names and types
-  NumGVs = 7;
-  NumExps = 1;
+  NumGVs = 8;
+  NumExps = 24;
 
   GVNames = new char*[NumGVs];
   GVTypes = new char*[NumGVs];
-  GVNames[0]=strdup("breakerSkill");
-  GVTypes[0]=strdup("short");
-  GVNames[1]=strdup("cyberVulnerabilitiesKnowledge");
+  GVNames[0]=strdup("adversaryCostPreference");
+  GVTypes[0]=strdup("float");
+  GVNames[1]=strdup("breakerSkill");
   GVTypes[1]=strdup("short");
-  GVNames[2]=strdup("hackerSkill");
+  GVNames[2]=strdup("cyberVulnerabilitiesKnowledge");
   GVTypes[2]=strdup("short");
-  GVNames[3]=strdup("secVulnerabilitiesKnowledge");
+  GVNames[3]=strdup("hackerSkill");
   GVTypes[3]=strdup("short");
-  GVNames[4]=strdup("securityComponentsAccess");
+  GVNames[4]=strdup("secVulnerabilitiesKnowledge");
   GVTypes[4]=strdup("short");
-  GVNames[5]=strdup("socialEngineerSkill");
+  GVNames[5]=strdup("securityComponentsAccess");
   GVTypes[5]=strdup("short");
-  GVNames[6]=strdup("stealthSkill");
+  GVNames[6]=strdup("socialEngineerSkill");
   GVTypes[6]=strdup("short");
+  GVNames[7]=strdup("stealthSkill");
+  GVTypes[7]=strdup("short");
 
   // create the arrays to store the values of each gv
+  adversaryCostPreferenceValues = new float[NumExps];
   breakerSkillValues = new short[NumExps];
   cyberVulnerabilitiesKnowledgeValues = new short[NumExps];
   hackerSkillValues = new short[NumExps];
@@ -48,6 +52,7 @@ bankStudyRangeStudy::bankStudyRangeStudy() {
   stealthSkillValues = new short[NumExps];
 
   // call methods to assign values to each gv
+  SetValues_adversaryCostPreference();
   SetValues_breakerSkill();
   SetValues_cyberVulnerabilitiesKnowledge();
   SetValues_hackerSkill();
@@ -63,6 +68,7 @@ bankStudyRangeStudy::bankStudyRangeStudy() {
 //bankStudyRangeStudy Destructor
 //******************************************************
 bankStudyRangeStudy::~bankStudyRangeStudy() {
+  delete [] adversaryCostPreferenceValues;
   delete [] breakerSkillValues;
   delete [] cyberVulnerabilitiesKnowledgeValues;
   delete [] hackerSkillValues;
@@ -75,10 +81,42 @@ bankStudyRangeStudy::~bankStudyRangeStudy() {
 
 
 //******************************************************
+// set values for adversaryCostPreference
+//******************************************************
+void bankStudyRangeStudy::SetValues_adversaryCostPreference() {
+  adversaryCostPreferenceValues[0] = 0.0;
+  adversaryCostPreferenceValues[1] = 0.5;
+  adversaryCostPreferenceValues[2] = 1.0;
+  adversaryCostPreferenceValues[3] = 0.0;
+  adversaryCostPreferenceValues[4] = 0.5;
+  adversaryCostPreferenceValues[5] = 1.0;
+  adversaryCostPreferenceValues[6] = 0.0;
+  adversaryCostPreferenceValues[7] = 0.5;
+  adversaryCostPreferenceValues[8] = 1.0;
+  adversaryCostPreferenceValues[9] = 0.0;
+  adversaryCostPreferenceValues[10] = 0.5;
+  adversaryCostPreferenceValues[11] = 1.0;
+  adversaryCostPreferenceValues[12] = 0.0;
+  adversaryCostPreferenceValues[13] = 0.5;
+  adversaryCostPreferenceValues[14] = 1.0;
+  adversaryCostPreferenceValues[15] = 0.0;
+  adversaryCostPreferenceValues[16] = 0.5;
+  adversaryCostPreferenceValues[17] = 1.0;
+  adversaryCostPreferenceValues[18] = 0.0;
+  adversaryCostPreferenceValues[19] = 0.5;
+  adversaryCostPreferenceValues[20] = 1.0;
+  adversaryCostPreferenceValues[21] = 0.0;
+  adversaryCostPreferenceValues[22] = 0.5;
+  adversaryCostPreferenceValues[23] = 1.0;
+}
+
+
+//******************************************************
 // set values for breakerSkill
 //******************************************************
 void bankStudyRangeStudy::SetValues_breakerSkill() {
-  breakerSkillValues[0] = 1000;
+  for (int n=0; n<NumExps; n++)
+    breakerSkillValues[n] = 1000;
 }
 
 
@@ -87,6 +125,29 @@ void bankStudyRangeStudy::SetValues_breakerSkill() {
 //******************************************************
 void bankStudyRangeStudy::SetValues_cyberVulnerabilitiesKnowledge() {
   cyberVulnerabilitiesKnowledgeValues[0] = 1;
+  cyberVulnerabilitiesKnowledgeValues[1] = 1;
+  cyberVulnerabilitiesKnowledgeValues[2] = 1;
+  cyberVulnerabilitiesKnowledgeValues[3] = 0;
+  cyberVulnerabilitiesKnowledgeValues[4] = 0;
+  cyberVulnerabilitiesKnowledgeValues[5] = 0;
+  cyberVulnerabilitiesKnowledgeValues[6] = 1;
+  cyberVulnerabilitiesKnowledgeValues[7] = 1;
+  cyberVulnerabilitiesKnowledgeValues[8] = 1;
+  cyberVulnerabilitiesKnowledgeValues[9] = 0;
+  cyberVulnerabilitiesKnowledgeValues[10] = 0;
+  cyberVulnerabilitiesKnowledgeValues[11] = 0;
+  cyberVulnerabilitiesKnowledgeValues[12] = 1;
+  cyberVulnerabilitiesKnowledgeValues[13] = 1;
+  cyberVulnerabilitiesKnowledgeValues[14] = 1;
+  cyberVulnerabilitiesKnowledgeValues[15] = 0;
+  cyberVulnerabilitiesKnowledgeValues[16] = 0;
+  cyberVulnerabilitiesKnowledgeValues[17] = 0;
+  cyberVulnerabilitiesKnowledgeValues[18] = 1;
+  cyberVulnerabilitiesKnowledgeValues[19] = 1;
+  cyberVulnerabilitiesKnowledgeValues[20] = 1;
+  cyberVulnerabilitiesKnowledgeValues[21] = 0;
+  cyberVulnerabilitiesKnowledgeValues[22] = 0;
+  cyberVulnerabilitiesKnowledgeValues[23] = 0;
 }
 
 
@@ -94,7 +155,8 @@ void bankStudyRangeStudy::SetValues_cyberVulnerabilitiesKnowledge() {
 // set values for hackerSkill
 //******************************************************
 void bankStudyRangeStudy::SetValues_hackerSkill() {
-  hackerSkillValues[0] = 1000;
+  for (int n=0; n<NumExps; n++)
+    hackerSkillValues[n] = 1000;
 }
 
 
@@ -102,7 +164,30 @@ void bankStudyRangeStudy::SetValues_hackerSkill() {
 // set values for secVulnerabilitiesKnowledge
 //******************************************************
 void bankStudyRangeStudy::SetValues_secVulnerabilitiesKnowledge() {
-  secVulnerabilitiesKnowledgeValues[0] = 0;
+  secVulnerabilitiesKnowledgeValues[0] = 1;
+  secVulnerabilitiesKnowledgeValues[1] = 1;
+  secVulnerabilitiesKnowledgeValues[2] = 1;
+  secVulnerabilitiesKnowledgeValues[3] = 1;
+  secVulnerabilitiesKnowledgeValues[4] = 1;
+  secVulnerabilitiesKnowledgeValues[5] = 1;
+  secVulnerabilitiesKnowledgeValues[6] = 0;
+  secVulnerabilitiesKnowledgeValues[7] = 0;
+  secVulnerabilitiesKnowledgeValues[8] = 0;
+  secVulnerabilitiesKnowledgeValues[9] = 0;
+  secVulnerabilitiesKnowledgeValues[10] = 0;
+  secVulnerabilitiesKnowledgeValues[11] = 0;
+  secVulnerabilitiesKnowledgeValues[12] = 1;
+  secVulnerabilitiesKnowledgeValues[13] = 1;
+  secVulnerabilitiesKnowledgeValues[14] = 1;
+  secVulnerabilitiesKnowledgeValues[15] = 1;
+  secVulnerabilitiesKnowledgeValues[16] = 1;
+  secVulnerabilitiesKnowledgeValues[17] = 1;
+  secVulnerabilitiesKnowledgeValues[18] = 0;
+  secVulnerabilitiesKnowledgeValues[19] = 0;
+  secVulnerabilitiesKnowledgeValues[20] = 0;
+  secVulnerabilitiesKnowledgeValues[21] = 0;
+  secVulnerabilitiesKnowledgeValues[22] = 0;
+  secVulnerabilitiesKnowledgeValues[23] = 0;
 }
 
 
@@ -111,6 +196,29 @@ void bankStudyRangeStudy::SetValues_secVulnerabilitiesKnowledge() {
 //******************************************************
 void bankStudyRangeStudy::SetValues_securityComponentsAccess() {
   securityComponentsAccessValues[0] = 1;
+  securityComponentsAccessValues[1] = 1;
+  securityComponentsAccessValues[2] = 1;
+  securityComponentsAccessValues[3] = 1;
+  securityComponentsAccessValues[4] = 1;
+  securityComponentsAccessValues[5] = 1;
+  securityComponentsAccessValues[6] = 1;
+  securityComponentsAccessValues[7] = 1;
+  securityComponentsAccessValues[8] = 1;
+  securityComponentsAccessValues[9] = 1;
+  securityComponentsAccessValues[10] = 1;
+  securityComponentsAccessValues[11] = 1;
+  securityComponentsAccessValues[12] = 0;
+  securityComponentsAccessValues[13] = 0;
+  securityComponentsAccessValues[14] = 0;
+  securityComponentsAccessValues[15] = 0;
+  securityComponentsAccessValues[16] = 0;
+  securityComponentsAccessValues[17] = 0;
+  securityComponentsAccessValues[18] = 0;
+  securityComponentsAccessValues[19] = 0;
+  securityComponentsAccessValues[20] = 0;
+  securityComponentsAccessValues[21] = 0;
+  securityComponentsAccessValues[22] = 0;
+  securityComponentsAccessValues[23] = 0;
 }
 
 
@@ -118,7 +226,8 @@ void bankStudyRangeStudy::SetValues_securityComponentsAccess() {
 // set values for socialEngineerSkill
 //******************************************************
 void bankStudyRangeStudy::SetValues_socialEngineerSkill() {
-  socialEngineerSkillValues[0] = 1000;
+  for (int n=0; n<NumExps; n++)
+    socialEngineerSkillValues[n] = 1000;
 }
 
 
@@ -126,7 +235,8 @@ void bankStudyRangeStudy::SetValues_socialEngineerSkill() {
 // set values for stealthSkill
 //******************************************************
 void bankStudyRangeStudy::SetValues_stealthSkill() {
-  stealthSkillValues[0] = 1000;
+  for (int n=0; n<NumExps; n++)
+    stealthSkillValues[n] = 1000;
 }
 
 
@@ -144,6 +254,7 @@ void bankStudyRangeStudy::PrintGlobalValues(int expNum) {
 
   cout<<"The Global Variable values for experiment "<<
     GetExpName(expNum)<<" are:"<<endl;
+  cout << "adversaryCostPreference\tfloat\t" << adversaryCostPreference << endl;
   cout << "breakerSkill\tshort\t" << breakerSkill << endl;
   cout << "cyberVulnerabilitiesKnowledge\tshort\t" << cyberVulnerabilitiesKnowledge << endl;
   cout << "hackerSkill\tshort\t" << hackerSkill << endl;
@@ -158,7 +269,9 @@ void bankStudyRangeStudy::PrintGlobalValues(int expNum) {
 //retrieve the value of a global variable
 //******************************************************
 void *bankStudyRangeStudy::GetGVValue(char *TheGVName) {
-  if (strcmp("breakerSkill", TheGVName) == 0)
+  if (strcmp("adversaryCostPreference", TheGVName) == 0)
+    return &adversaryCostPreference;
+  else if (strcmp("breakerSkill", TheGVName) == 0)
     return &breakerSkill;
   else if (strcmp("cyberVulnerabilitiesKnowledge", TheGVName) == 0)
     return &cyberVulnerabilitiesKnowledge;
@@ -182,7 +295,9 @@ void *bankStudyRangeStudy::GetGVValue(char *TheGVName) {
 //override the value of a global variable
 //******************************************************
 void bankStudyRangeStudy::OverrideGVValue(char *TheGVName,void *TheGVValue) {
-  if (strcmp("breakerSkill", TheGVName) == 0)
+  if (strcmp("adversaryCostPreference", TheGVName) == 0)
+    SetGvValue(adversaryCostPreference, *(float *)TheGVValue);
+  else if (strcmp("breakerSkill", TheGVName) == 0)
     SetGvValue(breakerSkill, *(short *)TheGVValue);
   else if (strcmp("cyberVulnerabilitiesKnowledge", TheGVName) == 0)
     SetGvValue(cyberVulnerabilitiesKnowledge, *(short *)TheGVValue);
@@ -205,6 +320,7 @@ void bankStudyRangeStudy::OverrideGVValue(char *TheGVName,void *TheGVValue) {
 //set the value of all global variables to the given exp
 //******************************************************
 void bankStudyRangeStudy::SetGVs(int expNum) {
+  SetGvValue(adversaryCostPreference, adversaryCostPreferenceValues[expNum]);
   SetGvValue(breakerSkill, breakerSkillValues[expNum]);
   SetGvValue(cyberVulnerabilitiesKnowledge, cyberVulnerabilitiesKnowledgeValues[expNum]);
   SetGvValue(hackerSkill, hackerSkillValues[expNum]);

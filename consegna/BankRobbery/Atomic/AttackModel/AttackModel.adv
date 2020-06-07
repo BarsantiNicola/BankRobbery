@@ -78,13 +78,13 @@
     <stepElements key="Find Secure Access">
       <value name="Find Secure Access" codename="FindSecureAccess" xpos="1143" ypos="441" sourceArcs="//@aeg/@arcElements.4" targetArcs="//@aeg/@arcElements.2 //@aeg/@arcElements.3" attackExecutionGraph="//@aeg" width="150" preconditions="return (!SecurePath->Mark()) &amp;&amp; SecurityRoutines->Mark() &amp;&amp; CamerasControl->Mark();" cost="return 5;">
         <outcomes key="Success">
-          <value name="Success" probability="return 0.1;" detection="return 0;" effects="SecurePath->Mark() = true;"/>
+          <value name="Success" probability="return 0.05;" detection="return 0;" effects="SecurePath->Mark() = true;"/>
         </outcomes>
         <outcomes key="Failure(Camera Access Found)">
           <value name="Failure(Camera Access Found)" probability="return 0.2;" detection="return 0.1;" effects="SecurityRoutines->Mark() = false;&#xA;CamerasControl->Mark() = false;"/>
         </outcomes>
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.70;" detection="return 0;" effects=""/>
+          <value name="Failure" probability="return 0.75;" detection="return 0;" effects=""/>
         </outcomes>
         <timing distributionType="Deterministic">
           <parameters>return 2000;</parameters>
@@ -94,10 +94,10 @@
     <stepElements key="Safe Break">
       <value name="Safe Break" codename="SafeBreak" xpos="812" ypos="686" sourceArcs="//@aeg/@arcElements.10" targetArcs="//@aeg/@arcElements.5 //@aeg/@arcElements.6 //@aeg/@arcElements.7 //@aeg/@arcElements.8 //@aeg/@arcElements.9" attackExecutionGraph="//@aeg" width="150" preconditions="return (!Money->Mark()) &amp;&amp; ( Breaker->Mark()>800 || SafeCombination->Mark()) &amp;&amp; AlarmsControl->Mark() &amp;&amp; CamerasControl->Mark() &amp;&amp; SecurePath->Mark();" cost="if( SafeCombination->Mark() == true) return 40;&#xA;else return 70;">
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.25;" detection="return 0.95;" effects=""/>
+          <value name="Failure" probability="return 0.35;" detection="return 0.95;" effects=""/>
         </outcomes>
         <outcomes key="Success">
-          <value name="Success" probability="return 0.75;" detection="return 0.15;" effects="Money->Mark() = true;"/>
+          <value name="Success" probability="return 0.65;" detection="return 0.15;" effects="Money->Mark() = true;"/>
         </outcomes>
         <timing distributionType="Deterministic">
           <parameters>if( SafeCombination->Mark() == true)  return 30;
@@ -169,10 +169,10 @@ else return 60;</parameters>
     <stepElements key="Phishing">
       <value name="Phishing" codename="Phishing" xpos="-32" ypos="389" sourceArcs="//@aeg/@arcElements.17" targetArcs="//@aeg/@arcElements.16" attackExecutionGraph="//@aeg" width="150" preconditions="return(!UserCredentials->Mark()&amp;&amp;SocialEngineer->Mark()>650);" cost="return 50;">
         <outcomes key="Outcome 1">
-          <value name="Success" probability="return 0.01;" detection="return 0;" effects="UserCredentials->Mark()=true;"/>
+          <value name="Success" probability="return 0.1;" detection="return 0;" effects="UserCredentials->Mark()=true;"/>
         </outcomes>
         <outcomes key="Failure">
-          <value name="Failure" probability="return 0.99;" detection="return 0;" effects=""/>
+          <value name="Failure" probability="return 0.9;" detection="return 0;" effects=""/>
         </outcomes>
         <timing distributionType="Deterministic">
           <parameters>return 5000-SocialEngineer->Mark()*2;</parameters>
@@ -278,7 +278,7 @@ else return 60;</parameters>
     <arcElements sourceName="Transfer Bank Money" targetName="Transfer a credit into a personal bank account" sourceType="Step" targetType="Goal"/>
     <arcElements sourceName="Transfer Customer Money" targetName="Transfer a credit into a personal bank account" sourceType="Step" targetType="Goal"/>
   </aeg>
-  <adversary name="AdversaryName" codename="AdversaryName" detectionSW="0.4" costSW="0" payoffSW="0.6" costDiscount="0">
+  <adversary name="BankRobbers" codename="BankRobbers" detectionSW="0.4-0.4*adversaryCostPreference" costSW="0.4*adversaryCostPreference" payoffSW="0.6" detectionDiscount="1.0-adversaryCostPreference" costDiscount="adversaryCostPreference">
     <accessInit key="Phisical Access To Security Components of the building" value="securityComponentsAccess"/>
     <goalInit key="Stolen money from the bank" value="0"/>
     <goalInit key="Transfer a credit into a personal bank account" value="0"/>
